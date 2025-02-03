@@ -11,9 +11,10 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         snowfall-lib.follows = "snowfall-lib";
+
         impermanence.follows = "impermanence";
         # Note: to keep in line with upstream, run this command to update lock file:
-        # `nix flake lock --recreate-lock-file --inputs-from 'github:p1x3l101-10/nixos'`
+        # `nix flake update --inputs-from 'github:p1x3l101-10/nixos'`
       };
     };
   };
