@@ -13,6 +13,7 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    peerix.url = "github:cid-chan/peerix";
     impermanence.url = "github:nix-community/impermanence";
     nixos-home = {
       url = "github:p1x3l101-10/nixos";
@@ -22,6 +23,7 @@
         lanzaboote.follows = "lanzaboote";
         disko.follows = "disko";
         impermanence.follows = "impermanence";
+        peerix.follows = "peerix";
         # Note: to keep in line with upstream, run this command to update lock file:
         # `nix flake update --inputs-from 'github:p1x3l101-10/nixos' --commit-lock-file`
       };
