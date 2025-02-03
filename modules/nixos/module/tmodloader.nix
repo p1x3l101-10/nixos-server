@@ -97,7 +97,7 @@ in
     };
     journey = {
       defaultPerm = mkOption {
-         type = types.enum [
+        type = types.enum [
           "locked"
           "hostOnly"
           "all"
@@ -196,7 +196,7 @@ in
         group = "root";
         mode = "0755";
       };
-      "/var/cache/tModLoader/workshop".d ={
+      "/var/cache/tModLoader/workshop".d = {
         user = "root";
         group = "root";
         mode = "0755";

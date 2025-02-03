@@ -6,9 +6,9 @@
 }:
 
 dockerTools.pullImage {
-    inherit imageName imageDigest sha256;
-    finalImageName = "internal/docker-tmodloader";
-    finalImageTag = "latest";
-    os = "linux";
-    arch = "x86_64";
+  inherit imageName imageDigest sha256;
+  finalImageName = "internal/docker-tmodloader";
+  finalImageTag = "latest";
+  os = "linux";
+  arch = "x86_64";
 }

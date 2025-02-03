@@ -4,7 +4,8 @@
 { config, options, pkgs, lib, ... }:
 let
   cfg = config.services.minecraft;
-in {
+in
+{
   options.services.minecraft = with lib; {
     enable = mkEnableOption "Minecraft Server";
     javaVersion = mkOption {

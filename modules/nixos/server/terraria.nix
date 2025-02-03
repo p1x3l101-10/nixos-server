@@ -70,7 +70,7 @@
       2908170107 # absoluteAquarian Utilities (SerousCommonLib)
       3222493606 # Luminance
       3395336633 # Clicker Extra API
-      
+
       # Compat Mods
       3106201538 # Thorium + Calamity Convergence Mod REDUX
       2816999612 # Recipe Browser && Magic Storage

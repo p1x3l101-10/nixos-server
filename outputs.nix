@@ -19,6 +19,6 @@ inputs: inputs.snowfall-lib.mkFlake {
     # List of unfree packages to allow
     # I could enable them all using one config, but that seems unsafe...
     # Make packages work using this one simple trick, Stallman hates him!
-    allowUnfreePredicate = pkg: builtins.elem (inputs.nixpkgs.lib.getName pkg) [];
+    allowUnfreePredicate = pkg: builtins.elem (inputs.nixpkgs.lib.getName pkg) [ ];
   };
 }
