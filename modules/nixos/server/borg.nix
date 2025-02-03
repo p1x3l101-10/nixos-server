@@ -17,7 +17,7 @@
     { directory = "/var/lib/borgbackup"; user = "borg"; mode = "0700"; }
   ];
   # Chrooted dir for security
-  systemd.tmpfiles."10-ssh-chroot" = {
+  systemd.tmpfiles.settings."10-ssh-chroot" = {
     "/var/lib/ssh-chroot/borg/var/lib/borgbackup".d = {
       user = "borg";
       group = "users";

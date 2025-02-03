@@ -14,7 +14,7 @@
   };
   services.openssh.settings.AllowUsers = [ "proxy" ];
   # Chrooted dir for security
-  systemd.tmpfiles."10-ssh-chroot" = {
+  systemd.tmpfiles.settings."10-ssh-chroot" = {
     "/var/lib/ssh-chroot/proxy/var/empty".d = {
       user = "root";
       group = "root";
