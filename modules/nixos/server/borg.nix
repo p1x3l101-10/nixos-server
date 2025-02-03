@@ -30,12 +30,12 @@
     };
   };
   # Bind mount nix store for shells and stuff
-  filesystems."/var/lib/ssh-chroot/borg/nix/store" = {
+  fileSystems."/var/lib/ssh-chroot/borg/nix/store" = {
     device = "/nix/store";
     options = [ "bind" "ro" ];
   };
   # Needed dirs
-  filesystems."/var/lib/ssh-chroot/borg/var/lib/borgbackup" = {
+  fileSystems."/var/lib/ssh-chroot/borg/var/lib/borgbackup" = {
     device = "/var/lib/borgbackup";
     options = [ "bind" "rw" ];
   };

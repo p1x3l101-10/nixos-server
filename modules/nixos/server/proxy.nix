@@ -27,7 +27,7 @@
     };
   };
   # Bind mount nix store for shells and stuff
-  filesystems."/var/lib/ssh-chroot/proxy/nix/store" = {
+  fileSystems."/var/lib/ssh-chroot/proxy/nix/store" = {
     device = "/nix/store";
     options = [ "bind" "ro" ];
   };
