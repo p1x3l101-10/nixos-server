@@ -18,16 +18,15 @@
     "disko": {
       "inputs": {
         "nixpkgs": [
-          "nixos-home",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1737038063,
-        "narHash": "sha256-rMEuiK69MDhjz1JgbaeQ9mBDXMJ2/P8vmOYRbFndXsk=",
+        "lastModified": 1738148035,
+        "narHash": "sha256-KYOATYEwaKysL3HdHdS5kbQMXvzS4iPJzJrML+3TKAo=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "bf0abfde48f469c256f2b0f481c6281ff04a5db2",
+        "rev": "18d0a984cc2bc82cf61df19523a34ad463aa7f54",
         "type": "github"
       },
       "original": {
@@ -101,7 +100,6 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
-          "nixos-home",
           "lanzaboote",
           "nixpkgs"
         ]
@@ -230,7 +228,6 @@
     "gitignore": {
       "inputs": {
         "nixpkgs": [
-          "nixos-home",
           "lanzaboote",
           "pre-commit-hooks-nix",
           "nixpkgs"
@@ -298,7 +295,6 @@
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",
         "nixpkgs": [
-          "nixos-home",
           "nixpkgs"
         ],
         "pre-commit-hooks-nix": "pre-commit-hooks-nix",
@@ -342,11 +338,15 @@
     },
     "nixos-home": {
       "inputs": {
-        "disko": "disko",
+        "disko": [
+          "disko"
+        ],
         "impermanence": [
           "impermanence"
         ],
-        "lanzaboote": "lanzaboote",
+        "lanzaboote": [
+          "lanzaboote"
+        ],
         "nix-autobahn": "nix-autobahn",
         "nixpak": "nixpak",
         "nixpkgs": [
@@ -359,11 +359,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1738555884,
-        "narHash": "sha256-scLSRi4UtXtPESNeybFHEnaAaocEnKErFdvAIfCAL1A=",
+        "lastModified": 1738559006,
+        "narHash": "sha256-md6EMAtsuitYLOdLu0okkV/VwKdCMh2TZnT5O99ZkTI=",
         "owner": "p1x3l101-10",
         "repo": "nixos",
-        "rev": "aa307316887401ae4fe827fec45a4bdaea2c00dc",
+        "rev": "ca60c89399322e739dd1fc7e17cef0c0c3dafd8b",
         "type": "github"
       },
       "original": {
@@ -397,18 +397,17 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1738435198,
-        "narHash": "sha256-5+Hmo4nbqw8FrW85FlNm4IIrRnZ7bn0cmXlScNsNRLo=",
+        "lastModified": 1738422722,
+        "narHash": "sha256-Q4vhtbLYWBUnjWD4iQb003Lt+N5PuURDad1BngGKdUs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f6687779bf4c396250831aa5a32cbfeb85bb07a3",
+        "rev": "102a39bfee444533e6b4e8611d7e92aa39b7bec1",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-24.11",
-        "repo": "nixpkgs",
-        "type": "github"
+        "id": "nixpkgs",
+        "ref": "nixpkgs-unstable",
+        "type": "indirect"
       }
     },
     "nixpkgs-stable": {
@@ -451,14 +450,27 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1738435198,
+        "narHash": "sha256-5+Hmo4nbqw8FrW85FlNm4IIrRnZ7bn0cmXlScNsNRLo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f6687779bf4c396250831aa5a32cbfeb85bb07a3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "peerix": {
       "inputs": {
         "flake-compat": "flake-compat_3",
         "flake-utils": "flake-utils_3",
-        "nixpkgs": [
-          "nixos-home",
-          "nixpkgs"
-        ]
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1661429880,
@@ -477,13 +489,11 @@
     "pre-commit-hooks-nix": {
       "inputs": {
         "flake-compat": [
-          "nixos-home",
           "lanzaboote",
           "flake-compat"
         ],
         "gitignore": "gitignore",
         "nixpkgs": [
-          "nixos-home",
           "lanzaboote",
           "nixpkgs"
         ],
@@ -505,16 +515,17 @@
     },
     "root": {
       "inputs": {
+        "disko": "disko",
         "impermanence": "impermanence",
+        "lanzaboote": "lanzaboote",
         "nixos-home": "nixos-home",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "snowfall-lib": "snowfall-lib"
       }
     },
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
-          "nixos-home",
           "lanzaboote",
           "nixpkgs"
         ]
