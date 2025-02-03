@@ -16,4 +16,15 @@
   users.mutableUsers = false;
   services.openssh.settings.AllowUsers = [ "pixel" "root" ];
   environment.etc.nixos.source = "/home/pixel/nix-server";
+  environment.persistence."/nix/host/UserData".users.pixel.directories = [
+    ".ssh"
+    "nix-server"
+  ];
+  programs.git.config = {
+    user = {
+      name = "Pixel";
+      email = "scott.blatt.0b10@gmail.com";
+    };
+    init.defaultBranch = "main";
+  };
 }
