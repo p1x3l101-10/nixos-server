@@ -15,7 +15,7 @@
   services.resolved = {
     enable = true;
     llmnr = "true";
-    dnsovertls = true;
+    dnsovertls = "true";
   };
   # Disable alterantives
   networking = {
