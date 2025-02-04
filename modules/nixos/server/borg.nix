@@ -28,6 +28,9 @@
       group = "root";
       mode = "0755";
     };
+    # This needs access to binaries
+    # Use booted system to ensure gc roots
+    "/var/lib/ssh-chroot/borg/run/current-system".C.argument = "/run/booted-system";
   };
   # Bind mount nix store for shells and stuff
   fileSystems."/var/lib/ssh-chroot/borg/nix/store" = {
