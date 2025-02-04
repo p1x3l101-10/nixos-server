@@ -20,7 +20,6 @@
   # Disable alterantives
   networking = {
     networkmanager.enable = lib.mkForce false;
-    dhcpd.enable = false;
     useDHCP = false;
     useNetworkd = true;
   };
