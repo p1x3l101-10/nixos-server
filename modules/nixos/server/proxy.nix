@@ -31,6 +31,10 @@
     device = "/nix/store";
     options = [ "bind" "ro" ];
   };
+  fileSystems."/var/lib/ssh-chroot/proxy/etc" = {
+    device = "/etc";
+    options = [ "bind" "ro" ];
+  };
   services.openssh.extraConfig = ''
     Match User proxy
       ChrootDirectory /var/lib/ssh-chroot/proxy

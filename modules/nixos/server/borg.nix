@@ -39,6 +39,10 @@
     device = "/var/lib/borgbackup";
     options = [ "bind" "rw" ];
   };
+  fileSystems."/var/lib/ssh-chroot/borg/etc" = {
+    device = "/etc";
+    options = [ "bind" "ro" ];
+  };
   services.openssh.extraConfig = ''
     Match User borg
       ChrootDirectory /var/lib/ssh-chroot/borg
