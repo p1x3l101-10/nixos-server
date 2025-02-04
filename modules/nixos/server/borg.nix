@@ -30,6 +30,7 @@
     };
     # This needs access to binaries
     # Use booted system to ensure gc roots
+    # NOTE: I could probably do this better with only pkgs.borg, but im lazy like that lol
     "/var/lib/ssh-chroot/borg/run/current-system".C.argument = "/run/booted-system";
   };
   # Bind mount nix store for shells and stuff
