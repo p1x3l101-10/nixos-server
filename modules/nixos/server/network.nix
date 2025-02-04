@@ -14,7 +14,7 @@
   };
   services.resolved = {
     enable = true;
-    llmnr = true;
+    llmnr = "true";
     dnsovertls = true;
   };
   # Disable alterantives
