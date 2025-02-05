@@ -3,6 +3,12 @@ inputs: inputs.snowfall-lib.mkFlake {
     modules.nixos = with inputs; [
       nixos-home.nixosModules.required
     ];
+    hosts.pixels-server.modules = with inputs; [
+    ] ++ (with nixos-hardware.nixosModules; [
+      common-pc
+      common-pc-ssd
+      common-cpu-intel-cpu-only
+    ]);
   };
   inherit inputs;
   src = ./.;
