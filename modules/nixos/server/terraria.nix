@@ -12,8 +12,8 @@
       }
     ];
     bindMounts."/nix/host/Servers/tModLoader".isReadOnly = false;
-    config = { ... }: {
-      imports = [ ../module/tmodloader.nix ];
+    config = { inputs, ... }: {
+      imports = [ inputs.self.nixosModules.module ];
       services.tmodloader = {
         enable = true;
         persist = true;
