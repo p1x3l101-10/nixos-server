@@ -59,6 +59,9 @@
       3412290677 # Industrial Excavation
       3328770071 # Unusacies Mixed Accessories
       2992213994 # Instant Platform Fallthrough
+      2979448082 # Summoner UI (Latest Stable Release)
+      2710494433 # Too Many Accessories
+      2907520140 # The Kill Bind Mod
       ## Music Mods
       2824688266 # Calamity Mod Music
       2816188633 # Vanilla Calamity Mod Music
