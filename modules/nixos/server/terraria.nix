@@ -134,6 +134,7 @@
             ];
           };
         };
+        image = pkgs.callPackage ../../../packages/dockerTmodloader {};
       };
     };
   };
