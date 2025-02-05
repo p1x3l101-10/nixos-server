@@ -6,6 +6,7 @@
     lanzaboote.follows = "nixos-home/lanzaboote";
     disko.follows = "nixos-home/disko";
     impermanence.follows = "nixos-home/impermanence";
+    nixos-hardware.follows = "nixos-home/nixos-hardware";
   };
   outputs = inputs: import ./outputs.nix inputs;
 }
