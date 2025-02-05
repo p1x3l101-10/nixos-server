@@ -53,7 +53,6 @@
       3407770135 # Guaranteed Traveling Merchant
       2979448082 # Summoner UI (Latest Stable Release)
       2896816354 # Unusacies' Battle Rods
-      2563277843 # The Clicker Class
       2812377597 # No Pylon Restrictions
       3415536524 # Calamity Mage Addon (Accessory Update)
       3412290677 # Industrial Excavation
@@ -70,12 +69,10 @@
       2785100219 # Subworld Library
       2908170107 # absoluteAquarian Utilities (SerousCommonLib)
       3222493606 # Luminance
-      3395336633 # Clicker Extra API
 
       # Compat Mods
       3106201538 # Thorium + Calamity Convergence Mod REDUX
       2816999612 # Recipe Browser && Magic Storage
-      3184307602 # Calamity Clickers
       2906406399 # Infernum Master and Legendary Modes Patch
       ## Multiplayer Patches
       3112745338 # Infernum Multiplayer Patch
