@@ -11,15 +11,14 @@
         protocol = "tcp";
       }
     ];
-    bindMounts."/nix/host/Servers/tModLoader".isReadOnly = false;
-    config = { inputs, ... }: {
-      imports = [
-        ../module/tmodloader.nix
-        inputs.impermanence.nixosModules.impermanence
-      ];
+    bindMounts."/nix/host/Servers/tModLoader/var/lib/tModLoader" = {
+      containerPath = "/var/lib/tModLoader";
+      isReadOnly = false;
+    };
+    config = { ... }: {
+      imports = [ ../module/tmodloader.nix ];
       services.tmodloader = {
         enable = true;
-        persist = true;
         openFirewall = true;
         difficulty = "expert";
         world = {
