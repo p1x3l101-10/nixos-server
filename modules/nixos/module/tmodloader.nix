@@ -25,7 +25,6 @@ in
 {
   options.services.tmodloader = {
     enable = mkEnableOption "tModLoader server";
-    persist = mkEnableOption "Impermanance support";
     difficulty = mkOption {
       type = with types; enum [
         "journey"
@@ -213,11 +212,6 @@ in
       };
     };
     virtualisation.containers.enable = true;
-    environment = lib.mkIf cfg.persist {
-      persistence."/nix/host/state/Servers/tModLoader".directories = [
-        "/var/lib/tModLoader"
-      ];
-    };
     networking.firewall.allowedTCPPorts = lib.optionals cfg.openFirewall [ cfg.port ];
     environment.etc = lib.mapAttrs' (name: value: lib.nameValuePair ("tModLoader/ModConfigs/" + name + ".json") { text = (builtins.toJSON value); mode = "0444"; }) cfg.mods.config;
   };
