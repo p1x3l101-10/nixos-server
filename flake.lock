@@ -512,23 +512,29 @@
     "root": {
       "inputs": {
         "disko": [
-          "nixos-home"
+          "nixos-home",
+          "disko"
         ],
         "impermanence": [
-          "nixos-home"
+          "nixos-home",
+          "impermanence"
         ],
         "lanzaboote": [
-          "nixos-home"
+          "nixos-home",
+          "lanzaboote"
         ],
         "nixos-home": "nixos-home",
         "nixpkgs": [
-          "nixos-home"
+          "nixos-home",
+          "nixpkgs"
         ],
         "peerix": [
-          "nixos-home"
+          "nixos-home",
+          "peerix"
         ],
         "snowfall-lib": [
-          "nixos-home"
+          "nixos-home",
+          "snowfall-lib"
         ]
       }
     },
