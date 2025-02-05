@@ -13,31 +13,8 @@
     autoSubUidGidRange = false;
   };
   services.openssh.settings.AllowUsers = [ "proxy" ];
-  # Chrooted dir for security
-  systemd.tmpfiles.settings."10-ssh-chroot" = {
-    "/var/lib/ssh-chroot/proxy/var/empty".d = {
-      user = "root";
-      group = "root";
-      mode = "0755";
-    };
-    "/var/lib/ssh-chroot/proxy/nix/store".d = {
-      user = "root";
-      group = "root";
-      mode = "0755";
-    };
-  };
-  # Bind mount nix store for shells and stuff
-  fileSystems."/var/lib/ssh-chroot/proxy/nix/store" = {
-    device = "/nix/store";
-    options = [ "bind" "ro" ];
-  };
-  fileSystems."/var/lib/ssh-chroot/proxy/etc" = {
-    device = "/etc";
-    options = [ "bind" "ro" ];
-  };
   services.openssh.extraConfig = ''
     Match User proxy
-      ChrootDirectory /var/lib/ssh-chroot/proxy
       ForceCommand nologin
   '';
 }
