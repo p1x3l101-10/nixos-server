@@ -12,7 +12,7 @@
       }
     ];
     bindMounts."/nix/host/Servers/tModLoader/var/lib/tModLoader" = {
-      containerPath = "/var/lib/tModLoader";
+      mountPoint = "/var/lib/tModLoader";
       isReadOnly = false;
     };
     config = { pkgs, ... }: {
