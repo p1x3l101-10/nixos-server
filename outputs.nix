@@ -4,7 +4,6 @@ inputs: inputs.snowfall-lib.mkFlake {
       lanzaboote.nixosModules.lanzaboote
       impermanence.nixosModules.impermanence
       disko.nixosModules.disko
-      peerix.nixosModules.peerix
       nixos-home.nixosModules.base
     ];
   };
