@@ -1,10 +1,7 @@
 inputs: inputs.snowfall-lib.mkFlake {
   systems = {
     modules.nixos = with inputs; [
-      lanzaboote.nixosModules.lanzaboote
-      impermanence.nixosModules.impermanence
-      disko.nixosModules.disko
-      nixos-home.nixosModules.base
+      nixos-home.nixosModules.required
     ];
   };
   inherit inputs;
