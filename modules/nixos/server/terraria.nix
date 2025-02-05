@@ -15,7 +15,7 @@
       containerPath = "/var/lib/tModLoader";
       isReadOnly = false;
     };
-    config = { ... }: {
+    config = { pkgs, ... }: {
       imports = [ ../module/tmodloader.nix ];
       services.tmodloader = {
         enable = true;
