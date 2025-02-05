@@ -136,6 +136,7 @@
         };
         image = pkgs.callPackage ../../../packages/dockerTmodloader {};
       };
+      system.stateVersion = "24.11";
     };
   };
   networking.firewall.allowedTCPPorts = [ 24454 ];
