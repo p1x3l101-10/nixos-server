@@ -3,7 +3,6 @@
 {
   services.tmodloader = {
     enable = true;
-    persist = true;
     openFirewall = true;
     difficulty = "expert";
     world = {
