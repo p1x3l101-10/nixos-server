@@ -19,9 +19,9 @@
       2909886416 # Thorium
       3015412343 # Calamity Mod Infernum Mode
       2838015851 # Catalyst Mod
+      2563309347 # Magic Storage
       ## Small mods
       2973922820 # Touhou Little Friends ~ Adventure with cute partners
-      2563309347 # Magic Storage
       2824688804 # Calamity's Vanities
       2995193002 # Calamity: Wrath of the Gods
       3071240652 # Automation & Defense
