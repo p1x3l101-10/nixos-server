@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   users.users.pixel = {
     isNormalUser = true;
@@ -8,6 +8,9 @@
     ];
     extraGroups = [ "wheel" ];
     initialHashedPassword = "$y$j9T$NSMuZ83C3iGB1HqRhcZOy.$6CGZk2KH94gE/gjBro9vioOkOFJw.a4rhQKJI4HzBB9";
+    packages = with pkgs; [
+      borgbackup
+    ];
   };
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP7hEnkX2r9nnIoVUa+isMwtdEppqWMTU9VDVE47ftLb MacBook"
