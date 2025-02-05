@@ -19,7 +19,7 @@ inputs: inputs.snowfall-lib.mkFlake {
   aliases.nixosModules.default = "module";
   channels-config = {
     contentAddressedByDefault = true;
-    overlays = [ nixos-home.overlays.only-nix3 ];
+    overlays = with inputs; [ nixos-home.overlays.only-nix3 ];
     # List of unfree packages to allow
     # I could enable them all using one config, but that seems unsafe...
     # Make packages work using this one simple trick, Stallman hates him!
