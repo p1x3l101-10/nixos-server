@@ -12,11 +12,11 @@
       }
     ];
     bindMounts."/nix/host/Servers/tModLoader".isReadOnly = false;
-    networking.firewall.allowedTCPPorts = [ 24454 ];
     config = { ... }: {
       services.tmodloader = {
         enable = true;
         persist = true;
+        openFirewall = true;
         difficulty = "expert";
         world = {
           name = "Bacchus";
@@ -134,4 +134,5 @@
       };
     };
   };
+  networking.firewall.allowedTCPPorts = [ 24454 ];
 }
