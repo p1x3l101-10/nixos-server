@@ -213,8 +213,8 @@ in
       };
     };
     virtualisation.containers.enable = true;
-    environment.persistence."/nix/host/state/Servers/tModLoader" = lib.mkIf cfg.persist {
-      directories = [
+    environment = lib.mkIf cfg.persist {
+      persistence."/nix/host/state/Servers/tModLoader".directories = [
         "/var/lib/tModLoader"
       ];
     };
