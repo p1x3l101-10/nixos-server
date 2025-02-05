@@ -338,11 +338,11 @@
         "snowfall-lib": "snowfall-lib"
       },
       "locked": {
-        "lastModified": 1738770827,
-        "narHash": "sha256-YhFvQMnWGj85QXd1hgrLw1Yp1T4r+5c2x3OcH+5BJzI=",
+        "lastModified": 1738773197,
+        "narHash": "sha256-eEhpR9kcd74vBoWB+Au860JuxxbzxzwPkDtcJvmczgc=",
         "owner": "p1x3l101-10",
         "repo": "nixos",
-        "rev": "4eec6dfa5d1e6dce4aa99a27d0864ec681564d6b",
+        "rev": "348ab35d0ce2f76e78a7df85eefc17b5a1ea7999",
         "type": "github"
       },
       "original": {
