@@ -3,7 +3,7 @@
 {
   containers.terraria = {
     autoStart = true;
-    bindMounts = {};
+    ephemeral = true;
     forwardPorts = [
       {
         containerPort = 7777;
