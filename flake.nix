@@ -5,7 +5,6 @@
     snowfall-lib.follows = "nixos-home/snowfall-lib";
     lanzaboote.follows = "nixos-home/lanzaboote";
     disko.follows = "nixos-home/disko";
-    peerix.follows = "nixos-home/peerix";
     impermanence.follows = "nixos-home/impermanence";
   };
   outputs = inputs: import ./outputs.nix inputs;

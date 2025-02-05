@@ -528,10 +528,6 @@
           "nixos-home",
           "nixpkgs"
         ],
-        "peerix": [
-          "nixos-home",
-          "peerix"
-        ],
         "snowfall-lib": [
           "nixos-home",
           "snowfall-lib"
