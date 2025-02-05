@@ -1,7 +1,7 @@
 inputs: inputs.snowfall-lib.mkFlake {
   systems = {
     modules.nixos = with inputs; [
-      nixos-home.nixosModules.required
+      nixos-home.nixosModules.default
     ];
     hosts.pixels-server.modules = with inputs; [
     ] ++ (with nixos-hardware.nixosModules; [
