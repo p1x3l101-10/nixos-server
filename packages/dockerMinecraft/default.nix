@@ -9,6 +9,4 @@ dockerTools.pullImage {
   inherit imageName imageDigest sha256;
   finalImageName = "internal/docker-minecraft";
   finalImageTag = "latest";
-  os = "linux";
-  arch = "x86_64";
 }
