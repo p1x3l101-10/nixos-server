@@ -6,6 +6,7 @@ in {
     environment = {
        EULA = "TRUE";
        CF_API_KEY = curseforge-api-key;
+       MEMORY = "8G";
        TYPE = "AUTO_CURSEFORGE";
        CF_SLUG = "terrafirmagreg-modern";
        CF_FILE_ID = "6123835";
