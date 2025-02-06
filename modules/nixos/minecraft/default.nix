@@ -40,4 +40,5 @@ in {
       mode = "0755";
     };
   };
+  environment.persistence."/nix/host/state/Servers/Minecraft".directories = [ "/var/lib/minecraft" ];
 }
