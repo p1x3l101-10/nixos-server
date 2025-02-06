@@ -17,6 +17,8 @@ in {
         iatfg-integration:jXoVQDSZ
         immersive-aircraft:BuPtsmaI
         man-of-many-planes:uZNB5Zrk
+       '' ++ ''
+        tfc-canes:QohMlQrN
        '';
     };
     image = "internal/docker-minecraft:latest";
