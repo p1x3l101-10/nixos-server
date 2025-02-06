@@ -38,7 +38,6 @@
       3024992349 # Better zenith in Calamity
       2706139083 # Craftable Accessories
       2825810436 # Craftable
-      2891420130 # Craftable Calamity Items
       2974503494 # More Pylons
       2860270524 # Calamity Ranger Expansion
       3246145263 # Calamity Texture Pack Glowmask Fix
