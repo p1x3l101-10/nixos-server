@@ -19,7 +19,13 @@ in {
         man-of-many-planes:uZNB5Zrk
        '' + ''
         tfc-canes:QohMlQrN
+       '' + ''
+        minecraft-comes-alive-reborn:34qYTndF
+       '' + ''
+        tfc-caelum:wSasbQOH
+        caelum:7JGuqBG4
        '';
+       MODRINTH_ALLOWED_VERSION_TYPE = "beta";
     };
     image = "internal/docker-minecraft:latest";
     imageFile = pkgs.internal.dockerMinecraft;
