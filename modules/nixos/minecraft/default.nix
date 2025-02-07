@@ -23,6 +23,8 @@ in {
         tfc-weather:tf6FcQfM
         weather-storms-tornadoes:ZKVtwI5D
         coroutil:6rPDKAT8
+       '' + ''
+        tfc-support-indicator:jeOTOlLX
        '';
     };
     image = "internal/docker-minecraft:latest";
