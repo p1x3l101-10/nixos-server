@@ -1,4 +1,9 @@
-inputs: inputs.snowfall-lib.mkFlake {
+inputs: let
+  lib = inputs.snowfall-lib.mkLib {
+    inherit inputs;
+    src = ./.;
+  };
+in lib.mkFlake {
   systems = {
     modules.nixos = with inputs; [
       nixos-home.nixosModules.default
@@ -10,8 +15,6 @@ inputs: inputs.snowfall-lib.mkFlake {
       common-cpu-intel-cpu-only
     ]);
   };
-  inherit inputs;
-  src = ./.;
   supportedSystems = [ "x86_64-linux" ];
   outputs-builder = channels: {
     formatter = channels.nixpkgs.nixpkgs-fmt;
