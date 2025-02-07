@@ -1,31 +1,32 @@
 { pkgs, lib, ... }:
 let
   curseforge-api-key = "$2a$10$bL4bIL5pUWqfcO7KQtnMReakwtfHbNKh6v1uTpKlzhwoueEJQnPnm";
-in {
+in
+{
   virtualisation.oci-containers.containers.minecraft = {
     environment = {
-       EULA = "TRUE";
-       CF_API_KEY = curseforge-api-key;
-       MEMORY = "8G";
-       TYPE = "AUTO_CURSEFORGE";
-       CF_SLUG = "terrafirmagreg-modern";
-       CF_FILE_ID = "6123835";
-       MODRINTH_PROJECTS = ''
+      EULA = "TRUE";
+      CF_API_KEY = curseforge-api-key;
+      MEMORY = "8G";
+      TYPE = "AUTO_CURSEFORGE";
+      CF_SLUG = "terrafirmagreg-modern";
+      CF_FILE_ID = "6123835";
+      MODRINTH_PROJECTS = ''
         tomstfg-integration:b7OlDn35
         toms-storage:UjCLHkAa
-       '' + ''
+      '' + ''
         iatfg-integration:jXoVQDSZ
         immersive-aircraft:BuPtsmaI
         man-of-many-planes:uZNB5Zrk
-       '' + ''
+      '' + ''
         tfc-canes:QohMlQrN
-       '' + ''
+      '' + ''
         tfc-weather:tf6FcQfM
         weather-storms-tornadoes:ZKVtwI5D
         coroutil:6rPDKAT8
-       '' + ''
+      '' + ''
         tfc-support-indicator:jeOTOlLX
-       '';
+      '';
     };
     image = "internal/docker-minecraft:latest";
     imageFile = pkgs.internal.dockerMinecraft;

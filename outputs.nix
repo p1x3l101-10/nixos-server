@@ -1,9 +1,11 @@
-inputs: let
+inputs:
+let
   lib = inputs.snowfall-lib.mkLib {
     inherit inputs;
     src = ./.;
   };
-in lib.mkFlake {
+in
+lib.mkFlake {
   systems = {
     modules.nixos = with inputs; [
       nixos-home.nixosModules.default
