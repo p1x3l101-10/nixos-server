@@ -9,6 +9,11 @@
       name = "Gallifrey";
       seed = "for the worthy";
     };
+    journey.setDifficulty = "all"; # Temp for setting master
+    journey = {
+      windStrength = "all";
+      placementRange = "all";
+    };
     port = 24454;
     mods.enabled = [
       # Content Mods
@@ -47,6 +52,14 @@
       2990764001 # Shimmer Extra
       3058372966 # Aether's Blessing: Shimmer QoL
       2767965680 # Tome of Research Sharing
+      2674701188 # Cellphone is Wormhole
+      2816880803 # Cellphone & Pylons
+      3116957194 # Optimizerraria
+      2979146327 # Chance Class Mod
+      2934087687 # Auto-Trash Researched Items
+      2896592287 # ResearchFromShop
+      3412277684 # 杂鱼~ 杂鱼~
+      3420147549 # Shared Health
       ## Music Mods
       2824688266 # Calamity Mod Music
       2816188633 # Vanilla Calamity Mod Music
