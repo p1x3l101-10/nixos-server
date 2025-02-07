@@ -17,7 +17,6 @@
       2824688072 # Calamity Mod
       2563862309 # The Stars Above
       2909886416 # Thorium
-      3015412343 # Calamity Mod Infernum Mode
       2838015851 # Catalyst Mod
       2563309347 # Magic Storage
       ## Small mods
@@ -62,7 +61,6 @@
       ## Music Mods
       2824688266 # Calamity Mod Music
       2816188633 # Vanilla Calamity Mod Music
-      3015416182 # Infernum Mode Music
 
       # Library Mods
       2785100219 # Subworld Library
@@ -72,9 +70,6 @@
       # Compat Mods
       3106201538 # Thorium + Calamity Convergence Mod REDUX
       2816999612 # Recipe Browser && Magic Storage
-      2906406399 # Infernum Master and Legendary Modes Patch
-      ## Multiplayer Patches
-      3112745338 # Infernum Multiplayer Patch
       ## Weapon Scaling to make things work w/ calamity endgame
       2571636086 # W1K's Weapon Scaling
       2940199906 # Weapon Scaling Thorium Patch
