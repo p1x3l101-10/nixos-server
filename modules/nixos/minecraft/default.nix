@@ -20,7 +20,9 @@ in {
        '' + ''
         tfc-canes:QohMlQrN
        '' + ''
-        minecraft-comes-alive-reborn:34qYTndF
+        tfc-weather:tf6FcQfM
+        weather-storms-tornadoes:ZKVtwI5D
+        coroutil:6rPDKAT8
        '';
     };
     image = "internal/docker-minecraft:latest";
