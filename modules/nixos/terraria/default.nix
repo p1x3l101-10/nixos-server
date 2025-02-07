@@ -108,6 +108,132 @@
           { Mod = "EvilPylon"; Name = "CloudPylon"; DisplayName = "Cloud Pylon"; }
         ];
       };
+      ShimmerQoL_Config = {
+  compoundTooltip = true;
+  detransmuteBiomeChests = true;
+  prefixBlacklist = [
+    {
+      DisplayName = "Hard";
+      Name = "Hard";
+    }
+    {
+      DisplayName = "Guarding";
+      Name = "Guarding";
+    }
+    {
+      DisplayName = "Precise";
+      Name = "Precise";
+    }
+    {
+      DisplayName = "Jagged";
+      Name = "Jagged";
+    }
+    {
+      DisplayName = "Spiked";
+      Name = "Spiked";
+    }
+    {
+      DisplayName = "Brisk";
+      Name = "Brisk";
+    }
+    {
+      DisplayName = "Fleeting";
+      Name = "Fleeting";
+    }
+    {
+      DisplayName = "Wild";
+      Name = "Wild";
+    }
+    {
+      DisplayName = "Terrible";
+      Name = "Terrible";
+    }
+    {
+      DisplayName = "Annoying";
+      Name = "Annoying";
+    }
+    {
+      DisplayName = "Awful";
+      Name = "Awful";
+    }
+    {
+      DisplayName = "Awkward";
+      Name = "Awkward";
+    }
+    {
+      DisplayName = "Ignorant";
+      Name = "Ignorant";
+    }
+    {
+      DisplayName = "Unhappy";
+      Name = "Unhappy";
+    }
+    {
+      DisplayName = "Lethargic";
+      Name = "Lethargic";
+    }
+    {
+      DisplayName = "Shoddy";
+      Name = "Shoddy";
+    }
+    {
+      DisplayName = "Shameful";
+      Name = "Shameful";
+    }
+    {
+      DisplayName = "Sluggish";
+      Name = "Sluggish";
+    }
+    {
+      DisplayName = "Weak";
+      Name = "Weak";
+    }
+    {
+      DisplayName = "Deranged";
+      Name = "Deranged";
+    }
+    {
+      DisplayName = "Tiny";
+      Name = "Tiny";
+    }
+    {
+      DisplayName = "Dull";
+      Name = "Dull";
+    }
+    {
+      DisplayName = "Damaged";
+      Name = "Damaged";
+    }
+    {
+      DisplayName = "Slow";
+      Name = "Slow";
+    }
+    {
+      DisplayName = "Small";
+      Name = "Small";
+    }
+    {
+      DisplayName = "Inept";
+      Name = "Inept";
+    }
+    {
+      DisplayName = "Lazy";
+      Name = "Lazy";
+    }
+    {
+      DisplayName = "Intense";
+      Name = "Intense";
+    }
+    {
+      DisplayName = "Blunt";
+      Mod = "CalamityMod";
+      Name = "Blunt";
+    }
+  ];
+  unrestrictLunarBrick = true;
+};
+TouhouPets_PetObtainConfig.AllowGapToSpawn = false;
+SharedHealth_HealthConfig.TeamDependant = true;
     };
   };
   environment.persistence."/nix/host/state/Servers/tModLoader".directories = [ "/var/lib/tModLoader" ];
