@@ -6,7 +6,7 @@
     openFirewall = true;
     difficulty = "journey";
     world = {
-      name = "The Sacred Valley";
+      name = "Gallifrey";
       seed = "for the worthy";
     };
     journey.setDifficulty = "all"; # Temp for setting master
