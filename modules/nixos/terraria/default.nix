@@ -9,7 +9,6 @@
       name = "Gallifrey";
       seed = "for the worthy";
     };
-    journey.setDifficulty = "all";
     port = 24454;
     mods.enabled = [
       # Content Mods
