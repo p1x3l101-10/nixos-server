@@ -263,6 +263,28 @@
         "type": "github"
       }
     },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos-home",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736373539,
+        "narHash": "sha256-dinzAqCjenWDxuy+MqUQq0I4zUSfaCvN9rzuCmgMZJY=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "bd65bc3cde04c16755955630b344bc9e35272c56",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-24.11",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "homebrew-bundle": {
       "flake": false,
       "locked": {
@@ -489,6 +511,7 @@
     "nixos-home": {
       "inputs": {
         "disko": "disko",
+        "home-manager": "home-manager",
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
@@ -507,11 +530,11 @@
         "snowfall-lib": "snowfall-lib"
       },
       "locked": {
-        "lastModified": 1738814770,
-        "narHash": "sha256-KATlARvk6Sla81pnBQpuPxE2erOhXV13ZoYitbahtBk=",
+        "lastModified": 1738897253,
+        "narHash": "sha256-ugtLUdVkR15VuNvKDpRAdAmaGrgbxRkXAJr994UBWMc=",
         "owner": "p1x3l101-10",
         "repo": "nixos",
-        "rev": "6033d966f7918d3d968b3be3eb23edfc53e216fb",
+        "rev": "94935dfb2be7f2c64a32d297c736c73655321478",
         "type": "github"
       },
       "original": {
