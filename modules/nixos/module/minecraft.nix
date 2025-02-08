@@ -72,9 +72,9 @@ let
                             )
                       );
 
-  mkEnvRaw = name: value: (mkIf (value != null) lib.nameValuePair name value);
-  mkEnvList = name: value: seperator: (mkIf (value != []) lib.nameValuePair name (lib.concatStringsSep seperator value));
-  mkEnv = name: value: (mkIf (value != null) lib.nameValuePair name (lib.toUpper value));
+  mkEnvRaw = name: value: (if (value != null) then lib.nameValuePair name value else {});
+  mkEnvList = name: value: seperator: (if (value != []) then lib.nameValuePair name (lib.concatStringsSep seperator value) else {});
+  mkEnv = name: value: (if (value != null) then lib.nameValuePair name (lib.toUpper value) else {});
 in
 {
   options.services.minecraft = with lib; {
