@@ -184,7 +184,7 @@ in
   };
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.minecraft = {
-      environment = (lib.mkMerge [
+      environment = (lib.internal.mergeAttrs [
         cfg.settings.extraEnv
         (mkEnv "EULA" (builtins.toString cfg.settings.eula))
         # Modrinth mod list
