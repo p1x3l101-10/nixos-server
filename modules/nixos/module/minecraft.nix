@@ -133,7 +133,7 @@ in
       memory = mkOption {
         type = types.int;
         default = 8;
-        description = "The amount of memory (in gigabytes) to allocate"
+        description = "The amount of memory (in gigabytes) to allocate";
       };
       javaVersion = mkOption {
         type = types.enum [
