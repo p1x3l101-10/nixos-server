@@ -237,7 +237,7 @@ in
     );
     assertions = [
       {
-        assertion = !cfg.settings.eula;
+        assertion = cfg.settings.eula;
         message = ''
           You need to agree to the Minecraft EULA in order to run the Minecraft Server
           You can read the EULA at https://www.minecraft.net/en-us/eula
