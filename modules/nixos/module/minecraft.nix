@@ -184,7 +184,7 @@ in
   };
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.minecraft = {
-      environment = lib.mkMerge [
+      environment = (lib.mkMerge [
         cfg.settings.extraEnv
         (mkEnv "EULA" (builtins.toString cfg.settings.eula))
         # Modrinth mod list
@@ -199,7 +199,7 @@ in
         (mkEnv "CF_FILE_ID" cfg.curseforge.fileId)
         # Settings
         (mkEnv "MEMORY" ((builtins.toString cfg.settings.memory) + "G"))
-      ];
+      ]);
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
       ] ++ (lib.optionals (cfg.settgs.extraPorts != []) (lib.forEach cfg.settings.extraPorts
