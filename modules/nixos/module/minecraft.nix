@@ -175,7 +175,7 @@ in
         default = {};
         description = "Extra environment variables to merge into server";
       };
-      extrPorts = mkOption {
+      extraPorts = mkOption {
         type = with types; listOf (coercedTo str (to: { inherit to; }) (submodule port));
         default = [];
         description = "Extra ports to map";
