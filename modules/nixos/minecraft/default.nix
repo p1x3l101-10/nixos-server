@@ -7,8 +7,10 @@ in
     enable = true;
     curseforge = {
       apiKey = "$2a$10$bL4bIL5pUWqfcO7KQtnMReakwtfHbNKh6v1uTpKlzhwoueEJQnPnm";
-      pack = "terrafirmagreg-modern";
-      fileId = 6123835;
+      pack = {
+        slug = "terrafirmagreg-modern";
+        fileId = 6123835;
+      };
     };
     modrinth.mods = [
       # Toms
