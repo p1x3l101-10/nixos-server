@@ -8,6 +8,6 @@ let
 in 
 genLib ./. [
   "internal"
-  "attrSets"
+  "attrsets"
   "environment"
 ]
