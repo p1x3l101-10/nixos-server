@@ -12,7 +12,7 @@ in
         fileId = 6123835;
       };
     };
-    modrinth.mod.projects = [
+    modrinth.mods.projects = [
       # Toms
       { modId = "tomstfg-integration"; versionId = "b7OlDn35"; }
       { modId = "toms-storage"; versionId = "UjCLHkAa"; }
