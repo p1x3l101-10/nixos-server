@@ -3,51 +3,36 @@ let
   curseforge-api-key = "$2a$10$bL4bIL5pUWqfcO7KQtnMReakwtfHbNKh6v1uTpKlzhwoueEJQnPnm";
 in
 {
-  virtualisation.oci-containers.containers.minecraft = {
-    environment = {
-      EULA = "TRUE";
-      CF_API_KEY = curseforge-api-key;
-      MEMORY = "8G";
-      TYPE = "AUTO_CURSEFORGE";
-      CF_SLUG = "terrafirmagreg-modern";
-      CF_FILE_ID = "6123835";
-      MODRINTH_PROJECTS = ''
-        tomstfg-integration:b7OlDn35
-        toms-storage:UjCLHkAa
-      '' + ''
-        iatfg-integration:jXoVQDSZ
-        immersive-aircraft:BuPtsmaI
-        man-of-many-planes:uZNB5Zrk
-      '' + ''
-        tfc-canes:QohMlQrN
-      '' + ''
-        tfc-weather:tf6FcQfM
-        weather-storms-tornadoes:ZKVtwI5D
-        coroutil:6rPDKAT8
-      '' + ''
-        tfc-support-indicator:jeOTOlLX
-      '';
+  services.minecraft = {
+    enable = true;
+    curseforge = {
+      apiKey = "$2a$10$bL4bIL5pUWqfcO7KQtnMReakwtfHbNKh6v1uTpKlzhwoueEJQnPnm";
+      pack = "terrafirmagreg-modern";
+      fileId = 6123835;
     };
-    image = "internal/docker-minecraft:latest";
-    imageFile = pkgs.internal.dockerMinecraft;
-    ports = [
-      "25565:25565"
+    modrinth.mods = [
+      # Toms
+      { modId = "tomstfg-integration"; versionId = "b7OlDn35"; }
+      { modId = "toms-storage"; versionId = "UjCLHkAa"; }
+      # Immersive Aircraft
+      { modId = "iatfg-integration"; versionId = "jXoVQDSZ"; }
+      { modId = "immersive-aircraft"; versionId = "BuPtsmaI"; }
+      { modId = "man-of-many-planes"; versionId = "uZNB5Zrk"; }
+      # Canes
+      { modId = "tfc-canes"; versionId = "QohMlQrN"; }
+      # Weather
+      { modId = "tfc-weather"; versionId = "tf6FcQfM"; }
+      { modId = "weather-storms-tornadoes"; versionId = "ZKVtwI5D"; }
+      { modId = "coroutil"; versionId = "6rPDKAT8"; }
+      # Support indicator
+      { modId = "tfc-support-indicator"; versionId = "jeOTOlLX"; }
     ];
-    volumes = [
-      "/var/lib/minecraft/data:/data:rw"
-    ];
-    autoStart = true;
-  };
-  systemd.tmpfiles.settings."10-minecraft" = {
-    "/var/lib/minecraft".d = {
-      user = "root";
-      group = "root";
-      mode = "0755";
-    };
-    "/var/lib/minecraft/data".d = {
-      user = "root";
-      group = "root";
-      mode = "0755";
+    settings = {
+      eula = true;
+      type = "auto_curseforge";
+      javaVersion = 21;
+      memory = 8;
+      port = 25565;
     };
   };
   environment.persistence."/nix/host/state/Servers/Minecraft".directories = [ "/var/lib/minecraft" ];
