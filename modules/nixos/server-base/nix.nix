@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ inputs, lib, ... }:
 
 {
   # Trust noone, not even yourself
