@@ -1,11 +1,14 @@
+{ lib, ext }:
+
 attrList:
+
 let f = attrPath:
-  zipAttrsWith (n: values:
-    if tail values == []
-      then head values
-    else if all isList values
-      then unique (concatLists values)
-    else if all isAttrs values
+  lib.attrsets.zipAttrsWith (n: values:
+    if lib.builtins.tail values == []
+      then lib.builtins.head values
+    else if all lib.builtins.isList values
+      then lib.lists.unique (lib.builtins.concatLists values)
+    else if all lib.builtins.isAttrs values
       then f (attrPath ++ [n]) values
     else last values
   );
