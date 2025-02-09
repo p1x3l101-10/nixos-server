@@ -10,14 +10,13 @@
       enableIPv6 = true;
     };
     bridges.br0.interfaces = [ "enp2s0" ];
-    interfaces."br0" = {
+    interfaces.br0 = {
       useDHCP = true;
+      virtual = true;
       ipv4.addresses = [{
-        address = "192.168.100.2";
+        address = "192.168.100.1";
         prefixLength = 24;
       }];
-      defaultGateway = "192.168.100.1";
-      nameservers = [ "192.168.100.1" ];
     };
   };
   environment.persistence."/nix/host/cache".directories = [
