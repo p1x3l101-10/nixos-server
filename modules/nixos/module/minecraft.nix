@@ -145,6 +145,10 @@ in
         default = "vanilla";
         description = "Server type to use";
       };
+      version = mkOption {
+        type = types.str;
+        default = "latest";
+      };
       port = mkOption {
         type = types.port;
         default = 25565;
@@ -225,9 +229,14 @@ in
       }
     ];
     # Encurage people to not use extraEnv
-    warnings = lib.optional (cfg.settings.extraEnv != []) ''
+    warnings = (lib.lists.optional (cfg.settings.extraEnv != []) ''
       services.minecraft.settings.extraEnv is unsupported
       be sure to check if there is a better way to set values
-    '';
+    '')
+    ++
+    (lib.lists.optional (lib.lists.any (x: x.from == 25575) cfg.settings.extraPorts)''
+      DO NOT port forward RCON on 25575 without first setting RCON_PASSWORD to a secure value.
+      It is highly recommended to only use RCON within the container, such as with rcon-cli
+    '');
   };
 }
