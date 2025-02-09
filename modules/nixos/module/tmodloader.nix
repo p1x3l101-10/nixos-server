@@ -143,39 +143,41 @@ in
   };
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.tmodloader = {
-      environment = lib.attrsets.recursiveUpdate cfg.extraConfig {
-        TMOD_PASS = cfg.password;
-        TMOD_WORLDNAME = cfg.world.name;
-        TMOD_WORLDSEED = cfg.world.seed;
-        TMOD_DIFFICULTY = toString (lib.attrsets.attrByPath [ cfg.difficulty ] 0 {
+      environment = (lib.nixos-home.attrset.mergeAttrs (let inherit (lib.nixos-home.environment) mkEnv mkEnvRawList mkEnvRaw; in [
+        cfg.extraConfig
+        (mkEnv "tmod_pass" cfg.password)
+        (mkEnv "tmod_worldname" cfg.world.name)
+        (mkEnv "tmod_worldseed" cfg.world.seed)
+        (mkEnv "tmod_difficulty" (lib.attrsets.attrByPath [cfg.difficulty] 0 {
           journey = -1;
           classic = 0;
           expert = 1;
           master = 2;
-        });
-        TMOD_WORLDSIZE = toString (lib.attrsets.attrByPath [ cfg.difficulty ] 0 {
+        }))
+        (mkEnv "tmod_worldsize" (lib.attrsets.attrByPath [ cfg.difficulty ] 0 {
           small = 0;
           medium = 1;
           large = 2;
-        });
-        TMOD_AUTODOWNLOAD = lib.strings.concatStringsSep "," (lib.forEach cfg.mods.download (x: toString x));
-        TMOD_ENABLEDMODS = lib.strings.concatStringsSep "," (lib.forEach cfg.mods.enabled (x: toString x));
-        TMOD_JOURNEY_SETFROZEN = fromJourney cfg.journey.setFrozen;
-        TMOD_JOURNEY_SETDAWN = fromJourney cfg.journey.setDawn;
-        TMOD_JOURNEY_SETNOON = fromJourney cfg.journey.setNoon;
-        TMOD_JOURNEY_SETDUSK = fromJourney cfg.journey.setDusk;
-        TMOD_JOURNEY_SETMIDNIGHT = fromJourney cfg.journey.setMidnight;
-        TMOD_JOURNEY_GODMODE = fromJourney cfg.journey.godmode;
-        TMOD_JOURNEY_WIND_STRENGTH = fromJourney cfg.journey.windStrength;
-        TMOD_JOURNEY_RAIN_STRENGTH = fromJourney cfg.journey.rainStrength;
-        TMOD_JOURNEY_TIME_SPEED = fromJourney cfg.journey.timeSpeed;
-        TMOD_JOURNEY_RAIN_FROZEN = fromJourney cfg.journey.rainFrozen;
-        TMOD_JOURNEY_WIND_FROZEN = fromJourney cfg.journey.windFrozen;
-        TMOD_JOURNEY_PLACEMENT_RANGE = fromJourney cfg.journey.placementRange;
-        TMOD_JOURNEY_SET_DIFFICULTY = fromJourney cfg.journey.setDifficulty;
-        TMOD_JOURNEY_BIOME_SPREAD = fromJourney cfg.journey.biomeSpread;
-        TMOD_JOURNEY_SPAWN_RATE = fromJourney cfg.journey.spawnRate;
-      };
+        }))
+        (mkEnvList "tmod_autodownload" cfg.mods.download ",")
+        (mkEnvList "tmod_enabledMods" cfg.mods.enable ",")
+        (mkEnv "tmod_journey_setFrozen" (fromJourney cfg.journey.setFrozen))
+        (mkEnv "tmod_journey_setDawn" (fromJourney cfg.journey.setDawn))
+        (mkEnv "tmod_journey_setNoon" (fromJourney cfg.journey.setNoon))
+        (mkEnv "tmod_journey_setDusk" (fromJourney cfg.journey.setDusk))
+        (mkEnv "tmod_journey_godmode" (fromJourney cfg.journey.godmode))
+        (mkEnv "tmod_journey_wind_strength" (fromJourney cfg.journey.windStrength))
+        (mkEnv "tmod_journey_rain_strength" (fromJourney cfg.journey.rainStrength))
+        (mkEnv "tmod_journey_time_speed" (fromJourney cfg.journey.timeSpeed))
+        (mkEnv "tmod_journey_rain_frozen" (fromJourney cfg.journey.rainFrozen))
+        (mkEnv "tmod_journey_wind_rozen" (fromJourney cfg.journey.windFrozen))
+        (mkEnv "tmod_journey_placement_range" (fromJourney cfg.journey.placementRange))
+        (mkEnv "tmod_journey_set_difficulty" (fromJourney cfg.journey.setDifficulty))
+        (mkEnv "tmod_journey_biome_spread" (fromJourney cfg.journey.biomeSpread))
+        (mkEnv "tmod_journey_spawn_rate" (fromJourney cfg.journey.spawnRate))
+        (mkEnv "tmod_journey_" (fromJourney cfg.journey.))
+        (mkEnv "tmod_journey_" (fromJourney cfg.journey.))
+      ]));
       image = "internal/docker-tmodloader:latest";
       imageFile = cfg.image;
       ports = [
