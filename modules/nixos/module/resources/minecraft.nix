@@ -14,7 +14,7 @@
     "21" = {
       # java21-alpine
       imageDigest = "sha256:fd43d03de558b598401968f898b6976ef05875234153261e7772470dce834c11";
-      sha256 = "0virk1y9qps45sqm5c5pg282nykl9srfc06h3l35ahx6idr3cz38";
+      sha256 = "sha256-uufGE5km+dSLVztO+cIzRG9xhOQMcU5xp0kdbccMSBo=";
     };
   };
 }
