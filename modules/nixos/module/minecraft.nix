@@ -51,28 +51,6 @@ let
       default = null;
     };
   };
-  # Set `from` to either "modrinth" or "curseforge"
-  translateModName =  { from
-                      , dataPack ? false
-                      , modId
-                      , slug ? null
-                      , versionId
-                      , partialFilename ? null
-                      }@mod: let inherit (lib) optional singleton; in (
-                        if (from == "modrinth")
-                        then
-                          lib.concatStringsSep ":"
-                          (optional dataPack "datapack")
-                          ++ singleton modId
-                          ++ (optional (versionId != null) versionId)
-                        else # curseforge
-                          (if (slug != null) then slug else modId)
-                          + (
-                              if (versionId != null) then ":${versionId}"
-                              else if (partialFilename != null) then "@${partialFilename}"
-                              else ""
-                            )
-                      );
 in
 {
   options.services.minecraft = with lib; {
@@ -186,7 +164,7 @@ in
         cfg.settings.extraEnv
         (mkEnv "EULA" (builtins.toString cfg.settings.eula))
         # Modrinth mod list
-        (mkEnvRawList "MODRINTH_PROJECTS" (lib.forEach translateModName cfg.modrinth.mods.projects) "\n")
+        (mkEnvRawList "MODRINTH_PROJECTS" (lib.forEach lib.internal.minecraft.translateModName cfg.modrinth.mods.projects) "\n")
         # Type and version
         (mkEnv "VERSION" cfg.settings.version)
         (mkEnv "TYPE" cfg.settings.type)
