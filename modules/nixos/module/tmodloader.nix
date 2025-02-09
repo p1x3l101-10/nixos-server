@@ -1,9 +1,9 @@
 { config, options, pkgs, lib, ... }:
 let
   cfg = config.services.tmodloader;
-  mkOption = lib.mkOption;
-  mkEnableOption = lib.mkEnableOption;
-  types = lib.types;
+  inherit (lib.options) mkOption mkEnableOption;
+  inherit (lib.modules) mkIf;
+  inherit (lib) types;
   mkJourneyOption = mkOption {
     type = types.enum [
       "locked"
@@ -141,25 +141,25 @@ in
       '';
     };
   };
-  config = lib.mkIf cfg.enable {
+  config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.tmodloader = {
-      environment = lib.recursiveUpdate cfg.extraConfig {
+      environment = lib.attrsets.recursiveUpdate cfg.extraConfig {
         TMOD_PASS = cfg.password;
         TMOD_WORLDNAME = cfg.world.name;
         TMOD_WORLDSEED = cfg.world.seed;
-        TMOD_DIFFICULTY = toString (lib.attrByPath [ cfg.difficulty ] 0 {
+        TMOD_DIFFICULTY = toString (lib.attrsets.attrByPath [ cfg.difficulty ] 0 {
           journey = -1;
           classic = 0;
           expert = 1;
           master = 2;
         });
-        TMOD_WORLDSIZE = toString (lib.attrByPath [ cfg.difficulty ] 0 {
+        TMOD_WORLDSIZE = toString (lib.attrsets.attrByPath [ cfg.difficulty ] 0 {
           small = 0;
           medium = 1;
           large = 2;
         });
-        TMOD_AUTODOWNLOAD = lib.concatStringsSep "," (lib.forEach cfg.mods.download (x: toString x));
-        TMOD_ENABLEDMODS = lib.concatStringsSep "," (lib.forEach cfg.mods.enabled (x: toString x));
+        TMOD_AUTODOWNLOAD = lib.strings.concatStringsSep "," (lib.forEach cfg.mods.download (x: toString x));
+        TMOD_ENABLEDMODS = lib.strings.concatStringsSep "," (lib.forEach cfg.mods.enabled (x: toString x));
         TMOD_JOURNEY_SETFROZEN = fromJourney cfg.journey.setFrozen;
         TMOD_JOURNEY_SETDAWN = fromJourney cfg.journey.setDawn;
         TMOD_JOURNEY_SETNOON = fromJourney cfg.journey.setNoon;
