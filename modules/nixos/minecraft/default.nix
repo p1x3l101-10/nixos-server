@@ -4,7 +4,7 @@ let
 in
 {
   services.minecraft = {
-    enable = true;
+    enable = false;
     curseforge = {
       apiKey = "$2a$10$bL4bIL5pUWqfcO7KQtnMReakwtfHbNKh6v1uTpKlzhwoueEJQnPnm";
       pack = {
