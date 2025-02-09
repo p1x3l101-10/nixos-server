@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ lib, ... }:
 
 lib.nixos-home.conf-templates.disko {
   disk-id = "nvme-WDC_PC_SN520_SDAPNUW-512G-1014_19131B802948_1";
