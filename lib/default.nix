@@ -5,4 +5,5 @@ let
   genLib1 = genLib callLibPrimitive;
 in genLib1 ./. [
   "minecraft"
+  "sss"
 ]
