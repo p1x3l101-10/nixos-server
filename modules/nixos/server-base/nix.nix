@@ -7,5 +7,5 @@
     substituters = lib.mkForce [];
     extra-substituters = lib.mkForce [];
   };
-  nix.registry = inputs.nixos-home.lib.confTemplates.registry inputs;
+  nix.registry = lib.nixos-home.conf-templates.registry inputs;
 }
