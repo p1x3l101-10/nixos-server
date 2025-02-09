@@ -6,7 +6,6 @@ let
   inherit (lib.options) mkOption mkEnableOption;
   inherit (lib.modules) mkIf;
   inherit (lib) types;
-  inherit (import ./resources/minecraft.nix) versionList;
   curseforgeMod = _: with lib; {
     modId = mkOption {
       type = with types; nullOr int;
@@ -189,7 +188,7 @@ in
       # Sets the javaVersion of the image from the respecive values from the attrSet at the begining
       image = "internal/docker-minecraft:${toString cfg.settings.javaVersion}";
       imageFile = pkgs.internal.dockerMinecraft.override {
-        inherit (versionList.${toString cfg.settings.javaVersion}) imageDigest sha256;
+        inherit ((import ./resources/minecraft.nix).versionList.${toString cfg.settings.javaVersion}) imageDigest sha256;
         finalImageTag = (toString cfg.settings.javaVersion); 
       };
       autoStart = true;
