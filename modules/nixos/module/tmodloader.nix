@@ -143,11 +143,11 @@ in
   };
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.tmodloader = {
-      environment = (lib.nixos-home.attrset.mergeAttrs (let inherit (lib.nixos-home.environment) mkEnv mkEnvRawList mkEnvRaw; in [
+      environment = (lib.nixos-home.attrset.mergeAttrs (let inherit (lib.nixos-home.environment) mkEnv mkEnvList mkEnvRaw; in [
         cfg.extraConfig
-        (mkEnv "tmod_pass" cfg.password)
-        (mkEnv "tmod_worldname" cfg.world.name)
-        (mkEnv "tmod_worldseed" cfg.world.seed)
+        (mkEnvRaw "tmod_pass" cfg.password)
+        (mkEnvRaw "tmod_worldname" cfg.world.name)
+        (mkEnvRaw "tmod_worldseed" cfg.world.seed)
         (mkEnv "tmod_difficulty" (lib.attrsets.attrByPath [cfg.difficulty] 0 {
           journey = -1;
           classic = 0;
