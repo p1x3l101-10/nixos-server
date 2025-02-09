@@ -46,12 +46,14 @@ let
     };
   };
   port = _: {
-    to = mkOption {
-      type = types.port;
-    };
-    from = mkOption {
-      type = with types; nullOr port;
-      default = null;
+    options = {
+      to = mkOption {
+        type = types.port;
+      };
+      from = mkOption {
+        type = with types; nullOr port;
+        default = null;
+      };
     };
   };
 in
