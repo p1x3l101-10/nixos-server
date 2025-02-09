@@ -3,7 +3,9 @@
 { config, options, pkgs, lib, ... }:
 let
   cfg = config.services.minecraft;
-  inherit (lib) mkIf mkOption mkEnableOption types;
+  inherit (lib.options) mkOption mkEnableOption;
+  inherit (lib.modules) mkIf;
+  inherit (lib) types;
   inherit (import ./resources/minecraft.nix) versionList;
   curseforgeMod = _: with lib; {
     modId = mkOption {
@@ -180,11 +182,11 @@ in
   };
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.minecraft = {
-      environment = (lib.internal.mergeAttrs [
+      environment = (lib.nixos-home.attrset.mergeAttrs (let inherit (lib.nixos-home.environment) mkEnv mkEnvListRaw mkEnvRaw; in [
         cfg.settings.extraEnv
         (mkEnv "EULA" (builtins.toString cfg.settings.eula))
         # Modrinth mod list
-        (mkEnvList "MODRINTH_PROJECTS" (lib.forEach translateModName cfg.modrinth.mods.projects) "\n")
+        (mkEnvListRaw "MODRINTH_PROJECTS" (lib.forEach translateModName cfg.modrinth.mods.projects) "\n")
         # Type and version
         (mkEnv "VERSION" cfg.settings.version)
         (mkEnv "TYPE" cfg.settings.type)
@@ -195,7 +197,7 @@ in
         (mkEnv "CF_FILE_ID" cfg.curseforge.fileId)
         # Settings
         (mkEnv "MEMORY" ((builtins.toString cfg.settings.memory) + "G"))
-      ]);
+      ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
       ] ++ (lib.optionals (cfg.settgs.extraPorts != []) (lib.forEach cfg.settings.extraPorts
@@ -227,9 +229,9 @@ in
       };
     };
     networking.firewall.allowedTCPPorts = (
-      lib.optional cfg.settings.openFirewall cfg.settings.port
+      lib.lists.optional cfg.settings.openFirewall cfg.settings.port
       ++
-      lib.optionals (cfg.settings.extraPorts != []) (lib.forEach cfg.settings.extraPorts (x: x.to))
+      lib.lists.optionals (cfg.settings.extraPorts != []) (lib.lists.forEach cfg.settings.extraPorts (x: x.to))
     );
     assertions = [
       {
