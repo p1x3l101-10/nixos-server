@@ -11,12 +11,14 @@ from:
 
 let
   inherit (lib.lists) optional singleton;
+  inherit (lib.strings) concatStringsSep;
 in (
   if (from == "modrinth") then
-    lib.concatStringsSep ":"
+    concatStringsSep ":" (
       (optional dataPack "datapack")
       ++ singleton modId
       ++ (optional (versionId != null) versionId)
+    )
   else # curseforge
     (if (slug != null) then slug else modId)
     + (
