@@ -164,7 +164,7 @@ in
         cfg.settings.extraEnv
         (mkEnv "EULA" (builtins.toString cfg.settings.eula))
         # Modrinth mod list
-        (mkEnvRawList "MODRINTH_PROJECTS" (lib.forEach (x: cfg.modrinth.mods.projects lib.internal.minecraft.translateModName x)) "\n")
+        (mkEnvRawList "MODRINTH_PROJECTS" (lib.forEach (x: lib.internal.minecraft.translateModName x) cfg.modrinth.mods.projects) "\n")
         # Type and version
         (mkEnv "VERSION" cfg.settings.version)
         (mkEnv "TYPE" cfg.settings.type)
