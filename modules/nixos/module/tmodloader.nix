@@ -189,7 +189,7 @@ in
       ];
       autoStart = true;
     };
-    systemd.tmpfiles.settings."10-tmodloader" = {
+    systemd.tmpfiles.settings."50-tmodloader" = {
       "/var/lib/tModLoader".d = {
         user = "root";
         group = "root";

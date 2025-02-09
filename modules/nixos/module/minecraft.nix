@@ -201,7 +201,7 @@ in
       };
       autoStart = true;
     };
-    systemd.tmpfiles.settings."10-minecraft" = {
+    systemd.tmpfiles.settings."50-minecraft" = {
       "/var/lib/minecraft".d = {
         user = "root";
         group = "root";
