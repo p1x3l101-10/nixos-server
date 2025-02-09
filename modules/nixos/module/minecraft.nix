@@ -7,39 +7,43 @@ let
   inherit (lib.modules) mkIf;
   inherit (lib) types;
   curseforgeMod = _: with lib; {
-    modId = mkOption {
-      type = with types; nullOr int;
-      default = null;
-      description = "modId or slug must be set";
+    options = {
+      modId = mkOption {
+        type = with types; nullOr int;
+        default = null;
+        description = "modId or slug must be set";
+      };
+      slug = mkOption {
+        type = with types; nullOr str;
+        default = null;
+        description = "modId or slug must be set";
+      };
+      versionId = mkOption {
+        type = with types; nullOr int;
+        default = null;
+      };
+      partialFilename = mkOption {
+        type = with types; nullOr str;
+        default = null;
+      };
+      from = "curseforge"; # DO NOT CHANGE THIS
     };
-    slug = mkOption {
-      type = with types; nullOr str;
-      default = null;
-      description = "modId or slug must be set";
-    };
-    versionId = mkOption {
-      type = with types; nullOr int;
-      default = null;
-    };
-    partialFilename = mkOption {
-      type = with types; nullOr str;
-      default = null;
-    };
-    from = "curseforge"; # DO NOT CHANGE THIS
   };
   modrinthMod = _: with lib; {
-    modId = mkOption {
-      type = types.str;
+    options = {
+      modId = mkOption {
+        type = types.str;
+      };
+      versionId = mkOption {
+        type = with types; nullOr str;
+        default = null;
+      };
+      dataPack = mkOption {
+        type = types.bool;
+        default = false;
+      };
+      from = "modrinth"; # DO NOT CHANGE THIS
     };
-    versionId = mkOption {
-      type = with types; nullOr str;
-      default = null;
-    };
-    dataPack = mkOption {
-      type = types.bool;
-      default = false;
-    };
-    from = "modrinth"; # DO NOT CHANGE THIS
   };
   port = _: {
     to = mkOption {
