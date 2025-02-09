@@ -1,13 +1,13 @@
 { lib, ext }:
 
 # Set `from` to either "modrinth" or "curseforge"
-{ from
-, dataPack ? false
+{ dataPack ? false
 , modId
 , slug ? null
 , versionId
 , partialFilename ? null
 }@mod:
+from:
 
 let
   inherit (lib.lists) optional singleton;

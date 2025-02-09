@@ -26,7 +26,6 @@ let
         type = with types; nullOr str;
         default = null;
       };
-      from = "curseforge"; # DO NOT CHANGE THIS
     };
   };
   modrinthMod = _: with lib; {
@@ -42,7 +41,6 @@ let
         type = types.bool;
         default = false;
       };
-      from = "modrinth"; # DO NOT CHANGE THIS
     };
   };
   port = _: {
@@ -169,7 +167,7 @@ in
         cfg.settings.extraEnv
         (mkEnv "EULA" (builtins.toString cfg.settings.eula))
         # Modrinth mod list
-        (mkEnvRawList "MODRINTH_PROJECTS" (lib.forEach cfg.modrinth.mods.projects (x: lib.internal.minecraft.translateModName x)) "\n")
+        (mkEnvRawList "MODRINTH_PROJECTS" (lib.forEach cfg.modrinth.mods.projects (x: lib.internal.minecraft.translateModName x "modrinth")) "\n")
         # Type and version
         (mkEnv "VERSION" cfg.settings.version)
         (mkEnv "TYPE" cfg.settings.type)
