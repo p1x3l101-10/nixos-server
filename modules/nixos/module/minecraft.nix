@@ -229,7 +229,7 @@ in
       }
     ];
     # Encurage people to not use extraEnv
-    warnings = (lib.lists.optional (cfg.settings.extraEnv != []) ''
+    warnings = (lib.lists.optional (cfg.settings.extraEnv != {}) ''
       services.minecraft.settings.extraEnv is unsupported
       be sure to check if there is a better way to set values
     '')
