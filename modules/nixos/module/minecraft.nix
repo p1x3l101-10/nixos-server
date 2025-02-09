@@ -43,7 +43,7 @@ let
       };
     };
   };
-  port = _: {
+  portPair = _: with lib; {
     options = {
       to = mkOption {
         type = types.port;
@@ -159,7 +159,7 @@ in
         description = "Extra environment variables to merge into server";
       };
       extraPorts = mkOption {
-        type = with types; listOf (coercedTo port (to: { inherit to; }) (submodule port));
+        type = with types; listOf (coercedTo port (to: { inherit to; }) (submodule portPair));
         default = [];
         description = "Extra ports to map";
       };
@@ -185,7 +185,7 @@ in
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
-      ] ++ (lib.optionals (cfg.settgs.extraPorts != []) (lib.forEach cfg.settings.extraPorts
+      ] ++ (lib.optionals (cfg.settings.extraPorts != []) (lib.forEach cfg.settings.extraPorts
         (x:
           (toString (if (x.from != null) then x.from else x.to)) + ":" + (toString x.to)
         )
