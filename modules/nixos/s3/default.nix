@@ -19,6 +19,6 @@ in {
         mountPoint = "/var/lib/minio";
       };
     };
-    config = args: import ./container.nix args;
+    config = { ... }: { imports = [ ./container.nix ]; };
   };
 }

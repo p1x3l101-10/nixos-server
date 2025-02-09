@@ -20,6 +20,6 @@ in {
       "/nix/host/keys/minio/keys/nextcloud".mountPoint = "/run/keys/s3";
       "/nix/host/keys/nextcloud".mountPoint = "/run/keys/nextcloud";
     };
-    config = args: import ./container.nix args;
+    config = { ... }: { imports = [ ./container.nix ]; };
   };
 }
