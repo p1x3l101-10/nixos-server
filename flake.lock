@@ -358,14 +358,15 @@
         "nixpak": "nixpak",
         "nixpkgs": "nixpkgs",
         "nixpkgs-xr": "nixpkgs-xr",
-        "snowfall-lib": "snowfall-lib"
+        "snowfall-lib": "snowfall-lib",
+        "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1739065185,
-        "narHash": "sha256-8The1uFTvn8x859ZRALJVHruHb8vCHFYG6oCkrAFnxg=",
+        "lastModified": 1739069021,
+        "narHash": "sha256-ZMq98VQdYQchL3nZuS6vgcTGvuvH5PWwVgl4bgTVdLo=",
         "owner": "p1x3l101-10",
         "repo": "nixos",
-        "rev": "f9de9c154a7136f79ff9abd2fdd8ca2eba077802",
+        "rev": "3f1c062ec16cfbf4295e219248c14ebded2935a7",
         "type": "github"
       },
       "original": {
@@ -508,6 +509,10 @@
         "snowfall-lib": [
           "nixos-home",
           "snowfall-lib"
+        ],
+        "systems": [
+          "nixos-home",
+          "systems"
         ]
       }
     },
@@ -583,6 +588,21 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_3": {
+      "locked": {
+        "lastModified": 1680978846,
+        "narHash": "sha256-Gtqg8b/v49BFDpDetjclCYXm8mAnTrUzR0JnE2nv5aw=",
+        "owner": "nix-systems",
+        "repo": "x86_64-linux",
+        "rev": "2ecfcac5e15790ba6ce360ceccddb15ad16d08a8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "x86_64-linux",
         "type": "github"
       }
     },
