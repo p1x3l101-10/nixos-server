@@ -175,8 +175,6 @@ in
         (mkEnv "tmod_journey_set_difficulty" (fromJourney cfg.journey.setDifficulty))
         (mkEnv "tmod_journey_biome_spread" (fromJourney cfg.journey.biomeSpread))
         (mkEnv "tmod_journey_spawn_rate" (fromJourney cfg.journey.spawnRate))
-        (mkEnv "tmod_journey_" (fromJourney cfg.journey.))
-        (mkEnv "tmod_journey_" (fromJourney cfg.journey.))
       ]));
       image = "internal/docker-tmodloader:latest";
       imageFile = cfg.image;
