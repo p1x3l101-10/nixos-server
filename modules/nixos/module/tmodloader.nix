@@ -143,7 +143,7 @@ in
   };
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.tmodloader = {
-      environment = (lib.nixos-home.attrset.mergeAttrs (let inherit (lib.nixos-home.environment) mkEnv mkEnvList mkEnvRaw; in [
+      environment = (lib.nixos-home.attrsets.mergeAttrs (let inherit (lib.nixos-home.environment) mkEnv mkEnvList mkEnvRaw; in [
         cfg.extraConfig
         (mkEnvRaw "tmod_pass" cfg.password)
         (mkEnvRaw "tmod_worldname" cfg.world.name)
