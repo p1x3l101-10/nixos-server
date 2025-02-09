@@ -17,7 +17,7 @@ lib.mkFlake {
       common-cpu-intel-cpu-only
     ]);
   };
-  supportedSystems = inputs.systems;
+  supportedSystems = import inputs.systems;
   outputs-builder = channels: {
     formatter = channels.nixpkgs.nixpkgs-fmt;
   };
