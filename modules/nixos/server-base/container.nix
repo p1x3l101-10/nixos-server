@@ -12,7 +12,6 @@
     bridges.br0.interfaces = [ "enp2s0" ];
     interfaces.br0 = {
       useDHCP = true;
-      virtual = true;
       ipv4.addresses = [{
         address = "192.168.100.1";
         prefixLength = 24;
