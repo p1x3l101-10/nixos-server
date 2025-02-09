@@ -169,7 +169,7 @@ in
     virtualisation.oci-containers.containers.minecraft = {
       environment = (lib.nixos-home.attrsets.mergeAttrs (let inherit (lib.nixos-home.environment) mkEnv mkEnvRawList mkEnvRaw; in [
         cfg.settings.extraEnv
-        (mkEnv "EULA" (builtins.toString cfg.settings.eula))
+        (mkEnv "EULA" (lib.trivial.boolToString cfg.settings.eula))
         # Modrinth mod list
         (mkEnvRawList "MODRINTH_PROJECTS" (lib.forEach cfg.modrinth.mods.projects (x: lib.internal.minecraft.translateModName x "modrinth")) "\n")
         # Type and version
@@ -178,8 +178,8 @@ in
         # API Keys
         (mkEnvRaw "CF_API_KEY" cfg.curseforge.apiKey)
         # Curseforge modpack
-        (mkEnv "CF_SLUG" cfg.curseforge.pack)
-        (mkEnv "CF_FILE_ID" cfg.curseforge.fileId)
+        (mkEnv "CF_SLUG" cfg.curseforge.pack.slug)
+        (mkEnv "CF_FILE_ID" cfg.curseforge.pack.fileId)
         # Settings
         (mkEnv "MEMORY" ((builtins.toString cfg.settings.memory) + "G"))
       ]));
