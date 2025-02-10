@@ -15,7 +15,7 @@ let
     argument = "CHANGEME";
   };
 in
-lib.mergeAttrs [
+lib.attrsets.mergeAttrsList [
   {
     systemd.tmpfiles.settings."10-host-keys" = {
       "/nix/host/keys/minio" = {
