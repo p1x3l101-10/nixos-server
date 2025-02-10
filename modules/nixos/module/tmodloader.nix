@@ -160,7 +160,7 @@ in
           large = 2;
         }))
         (mkEnvList "tmod_autodownload" cfg.mods.download ",")
-        (mkEnvList "tmod_enabledMods" cfg.mods.enable ",")
+        (mkEnvList "tmod_enabledMods" cfg.mods.enabled ",")
         (mkEnv "tmod_journey_setFrozen" (fromJourney cfg.journey.setFrozen))
         (mkEnv "tmod_journey_setDawn" (fromJourney cfg.journey.setDawn))
         (mkEnv "tmod_journey_setNoon" (fromJourney cfg.journey.setNoon))
