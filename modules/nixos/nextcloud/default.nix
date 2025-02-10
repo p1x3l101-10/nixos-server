@@ -4,7 +4,7 @@
 
 let
   # Habit
-  cfg.enable = true;
+  cfg.enable = false;
 in {
   containers.nextcloud = lib.modules.mkIf cfg.enable {
     autoStart = true;
