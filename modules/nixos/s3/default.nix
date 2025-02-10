@@ -18,6 +18,7 @@ in lib.nixos-home.attrsets.mergeAttrs [
         "/nix/host/state/Servers/Minio" = {
           isReadOnly = false;
           mountPoint = "/var/lib/minio";
+          hostPath = "/nix/host/state/Servers/Minio";
         };
       };
       config = { ... }: { imports = [ ./container.nix ]; };
