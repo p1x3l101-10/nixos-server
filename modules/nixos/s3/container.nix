@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   inherit (import ./key.nix) rootCredentialsFile;
