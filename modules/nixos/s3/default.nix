@@ -31,5 +31,5 @@ in {
     (lib.internal.sss.makeTmpFiles [
       "nextcloud"
     ])
-  ]
+  ];
 }
