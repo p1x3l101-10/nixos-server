@@ -3,7 +3,7 @@
 {
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud28;
+    package = pkgs.nextcloud30;
     hostName = "166.113.94.161";
     datadir = "/var/lib/nextcloud";
     config = {
