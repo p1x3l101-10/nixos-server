@@ -44,7 +44,7 @@ in {
       systemd.tmpfiles.settings = {
         "50-host-state"."/nix/host/state/Servers/NextCloud".d = { mode = "0755"; };
         "50-host-keys"."/nix/host/keys/nextcloud".d = { mode = "0700"; };
-      }
+      };
     }
   ]);
 }
