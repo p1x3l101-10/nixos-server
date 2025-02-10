@@ -29,7 +29,7 @@ lib.nixos-home.attrsets.mergeAttrs [
   {
     systemd.tmpfiles.settings."10-host-keys" = {
       "/nix/host/keys/minio/keys/${f}".d = defaultDir;
-      "/nix/host/keys/minio/keys/${f}/${f}.psk".f = defaultFile
+      "/nix/host/keys/minio/keys/${f}/${f}.psk".f = defaultFile;
     };
   }
 )
