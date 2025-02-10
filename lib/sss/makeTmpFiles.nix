@@ -15,7 +15,7 @@ let
     argument = "CHANGEME";
   };
 in
-lib.nixos-home.attrsets.mergeAttrs [
+lib.attrsets.mergeAttrs [
   {
     systemd.tmpfiles.settings."10-host-keys" = {
       "/nix/host/keys/minio" = {
