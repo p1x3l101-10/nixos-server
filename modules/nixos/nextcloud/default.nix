@@ -4,7 +4,7 @@
 
 let
   # Habit
-  cfg.enable = false;
+  cfg.enable = true;
 in {
   containers.nextcloud = lib.modules.mkIf cfg.enable {
     autoStart = true;
@@ -12,6 +12,13 @@ in {
     localAddress = "192.168.100.4/24";
     hostBridge = "br0";
     ephemeral = true;
+    forwardPorts = [
+      {
+        containerPort = 80;
+        hostPort = 4443;
+        protocol = "tcp";
+      }
+    ];
     bindMounts = {
       "/nix/host/state/Servers/Nextcloud" = {
         mountPoint = "/var/lib/nextcloud";
@@ -22,4 +29,5 @@ in {
     };
     config = { ... }: { imports = [ ./container.nix ]; };
   };
+  networking.firewall.allowedTCPPorts = [ 4443 ]; # Maps to 7001 externally
 }
