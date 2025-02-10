@@ -6,7 +6,7 @@ let
   # Habit
   cfg.enable = true;
 in {
-  config = lib.modules.mkIf cfg.enable lib.nixos-home.attrsets.mergeAttrs [
+  config = lib.modules.mkIf cfg.enable (lib.nixos-home.attrsets.mergeAttrs [
     {
       containers.s3 = {
         autoStart = true;
@@ -31,5 +31,5 @@ in {
     (lib.internal.sss.makeTmpFiles [
       "nextcloud"
     ])
-  ];
+  ]);
 }
