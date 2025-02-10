@@ -23,7 +23,7 @@ in lib.nixos-home.attrsets.mergeAttrs [
       config = { ... }: { imports = [ ./container.nix ]; };
     };
   }
-  lib.internal.sss.makeTmpFiles [
-  "nextcloud"
-  ]
+  (lib.internal.sss.makeTmpFiles [
+    "nextcloud"
+  ])
 ]
