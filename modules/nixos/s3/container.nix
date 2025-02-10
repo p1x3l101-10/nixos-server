@@ -9,6 +9,15 @@ in {
     consoleAddress = "127.0.0.1:9001";
     inherit rootCredentialsFile;
   };
+  networking = {
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 9000 ];
+    };
+    useNetworkd = true;
+    networkmanager.enable = lib.mkForce false;
+    useHostResolvConf = lib.mkForce false;
+  };
   environment.systemPackages = [ pkgs.minio-client ];
   systemd.tmpfiles.settings."11-preset-key".${rootCredentialsFile}.f = {
     user = "root";

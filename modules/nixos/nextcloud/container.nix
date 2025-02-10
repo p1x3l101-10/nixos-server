@@ -15,6 +15,8 @@
       enable = true;
       allowedTCPPorts = [ 80 ];
     };
+    useNetworkd = true;
+    networkmanager.enable = lib.mkForce false;
     useHostResolvConf = lib.mkForce false;
   };
   services.resolved.enable = true;
