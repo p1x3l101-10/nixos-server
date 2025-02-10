@@ -9,7 +9,7 @@ in {
     autocreate = true;
     inherit key;
     secretFile = "/run/keys/s3/nextcloud.psk";
-    hostname = "192.168.100.3";
+    hostname = "10.10.10.3";
     useSsl = false;
     port = 9000;
     usePathStyle = true;

@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  # Host config to help with running containers
   boot.enableContainers = true;
   networking = {
     nat = {
@@ -11,9 +12,9 @@
     };
     bridges.br0.interfaces = [ "enp2s0" ];
     interfaces.br0 = {
-      useDHCP = true;
+      useDHCP = false;
       ipv4.addresses = [{
-        address = "192.168.100.1";
+        address = "10.10.10.2";
         prefixLength = 24;
       }];
     };

@@ -9,7 +9,7 @@ in {
   containers.s3 = lib.modules.mkIf cfg.enable {
     autoStart = true;
     privateNetwork = true;
-    localAddress = "192.168.100.3/24";
+    localAddress = "10.10.10.3/24";
     hostBridge = "br0";
     ephemeral = true;
     bindMounts = {

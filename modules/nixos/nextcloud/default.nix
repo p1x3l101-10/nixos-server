@@ -9,7 +9,7 @@ in {
   containers.nextcloud = lib.modules.mkIf cfg.enable {
     autoStart = true;
     privateNetwork = true;
-    localAddress = "192.168.100.4/24";
+    localAddress = "10.10.10.4/24";
     hostBridge = "br0";
     ephemeral = true;
     forwardPorts = [
