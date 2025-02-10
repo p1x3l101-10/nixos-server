@@ -5,7 +5,7 @@
 let
   # Habit
   cfg.enable = true;
-in lib.nixos-home.attrsets.mergeAttrs [
+in lib.internal.attrsets.mergeAttrs [
   {
     containers.s3 = lib.modules.mkIf cfg.enable {
       autoStart = true;
