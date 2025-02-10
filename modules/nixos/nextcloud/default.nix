@@ -6,28 +6,45 @@ let
   # Habit
   cfg.enable = false;
 in {
-  containers.nextcloud = lib.modules.mkIf cfg.enable {
-    autoStart = true;
-    privateNetwork = true;
-    localAddress = "10.10.10.4/24";
-    hostBridge = "br0";
-    ephemeral = true;
-    forwardPorts = [
-      {
-        containerPort = 80;
-        hostPort = 4443;
-        protocol = "tcp";
-      }
-    ];
-    bindMounts = {
-      "/nix/host/state/Servers/Nextcloud" = {
-        mountPoint = "/var/lib/nextcloud";
-        isReadOnly = false;
+  config = lib.modules.mkIf cfg.enable (lib.nixos-home.attrsets.mergeAttrs [
+    {
+      containers.nextcloud = {
+        autoStart = true;
+        privateNetwork = true;
+        localAddress = "10.10.10.4/24";
+        hostBridge = "br0";
+        ephemeral = true;
+        forwardPorts = [
+          {
+            containerPort = 80;
+            hostPort = 4443;
+            protocol = "tcp";
+          }
+        ];
+        bindMounts = {
+          "/nix/host/state/Servers/Nextcloud" = {
+            mountPoint = "/var/lib/nextcloud";
+            hostPath = "/nix/host/state/Servers/Nextcloud";
+            isReadOnly = false;
+          };
+          "/nix/host/keys/minio/keys/nextcloud" = {
+            mountPoint = "/run/keys/s3";
+            hostPath = "/nix/host/keys/minio/keys/nextcloud";
+          };
+          "/nix/host/keys/nextcloud" = {
+            mountPoint = "/run/keys/nextcloud";
+            hostPath = "/nix/host/keys/nextcloud";
+          };
+        };
+        config = { ... }: { imports = [ ./container.nix ]; };
       };
-      "/nix/host/keys/minio/keys/nextcloud".mountPoint = "/run/keys/s3";
-      "/nix/host/keys/nextcloud".mountPoint = "/run/keys/nextcloud";
-    };
-    config = { ... }: { imports = [ ./container.nix ]; };
-  };
-  networking.firewall.allowedTCPPorts = [ 4443 ]; # Maps to 7001 externally
+      networking.firewall.allowedTCPPorts = [ 4443 ]; # Maps to 7001 externally
+    }
+    {
+      systemd.tmpfiles.settings = {
+        "50-host-state"."/nix/host/state/Servers/NextCloud".d = { mode = "0755"; };
+        "50-host-keys"."/nix/host/keys/nextcloud".d = { mode = "0700"; };
+      }
+    }
+  ]);
 }
