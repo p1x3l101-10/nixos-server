@@ -21,15 +21,18 @@
     dnsovertls = "true";
   };
   networking = let
-    containerGateway = "10.10.10.255";
+    containerGateway = ;
   in {
-    defaultGateway = containerGateway;
+    defaultGateway = {
+      address = "10.10.10.255";
+      inteface = "eth0";
+    };
     firewall = {
       allowedTCPPorts = [ 80 ];
       extraCommands = ''
         iptables -F INPUT # TODO: might not be necessary
         iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-        iptables -A INPUT -s ${containerGateway} -p tcp --dport 80 -j ACCEPT
+        iptables -A INPUT -s "10.10.10.255" -p tcp --dport 80 -j ACCEPT
         iptables -A INPUT -j DROP
       '';
     };
