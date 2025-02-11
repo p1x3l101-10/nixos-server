@@ -9,7 +9,6 @@
       name = "Gallifrey";
       seed = "for the worthy";
     };
-    journey.setDifficulty = "all"; # Temp for setting master
     journey = {
       windStrength = "all";
       placementRange = "all";
