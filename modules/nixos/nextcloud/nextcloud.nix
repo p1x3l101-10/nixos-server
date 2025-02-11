@@ -18,7 +18,7 @@
     "/run/secrets/nextcloud/admin-password.txt".z = {
       user = "nextcloud";
       group = "nextcloud";
-      mode = "0660";
+      mode = "0440";
     };
     "/run/secrets/nextcloud".z = {
       user = "root";
