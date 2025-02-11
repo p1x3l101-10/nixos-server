@@ -17,7 +17,7 @@ in {
         forwardPorts = [
           {
             containerPort = 80;
-            hostPort = 4443;
+            hostPort = 8100;
             protocol = "tcp";
           }
         ];
