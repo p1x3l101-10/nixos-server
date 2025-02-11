@@ -28,7 +28,7 @@
     "/var/lib/nextcloud".z = {
       user = "nextcloud";
       group = "nextcloud";
-      mode = "0770";
+      mode = "0750";
     };
   };
 }
