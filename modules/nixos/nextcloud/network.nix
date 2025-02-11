@@ -23,7 +23,7 @@
   networking = let
     containerGateway = "10.10.10.255";
   in {
-    defaultGateway = settings.containerGateway;
+    defaultGateway = containerGateway;
     firewall = {
       allowedTCPPorts = [ 80 ];
       extraCommands = ''
