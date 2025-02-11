@@ -7,7 +7,7 @@
     nat = {
       enable = true;
       internalInterfaces = [ "ve-+" ];
-      externalInterface = "ens3";
+      externalInterface = "enp2s0";
       enableIPv6 = true;
     };
     bridges.br0.interfaces = [ "enp2s0" ];
