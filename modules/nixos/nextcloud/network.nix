@@ -8,7 +8,7 @@
       "40-eth0" = {
         name = "eth0";
         linkConfig.RequiredForOnline = "routable";
-        gateway = "10.10.10.1";
+        gateway = [ "10.10.10.1" ];
         address = [ "10.10.10.4/24" ];
       };
     };
