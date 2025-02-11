@@ -4,7 +4,7 @@
 
 let
   # Habit
-  cfg.enable = false;
+  cfg.enable = true;
 in {
   config = lib.modules.mkIf cfg.enable (lib.nixos-home.attrsets.mergeAttrs [
     {
