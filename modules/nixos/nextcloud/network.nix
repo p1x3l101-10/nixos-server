@@ -8,6 +8,8 @@
       "40-eth0" = {
         name = "eth0";
         linkConfig.RequiredForOnline = "routable";
+        gateway = "10.10.10.1";
+        address = [ "10.10.10.4/24" ];
       };
     };
   };
@@ -20,10 +22,6 @@
     dnsovertls = "true";
   };
   networking = {
-    defaultGateway = {
-      address = "10.10.10.1";
-      interface = "eth0";
-    };
     firewall = {
       allowedTCPPorts = [ 80 ];
       extraCommands = ''
@@ -34,6 +32,7 @@
       '';
     };
     # Disable alterantives
+    dhcpcd.enable = false;
     networkmanager.enable = lib.mkForce false;
     useDHCP = false;
     useNetworkd = true;

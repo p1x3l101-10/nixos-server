@@ -22,6 +22,7 @@
   };
   # Disable alterantives
   networking = {
+    dhcpcd.enable = false;
     networkmanager.enable = lib.mkForce false;
     useDHCP = false;
     useNetworkd = true;
