@@ -25,6 +25,5 @@
     networkmanager.enable = lib.mkForce false;
     useDHCP = false;
     useNetworkd = true;
-    useHostResolvConf = lib.mkForce false;
   };
 }
