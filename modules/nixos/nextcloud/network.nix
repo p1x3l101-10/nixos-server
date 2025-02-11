@@ -21,7 +21,7 @@
   };
   networking = {
     defaultGateway = {
-      address = "10.10.10.255";
+      address = "10.10.10.1";
       interface = "eth0";
     };
     firewall = {
