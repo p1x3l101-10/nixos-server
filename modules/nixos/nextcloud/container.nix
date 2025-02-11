@@ -3,7 +3,7 @@
 {
   imports = [
     ./apps.nix
-    ./caching.nix
+    #./caching.nix
     ./mail.nix
     ./network.nix
     ./nextcloud.nix
