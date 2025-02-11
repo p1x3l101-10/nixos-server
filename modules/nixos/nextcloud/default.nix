@@ -27,7 +27,7 @@ in {
             hostPath = "/nix/host/state/Servers/Nextcloud";
             isReadOnly = false;
           };
-          "/run/keys/s3".hostPath = "/nix/host/keys/minio/keys/nextcloud";
+          "/run/secrets/s3".hostPath = "/nix/host/keys/minio/keys/nextcloud";
           "/run/secrets/nextcloud" = {
             hostPath = "/nix/host/keys/nextcloud";
             isReadOnly = false;
