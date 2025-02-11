@@ -15,7 +15,7 @@
   };
   # Make adminPass readable by nextcloud:nextcloud
   systemd.services."nextcloud-setup-setup" = {
-    requiredBy = "nextcloud-setup.service";
+    requiredBy = [ "nextcloud-setup.service" ];
     before = [ "nextcloud-setup.service" ];
     script = ''
       cp /run/keys/nextcloud/admin-password.txt /tmp/nextcloud-admin-password.txt
