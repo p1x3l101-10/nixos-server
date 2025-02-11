@@ -25,5 +25,10 @@
       group = "root";
       mode = "0771";
     };
+    "/var/lib/nextcloud".z = {
+      user = "nextcloud";
+      group = "nextcloud";
+      mode = "0770";
+    };
   };
 }
