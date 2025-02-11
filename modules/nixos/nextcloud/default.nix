@@ -9,7 +9,7 @@ in {
   config = lib.modules.mkIf cfg.enable (lib.nixos-home.attrsets.mergeAttrs [
     {
       containers.nextcloud = {
-        autoStart = false;
+        autoStart = true;
         privateNetwork = true;
         localAddress = "10.10.10.4/24";
         hostBridge = "br0";
