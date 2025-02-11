@@ -20,8 +20,19 @@
     llmnr = "true";
     dnsovertls = "true";
   };
-  networking = {
-    firewall.allowedTCPPorts = [ 80 ];
+  networking = let
+    containerGateway = "10.10.10.255";
+  in {
+    defaultGateway = settings.containerGateway;
+    firewall = {
+      allowedTCPPorts = [ 80 ];
+      extraCommands = ''
+        iptables -F INPUT # TODO: might not be necessary
+        iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
+        iptables -A INPUT -s ${containerGateway} -p tcp --dport 80 -j ACCEPT
+        iptables -A INPUT -j DROP
+      '';
+    };
     # Disable alterantives
     networkmanager.enable = lib.mkForce false;
     useDHCP = false;

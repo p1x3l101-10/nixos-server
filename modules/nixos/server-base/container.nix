@@ -2,11 +2,14 @@
 
 {
   # Host config to help with running containers
-  boot.enableContainers = true;
+  boot = {
+    enableContainers = true;
+    kernel.sysctl."net.ipv4.ip_forward" = 1;
+  };
   networking = {
     nat = {
       enable = true;
-      internalInterfaces = [ "br0" ];
+      internalInterfaces = [ "ve-+" "vb-+" "br0" ];
       externalInterface = "enp2s0";
       enableIPv6 = true;
     };

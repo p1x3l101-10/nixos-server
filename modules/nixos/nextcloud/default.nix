@@ -10,6 +10,7 @@ in {
     {
       containers.nextcloud = {
         autoStart = true;
+        privateNetwork = true;
         localAddress = "10.10.10.4/24";
         hostBridge = "br0";
         ephemeral = true;
