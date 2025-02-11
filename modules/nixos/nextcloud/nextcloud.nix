@@ -7,6 +7,7 @@
     hostName = "166.113.94.161";
     datadir = "/var/lib/nextcloud";
     config = {
+      adminuser = "internal-admin";
       adminpassFile = "/run/keys/nextcloud/admin-password.txt";
       dbtype = "sqlite";
     };
