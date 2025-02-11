@@ -34,6 +34,7 @@ in {
           "/nix/host/keys/nextcloud" = {
             mountPoint = "/run/keys/nextcloud";
             hostPath = "/nix/host/keys/nextcloud";
+            isReadOnly = false;
           };
         };
         config = { ... }: { imports = [ ./container.nix ]; };
