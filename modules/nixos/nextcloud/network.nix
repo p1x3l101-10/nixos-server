@@ -23,7 +23,7 @@
   networking = {
     defaultGateway = {
       address = "10.10.10.255";
-      inteface = "eth0";
+      interface = "eth0";
     };
     firewall = {
       allowedTCPPorts = [ 80 ];
