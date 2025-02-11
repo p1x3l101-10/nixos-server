@@ -8,7 +8,7 @@ in {
     bucket = "nextcloud";
     autocreate = true;
     inherit key;
-    secretFile = "/run/keys/s3/nextcloud.psk";
+    secretFile = "/run/secrets/s3/nextcloud.psk";
     hostname = "10.10.10.3";
     useSsl = false;
     port = 9000;

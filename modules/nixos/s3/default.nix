@@ -16,9 +16,8 @@ in {
         ephemeral = true;
         bindMounts = {
           "/nix/host/keys/minio".isReadOnly = false;
-          "/nix/host/state/Servers/Minio" = {
+          "/var/lib/minio" = {
             isReadOnly = false;
-            mountPoint = "/var/lib/minio";
             hostPath = "/nix/host/state/Servers/Minio";
           };
         };

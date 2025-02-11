@@ -28,7 +28,7 @@ in {
             isReadOnly = false;
           };
           "/run/keys/s3".hostPath = "/nix/host/keys/minio/keys/nextcloud";
-          "/run/keys/nextcloud" = {
+          "/run/secrets/nextcloud" = {
             hostPath = "/nix/host/keys/nextcloud";
             isReadOnly = false;
           };
