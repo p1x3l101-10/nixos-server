@@ -20,9 +20,7 @@
     llmnr = "true";
     dnsovertls = "true";
   };
-  networking = let
-    containerGateway = ;
-  in {
+  networking = {
     defaultGateway = {
       address = "10.10.10.255";
       inteface = "eth0";
