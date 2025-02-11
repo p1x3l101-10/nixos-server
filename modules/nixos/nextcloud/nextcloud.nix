@@ -20,5 +20,10 @@
       group = "nextcloud";
       mode = "0660";
     };
+    "/run/secrets/nextcloud".z = {
+      user = "root";
+      group = "root";
+      mode = "0771";
+    };
   };
 }
