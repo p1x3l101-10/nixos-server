@@ -27,12 +27,8 @@ in {
             hostPath = "/nix/host/state/Servers/Nextcloud";
             isReadOnly = false;
           };
-          "/nix/host/keys/minio/keys/nextcloud" = {
-            mountPoint = "/run/keys/s3";
-            hostPath = "/nix/host/keys/minio/keys/nextcloud";
-          };
-          "/nix/host/keys/nextcloud" = {
-            mountPoint = "/run/keys/nextcloud";
+          "/run/keys/s3".hostPath = "/nix/host/keys/minio/keys/nextcloud";
+          "/run/keys/nextcloud" = {
             hostPath = "/nix/host/keys/nextcloud";
             isReadOnly = false;
           };
