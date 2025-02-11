@@ -22,15 +22,7 @@
     dnsovertls = "true";
   };
   networking = {
-    firewall = {
-      allowedTCPPorts = [ 80 ];
-      extraCommands = ''
-        iptables -F INPUT # TODO: might not be necessary
-        iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
-        iptables -A INPUT -s "10.10.10.255" -p tcp --dport 80 -j ACCEPT
-        iptables -A INPUT -j DROP
-      '';
-    };
+    firewall.allowedTCPPorts = [ 80 ];
     # Disable alterantives
     dhcpcd.enable = false;
     networkmanager.enable = lib.mkForce false;
