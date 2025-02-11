@@ -17,7 +17,7 @@ in {
         forwardPorts = [
           {
             containerPort = 80;
-            hostPort = 7777;
+            hostPort = 25565;
             protocol = "tcp";
           }
         ];
@@ -35,7 +35,7 @@ in {
         };
         config = { ... }: { imports = [ ./container.nix ]; };
       };
-      networking.firewall.allowedTCPPorts = [ 7777 ]; # Maps to 7777 externally
+      networking.firewall.allowedTCPPorts = [ 25565 ]; # Maps to 7777 externally
     }
     {
       systemd.tmpfiles.settings = {
