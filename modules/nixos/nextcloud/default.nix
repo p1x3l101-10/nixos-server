@@ -4,12 +4,12 @@
 
 let
   # Habit
-  cfg.enable = false;
+  cfg.enable = true;
 in {
   config = lib.modules.mkIf cfg.enable (lib.nixos-home.attrsets.mergeAttrs [
     {
       containers.nextcloud = {
-        autoStart = true;
+        autoStart = false;
         privateNetwork = true;
         localAddress = "10.10.10.4/24";
         hostBridge = "br0";
