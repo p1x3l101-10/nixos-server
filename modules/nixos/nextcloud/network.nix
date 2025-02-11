@@ -5,9 +5,8 @@
     enable = true;
     wait-online.enable = true;
     networks = {
-      "10-wired" = {
+      "40-eth0" = {
         name = "eth0";
-        DHCP = "yes";
         linkConfig.RequiredForOnline = "routable";
       };
     };
