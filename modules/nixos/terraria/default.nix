@@ -61,7 +61,6 @@
       2934087687 # Auto-Trash Researched Items
       2896592287 # ResearchFromShop
       3412277684 # 杂鱼~ 杂鱼~
-      3420147549 # Shared Health
       3032011692 # Hyper Research
       ## Music Mods
       2824688266 # Calamity Mod Music
