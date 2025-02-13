@@ -19,7 +19,7 @@
   users.mutableUsers = false;
   services.openssh.settings.AllowUsers = [ "pixel" "root" ];
   environment.etc.nixos.source = "/home/pixel/nix-server";
-  environment.persistence."/nix/host/UserData".users.pixel.directories = [
+  environment.persistence."/nix/host/state/UserData".users.pixel.directories = [
     ".ssh"
     "nix-server"
   ];
