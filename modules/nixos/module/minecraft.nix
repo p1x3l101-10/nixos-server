@@ -163,6 +163,11 @@ in
         default = [];
         description = "Extra ports to map";
       };
+      rconStartup = mkOption {
+        type = with types; listOf str;
+        default = [];
+        description = "RCon commands to run on server startup";
+      };
     };
   };
   config = mkIf cfg.enable {
@@ -182,6 +187,7 @@ in
         (mkEnv "CF_FILE_ID" cfg.curseforge.pack.fileId)
         # Settings
         (mkEnv "MEMORY" ((builtins.toString cfg.settings.memory) + "G"))
+        (mkEnvRaw "RCON_CMDS_STARTUP" (lib.lists.concatStringsSep "\n" cfg.settings.rconStartup))
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
@@ -192,6 +198,9 @@ in
       ));
       volumes = [
         "/var/lib/minecraft/data:/data:rw"
+        "/var/lib/minecraft/mods:/mods:ro"
+        "/var/lib/minecraft/config:/config:ro"
+        "/var/lib/minecraft/global:/global:ro"
       ];
       # Sets the javaVersion of the image from the respecive values from the attrSet at the begining
       image = "internal/docker-minecraft:${toString cfg.settings.javaVersion}";
@@ -208,6 +217,31 @@ in
         mode = "0755";
       };
       "/var/lib/minecraft/data".d = {
+        user = "root";
+        group = "root";
+        mode = "0755";
+      };
+      "/var/lib/minecraft/config".d = {
+        user = "root";
+        group = "root";
+        mode = "0755";
+      };
+      "/var/lib/minecraft/mods".d = {
+        user = "root";
+        group = "root";
+        mode = "0755";
+      };
+      "/var/lib/minecraft/plugins".d = {
+        user = "root";
+        group = "root";
+        mode = "0755";
+      };
+      "/var/lib/minecraft/global".d = {
+        user = "root";
+        group = "root";
+        mode = "0755";
+      };
+      "/var/lib/minecraft/backups".d = {
         user = "root";
         group = "root";
         mode = "0755";
