@@ -1,0 +1,389 @@
+
+[attributes]
+
+	[attributes.armorReducedPercentage]
+		#The max percentage of damage getting reduced by armor points
+		#vanilla is 80
+		#default = 95
+		#Range: 0.0 ~ 100.0
+		reducedPercentage = 95.0
+
+	[attributes.attributeMax]
+		#The max value for this attribute
+		#vanilla is 1024
+		#default = 10000
+		#Range: 0.0 ~ 1.0E9
+		maxHP = 10000.0
+		#The max value for this attribute
+		#vanilla is 2048
+		#default = 10000
+		#Range: 0.0 ~ 1.0E9
+		maxAttack = 10000.0
+		#The max value for this attribute
+		#vanilla is 30
+		#default = 1024
+		#Range: 0.0 ~ 1.0E9
+		maxArmor = 1024.0
+		#The max value for this attribute
+		#vanilla is 20
+		#default = 1024
+		#Range: 0.0 ~ 1.0E9
+		maxToughness = 1024.0
+
+	[attributes.minimumSize]
+		#The minimum size a player can get through races and skills
+		#Range: 0.0 ~ 10000.0
+		minimumSize = 0.15
+
+[awakening]
+	#The percentage to become Majin when dying of Magicule Poison
+	#Range: 0.0 ~ 100.0
+	majinPercentage = 5.0
+	#The percentage to be blessed on reincarnation by 6 Greater Spirits when praying
+	#Range: 0.0 ~ 100.0
+	blessedPercentage = 5.0
+	#The number of ticks that players need to pray for spirits
+	#Range: > 0
+	prayingTime = 200
+	#The number of seconds of cooldown between each time of Spirit Praying
+	#Range: > 0
+	prayingCooldown = 1200
+	#The percentage to get a Lesser Spirit when praying in the labyrinth
+	#Range: 0.0 ~ 100.0
+	lesserSpiritPercentage = 40.0
+	#The percentage to get a Medium Spirit when praying in the labyrinth
+	#Range: 0.0 ~ 100.0
+	mediumSpiritPercentage = 30.0
+	#The percentage to get a Greater Spirit when praying in the labyrinth
+	#Range: 0.0 ~ 100.0
+	greaterSpiritPercentage = 20.0
+	#The percentage to get a Spirit Lord when praying in the labyrinth if met the condition
+	#Range: 0.0 ~ 100.0
+	lordSpiritPercentage = 1.0
+	#The level of Spirit needed to be counted for Hero Egg
+	#Range: 0 ~ 5
+	heroSpiritLevel = 3
+	#The number of Spirits needed to be a Hero Egg
+	#Range: 0 ~ 8
+	heroSpiritNumber = 6
+	#The percentage of fallen targets' EP getting added into the attacker's soul points
+	#Range: 0.0 ~ 100.0
+	epSoulRate = 50.0
+	#The number of raids needed for Mass Naming
+	#Range: 1 ~ 1000
+	raids_for_mass_naming = 25
+	#The number of human kills needed for Mass Naming
+	#Range: 1 ~ 1000000000
+	human_kills_for_mass_naming = 1000
+
+[block]
+
+	[block.charybdisCore]
+		#The amount of EP needed for Inactive Charybdis Core to turn Active
+		#Range: 0.0 ~ 1.0E7
+		turnActiveCoreEP = 100000.0
+		#List of Skills that can be obtained from right-clicking Inert Charybdis Core
+		inertCoreSkills = ["tensura:gravity_manipulation", "tensura:magic_jamming"]
+
+	[block.degenerateFusingCore]
+		#List of Skills that can be obtained from fusing with Inert Charybdis Core using Degenerate
+		fusingInertCoreSkills = ["tensura:gravity_manipulation", "tensura:magic_jamming", "tensura:magic_sense", "tensura:ultraspeed_regeneration"]
+		#List of Skills that can be obtained from fusing with Active Charybdis Core using Degenerate
+		fusingActiveCoreSkills = ["tensura:gravity_manipulation", "tensura:magic_sense"]
+		#List of Skills that can be obtained from fusing with Inactive Charybdis Core using Degenerate
+		fusingInactiveCoreSkills = ["tensura:gravity_manipulation"]
+		#The amount of EP that can be obtained from fusing with Inert Charybdis Core using Degenerate
+		#Range: 0.0 ~ 1.0E7
+		fusingCoreEP = 200000.0
+
+[effects]
+
+	[effects.MaxFearLevel]
+		#The max level of Fear can be applied in game
+		#default = 20
+		#Range: 0 ~ 255
+		maxValue = 20
+
+[entities]
+
+	[entities.tamedWanderRadius]
+		#The maximum distance the tamed entities can go from its wandering pos
+		#Range: 1.0 ~ 256.0
+		wanderRadius = 50.0
+
+	[entities.goblinClothingColors]
+		#Random colors for goblins' Clothing
+		colors = [13808780, 3154966, 8612179, 2105626, 3494666, 9830400]
+
+	[entities.structureMaps]
+		#The chance for Labyrinth Explorer Map to show up when the trades roll into it
+		#Range: 0.0 ~ 1.0
+		labyrinthMapChance = 0.2
+		#The chance for Hell Gate Explorer Map to show up when the trades roll into it
+		#Range: 0.0 ~ 1.0
+		hellGateMapChance = 0.2
+
+[races]
+
+	[races.startingRaces]
+		#List of races that can be selected through the Race Selection Menu
+		#default: ["tensura:human", "tensura:elf", "tensura:dwarf", "tensura:merfolk", "tensura:beastfolk", "tensura:goblin", "tensura:lizardman", "tensura:ogre", "tensura:orc", "tensura:slime", "tensura:wight", "tensura:ghoul", "tensura:lesser_daemon"]
+		startingRaces = ["tensura:human", "tensura:elf", "tensura:dwarf", "tensura:merfolk", "tensura:beastfolk", "tensura:goblin", "tensura:lizardman", "tensura:ogre", "tensura:orc", "tensura:slime", "tensura:wight", "tensura:ghoul", "tensura:lesser_daemon", "create_new_tempest:mechanical_construct"]
+		#List of races that can be obtained through picking the "Random" option in the Race Selection Menu
+		#default: the same as startingRaces
+		possibleRandomRaces = ["tensura:human", "tensura:ogre", "tensura:orc", "tensura:lizardman", "tensura:beastfolk", "tensura:slime", "tensura:merfolk", "tensura:elf", "tensura:dwarf", "tensura:goblin", "tensura:ghoul", "tensura:wight", "tensura:lesser_daemon", "create_new_tempest:mechanical_construct"]
+
+	[races.evolutionRequirements]
+		#The amount of EP needed to evolve into Enlightened or equivalent races
+		#Range: 0.0 ~ 1.0E9
+		epToEnlightened = 100000.0
+		#The amount of EP needed to evolve into Saint or equivalent races
+		#Range: 0.0 ~ 1.0E9
+		epToSaint = 400000.0
+		#The amount of EP needed to evolve into Divine or equivalent races
+		#Range: 0.0 ~ 1.0E9
+		epToDivine = 2000000.0
+		#The amount of EP needed to evolve into High Orc as an Orc
+		#Range: 0.0 ~ 1.0E9
+		epToHighOrc = 5000.0
+		#The amount of EP needed to evolve into Orc Disaster as an Orc Lord
+		#Range: 0.0 ~ 1.0E9
+		epToDisaster = 200000.0
+		#The amount of EP needed to evolve into Vampire Overcomer as a Vampire
+		#Range: 0.0 ~ 1.0E9
+		epToOvercomer = 150000.0
+		#The amount of EP needed to evolve into Wight King as a Wight
+		#Range: 0.0 ~ 1.0E9
+		epToWightKing = 200000.0
+		#The amount of EP needed to evolve into Spirit Skeleton as a Wight King
+		#Range: 0.0 ~ 1.0E9
+		epToSpiritSkeleton = 800000.0
+		#The amount of EP needed to evolve into True Dragonewt as a Dragonewt
+		#Range: 0.0 ~ 1.0E9
+		epToTrueDragonewt = 800000.0
+		#The number of Boss kills needed to evolve into Saint or equivalent races
+		#Range: 0 ~ 10000
+		bossForSaint = 4
+		#The number of Dragon Essences needed to evolve into Dragonewt as a Lizardman
+		#Range: 0 ~ 10000
+		essenceForDragonewt = 10
+		#The number of Elemental Essences needed to evolve into Mystic Oni as a Kijin
+		#Range: 0 ~ 10000
+		essenceForMystic = 10
+		#The number of Demon Essences needed to evolve into Wicked Oni as a Kijin
+		#Range: 0 ~ 10000
+		essenceForWicked = 10
+		#The number of Magic Ores needed to evolve into Metal Slime as a Slime
+		#Range: 0 ~ 10000
+		oreForMetalSlime = 100
+		#The number of Royal Bloods needed to evolve into Orc Lord as an Orc
+		#Range: 0 ~ 10000
+		bloodForOrcLord = 10
+		#The number of Zane Bloods needed to evolve into Vampire as a Human
+		#Range: 0 ~ 10000
+		bloodForVampireAsHuman = 5
+		#The number of Zane Bloods needed to evolve into Vampire as a Ghoul
+		#Range: 0 ~ 10000
+		bloodForVampireAsGhoul = 1
+
+	[races.possessionStats]
+		#The maximum amount of HP the user can get from possessing an entity
+		#Range: 0.0 ~ 1.0E9
+		maxHeathPossession = 6000.0
+		#The maximum amount of Attack Damage the user can get from possessing an entity
+		#Range: 0.0 ~ 1.0E9
+		maxAttackPossession = 100.0
+
+[items]
+
+	[items.elementalCoreCost]
+		#The amount of EP that an empty elemental core will take from the spirit when used
+		#Range: 0 ~ 1000000000
+		coreEPCost = 1000
+
+	[items.HolyMilk]
+		#List of harmful effects that get removed upon consumption
+		effects = ["minecraft:bad_omen", "minecraft:nausea", "minecraft:weakness", "minecraft:blindness", "minecraft:hunger", "minecraft:poison", "minecraft:darkness", "minecraft:mining_fatigue", "minecraft:levitation", "minecraft:slowness", "minecraft:unluck", "minecraft:wither", "tensura:burden", "tensura:chill", "tensura:fragility", "tensura:silence", "tensura:corrosion", "tensura:fatal_poison", "tensura:infection", "tensura:paralysis"]
+
+	[items.resetScrolls]
+		#List of Reset Scroll that can be used
+		scrolls = ["tensura:race_reset_scroll", "tensura:skill_reset_scroll", "tensura:character_reset_scroll"]
+
+[skills]
+
+	[skills.reincarnationSkills]
+		#List of Unique skills that can be randomly obtained through reincarnation
+		reincarnationSkills = ["tensura:absolute_severance", "tensura:berserk", "tensura:berserker", "tensura:bewilder", "tensura:chef", "tensura:chosen_one", "tensura:commander", "tensura:cook", "tensura:creator", "tensura:degenerate", "tensura:divine_berserker", "tensura:engorger", "tensura:envy", "tensura:falsifier", "tensura:fighter", "tensura:fusionist", "tensura:gourmand", "tensura:gourmet", "tensura:great_sage", "tensura:greed", "tensura:guardian", "tensura:healer", "tensura:infinity_prison", "tensura:lust", "tensura:martial_master", "tensura:mathematician", "tensura:merciless", "tensura:murderer", "tensura:musician", "tensura:observer", "tensura:oppressor", "tensura:predator", "tensura:pride", "tensura:reflector", "tensura:researcher", "tensura:royal_beast", "tensura:reaper", "tensura:reverser", "tensura:seer", "tensura:severer", "tensura:shadow_striker", "tensura:sloth", "tensura:sniper", "tensura:spearhead", "tensura:suppressor", "tensura:survivor", "tensura:traveler", "tensura:thrower", "tensura:tuner", "tensura:unyielding", "tensura:usurper", "tensura:villain", "tensura:wrath"]
+		#
+		#How many skills from the list that a players can gain on Reincarnation
+		#Range: 0 ~ 1000
+		skillNumber = 1
+		#
+		#List of Unique skills that can be randomly obtained through reincarnation as a second Unique
+		#Only applies when the Skill Number on reincarnation is 2
+		secondReincarnationSkills = ["tensura:chef", "tensura:commander", "tensura:degenerate", "tensura:divine_berserker", "tensura:falsifier", "tensura:gourmand", "tensura:great_sage", "tensura:guardian", "tensura:mathematician", "tensura:merciless", "tensura:murderer", "tensura:observer", "tensura:researcher", "tensura:royal_beast", "tensura:reverser", "tensura:seer", "tensura:suppressor", "tensura:survivor"]
+		#
+		#The chance for a player to gain a skill from additional Unique rolls on Reincarnation
+		#Only applies when the Skill Number on reincarnation is higher than 1
+		#Range: 0.0 ~ 100.0
+		additionalUniqueChance = 100.0
+		#
+		#The maximum number of bonus Unique Skills that resetCounterBonusUnique gamerule can give to a player
+		#Range: 0 ~ 10000
+		maxCounterBonus = 100
+		#
+		#Apply the reset counter Penalty when a player uses a Race/Skill Reset Scroll even when they meet all of their reset requirements
+		#Only applies when the resetIncompletePenalty gamerule is higher than 1
+		counterPenaltyNonCharScroll = false
+
+	[skills.skillCreatorSkills]
+		#List of Unique Skills available in Skill Creator
+		skillCreatorSkills = ["tensura:anti_skill", "tensura:absolute_severance", "tensura:berserk", "tensura:berserker", "tensura:bewilder", "tensura:chef", "tensura:commander", "tensura:cook", "tensura:divine_berserker", "tensura:falsifier", "tensura:fighter", "tensura:fusionist", "tensura:gourmand", "tensura:guardian", "tensura:healer", "tensura:martial_master", "tensura:mathematician", "tensura:murderer", "tensura:musician", "tensura:observer", "tensura:oppressor", "tensura:reflector", "tensura:researcher", "tensura:royal_beast", "tensura:reaper", "tensura:reverser", "tensura:seer", "tensura:severer", "tensura:shadow_striker", "tensura:sniper", "tensura:spearhead", "tensura:suppressor", "tensura:survivor", "tensura:traveler", "tensura:thrower", "tensura:tuner", "tensura:usurper", "tensura:villain"]
+
+	[skills.otherworlderSkillsDrop]
+		#The chance in percentage for otherworlders to drop their Unique skills to the attacker
+		#Range: 0.0 ~ 100.0
+		dropChance = 0.0
+
+	[skills.miscSkillValue]
+		#The number of seconds that Severance will remove itself after if not updated.
+		#0 = disable Severance
+		#-1 = last forever
+		#default = 300
+		#Range: -1 ~ 1000000
+		severanceRemoveSec = 300
+		#The number of seconds that Possession Bodies will despawn.
+		#0 = instant despawn
+		#-1 = doesn't despawn
+		#default = 300
+		#Range: -1 ~ 1000000
+		bodyDespawnTick = 300
+		#The maximum amount of EP that an EP stealing ability can take
+		#Range: 0.0 ~ 1.0E9
+		maximumEPSteal = 1000000.0
+		#Allow Thrower to place down Liquid on thrown
+		throwerLiquid = true
+
+	[skills.resistanceValue]
+		#How many times of current HP that incoming damage value needs to be higher to deal damage to the user with Resistances
+		#-1 = always applied regardless of HP
+		#Range: -1.0 ~ 1000000.0
+		hpForResistance = 0.5
+		#The multiplier that will be applied on incoming damage when the damage went through Resistances
+		#Range: 0.0 ~ 1000000.0
+		resistanceDamageMultiplier = 0.5
+		#How many times of current HP that incoming damage value needs to be higher to deal damage to the user with Nullifications
+		#-1 = always applied regardless of HP
+		#Range: -1.0 ~ 1000000.0
+		hpForNullification = -1.0
+		#The multiplier that will be applied on incoming damage when the damage went through Resistances
+		#Range: 0.0 ~ 1000000.0
+		nullificationDamageMultiplier = 0.0
+
+	[skills.masteryGain]
+		#Bonus points of mastery players get when using skills.
+		#Range: 0 ~ 1000000
+		bonusMasteryGain = 0
+		#Bonus points of learning players get when using skills.
+		#Range: 0 ~ 1000000
+		bonusLearningGain = 0
+
+[arts]
+
+	[arts.battlewillManualList]
+		#List of Battlewills that can be randomly obtained from using the Battlewill Manual
+		battlewills = ["tensura:aura_slash", "tensura:aura_sword", "tensura:earthshatter_kick", "tensura:ogre_sword_guillotine", "tensura:roaring_lion_punch", "tensura:dark_eight_palms", "tensura:elephant_stampede", "tensura:magic_bullet", "tensura:ogre_flame", "tensura:air_flight", "tensura:aura_shield", "tensura:battlewill", "tensura:diamond_path", "tensura:formhide", "tensura:instant_move", "tensura:violent_break"]
+
+	[arts.violentBreakEffect]
+		#List of harmful effects that get removed upon activation
+		effects = ["minecraft:bad_omen", "minecraft:nausea", "minecraft:weakness", "minecraft:blindness", "minecraft:hunger", "minecraft:poison", "minecraft:darkness", "minecraft:mining_fatigue", "minecraft:levitation", "minecraft:slowness", "minecraft:unluck", "minecraft:wither", "tensura:burden", "tensura:chill", "tensura:fragility", "tensura:silence", "tensura:corrosion", "tensura:fatal_poison", "tensura:infection", "tensura:paralysis", "tensura:mind_control"]
+
+[enchantments]
+
+	[enchantments.enchantmentEP]
+		#The amount of EP needed to become an Unique Equipment
+		#Range: 0 ~ 1000000000
+		uniqueEP = 50000
+		#The amount of EP needed to become an Legend Equipment
+		#Range: 0 ~ 1000000000
+		legendaryEP = 250000
+		#The amount of EP needed to become an God Equipment
+		#Range: 0 ~ 1000000000
+		godEP = 1000000
+
+	[enchantments.maxSlotting]
+		#The max level of Slotting a weapon can get for data pack
+		#Range: 0 ~ 100
+		maxSlotting = 3
+
+	[enchantments.commonEngrave]
+		#Common engraving enchantments
+		enchantments = ["tensura:crushing", "tensura:sturdy", "tensura:swift"]
+
+	[enchantments.uncommonEngrave]
+		#Uncommon engraving enchantments
+		enchantments = ["tensura:magic_weapon", "tensura:holy_weapon", "tensura:slotting", "tensura:breathing_support", "tensura:elemental_boost", "tensura:elemental_resistance"]
+
+	[enchantments.rareEngrave]
+		#Rare engraving enchantments
+		enchantments = ["tensura:energy_steal", "tensura:slotting", "tensura:barrier_piercing"]
+
+	[enchantments.veryRareEngrave]
+		#Very rare engraving enchantments
+		enchantments = ["tensura:severance", "tensura:soul_eater", "tensura:slotting", "tensura:elemental_boost", "tensura:elemental_resistance"]
+
+[magicule]
+	#Base magicule for a chunk
+	#Range: 0.0 ~ 1.0E8
+	baseMagicule = 500.0
+	#Base magicule regeneration per second for a chunk
+	#Range: 0.0 ~ 1.0E8
+	baseMagiculeRegeneration = 10.0
+	#How often magicule is synced to clients when marked as dirty in ticks
+	#Range: 1 ~ 12000
+	magiculeSyncInterval = 15
+	#How often maxMagiculeModifier are updated in ticks
+	#Range: 1 ~ 12000
+	modifierUpdateInterval = 100
+	#Seed for magicule generation
+	#Changing this will change the magicule values for all chunks
+	#Range: -9223372036854775808 ~ 9223372036854775807
+	magiculeSeed = -5537670692300115688
+
+	[magicule.energyRegen]
+		#The percentage of the current chunk's Magicule gets turned into players' MP within the chunk each 10 ticks (half a second)
+		#Range: 0.0 ~ 1.0E9
+		manaRegenPercentage = 0.01
+		#The base amount of Aura that players each 10 ticks (half a second)
+		#Range: 0.0 ~ 1.0E9
+		auraBaseRegen = 2.0
+
+[naming]
+
+	[naming.namingRequirement]
+		#The percentage of max HP for the target to submit to the namer
+		#Range: 0.0 ~ 100.0
+		hpToName = 25.0
+		#The percentage of EP of the namer for the target to submit to the namer
+		#Range: 0.0 ~ 100.0
+		epToName = 1.0
+
+	[naming.namingCost]
+		#The maximum amount of EP that an entity can gain from being named
+		#Range: 0.0 ~ 1.0E9
+		maxEPFromNaming = 1000000.0
+		#The maximum amount of Magicule that the namer can lose from naming a target
+		#Range: 0.0 ~ 1.0E9
+		maxMagiculeCost = 3000000.0
+
+	[naming.names]
+		#Random names for the Naming menu
+		names = ["Viciel", "MinhEragon", "Borniuus", "Nieadni", "R.E", "Arthur", "ProfessorAkaChris", "Subordinate", "Memoires", "Kenji", "Mac", "AxelDude", "Geld", "Benimaru", "Shion", "Shuna", "Rimuru", "Veldora", "Hakurou", "Milim", "Gabiru", "Souei", "Ranga", "Gobta", "Diablo", "Rigurd", "Beretta", "Clayman", "Leon", "Ifrit", "Mjurran", "Carrion"]
+
+[misc]
+
+	[misc.maxEPReductionPercentage]
+		#The maximum percentage of EP reduction when used in calculation for EP gain after killing mobs
+		#Range: 0.0 ~ 1.0
+		maxEPReductionPercentage = 0.9
+
