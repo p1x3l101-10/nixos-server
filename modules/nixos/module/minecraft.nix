@@ -134,11 +134,12 @@ in
       };
       javaVersion = mkOption {
         type = types.enum [
-          8
-          17
-          21
+          "8"
+          "17-alpine"
+          "17-graalvm"
+          "21-alpine"
         ];
-        default = 21;
+        default = "21-alpine";
         description = "Java version to select";
       };
       type = mkOption {
