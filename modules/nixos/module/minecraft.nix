@@ -204,6 +204,7 @@ in
         "/var/lib/minecraft/mods:/mods:ro"
         "/var/lib/minecraft/config:/config:ro"
         "/var/lib/minecraft/global:/global:ro"
+        "/nix/store:/nix/store:ro"
       ];
       # Sets the javaVersion of the image from the respecive values from the attrSet at the begining
       image = "internal/docker-minecraft:${toString cfg.settings.javaVersion}";
