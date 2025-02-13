@@ -8,6 +8,7 @@ in
     settings = {
       eula = true;
       type = "forge";
+      forgeVersion = "43.4.16";
       version = "1.19.2";
       javaVersion = 17;
       memory = 8;

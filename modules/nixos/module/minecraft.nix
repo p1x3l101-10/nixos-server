@@ -173,6 +173,10 @@ in
         default = null;
         description = "extra files to be added to the server as a generic pack";
       };
+      forgeVersion = mkOption {
+        type = with types; nullOr str;
+        default = null;
+      }
     };
   };
   config = mkIf cfg.enable {
@@ -194,6 +198,7 @@ in
         (mkEnv "MEMORY" ((builtins.toString cfg.settings.memory) + "G"))
         (mkEnvRaw "RCON_CMDS_STARTUP" (lib.strings.concatStringsSep "\n" cfg.settings.rconStartup))
         (mkEnvRaw "GENERIC_PACK" ( if cfg.settings.extraFiles == null then null else (toString (pkgs.callPackage ./resources/genericPack.nix { src = cfg.settings.extraFiles; }))))
+        (mkEnvRaw "forge_version" cfg.settings.forgeVersion)
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
