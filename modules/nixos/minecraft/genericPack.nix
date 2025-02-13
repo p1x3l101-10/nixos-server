@@ -14,6 +14,7 @@ stdenvNoCC.mkDerivation {
     zip -r ./out.zip ./*
   '';
   installPhase = ''
-    mv ./out.zip $out
+    mkdir -p $out
+    mv ./out.zip $out/pack.zip
   '';
 }
