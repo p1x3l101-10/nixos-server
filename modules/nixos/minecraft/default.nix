@@ -9,7 +9,7 @@ in
     settings = {
       eula = true;
       type = "modrinth";
-      javaVersion = 17;
+      javaVersion = "17-graalvm";
       memory = 8;
       port = 25565;
       rconStartup = [];
