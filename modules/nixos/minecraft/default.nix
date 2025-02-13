@@ -13,7 +13,7 @@ in
       memory = 8;
       port = 25565;
       extraEnv = {
-        GENERIC_PACK = (pkgs.callPackage ./genericPack.nix {}) + "/pack.zip";
+        GENERIC_PACK = pkgs.callPackage ./genericPack.nix {};
       };
       rconStartup = [];
     };
