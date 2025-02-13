@@ -249,9 +249,9 @@ in
         group = "root";
         mode = "0755";
       };
-      "/var/lib/minecraft/data".d = {
-        user = "root";
-        group = "root";
+      "/var/lib/minecraft/data/saves".d = {
+        user = "1000";
+        group = "1000";
         mode = "0755";
       };
       "/var/lib/minecraft/config".d = {
