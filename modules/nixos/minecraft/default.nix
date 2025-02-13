@@ -12,9 +12,7 @@ in
       javaVersion = 17;
       memory = 8;
       port = 25565;
-      extraEnv = {
-        GENERIC_PACK = builtins.toString (pkgs.callPackage ./genericPack.nix {});
-      };
+      extraFiles = ./pack;
       rconStartup = [];
     };
   };
