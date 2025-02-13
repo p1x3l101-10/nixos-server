@@ -1,12 +1,13 @@
 { lib
 , stdenvNoCC
 , zip
+, src ? null
 }:
 
 stdenvNoCC.mkDerivation {
   pname = "genericPack";
-  version = "1.0.0";
-  src = ./pack;
+  version = "1";
+  inherit src;
   nativeBuildInputs = [
     zip
   ];

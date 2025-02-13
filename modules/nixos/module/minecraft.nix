@@ -168,6 +168,11 @@ in
         default = [];
         description = "RCon commands to run on server startup";
       };
+      extraFiles = mkOption {
+        type = with types; nullOr path;
+        default = null;
+        description = "extra files to be added to the server as a generic pack";
+      };
     };
   };
   config = mkIf cfg.enable {
@@ -188,6 +193,7 @@ in
         # Settings
         (mkEnv "MEMORY" ((builtins.toString cfg.settings.memory) + "G"))
         (mkEnvRaw "RCON_CMDS_STARTUP" (lib.strings.concatStringsSep "\n" cfg.settings.rconStartup))
+        (mkEnvRaw "GENERIC_PACK" ( if cfg.settings.extraFiles == null then null else (toString (pkgs.callPackage ./resources/genericPack.nix { src = cfg.settings.extraFiles; }))))
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
