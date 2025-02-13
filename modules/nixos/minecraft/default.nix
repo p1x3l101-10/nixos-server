@@ -5,15 +5,13 @@ in
 {
   services.minecraft = {
     enable = true;
+    modrinth.pack.project = "/global/pack.mrpack";
     settings = {
       eula = true;
-      type = "forge";
-      forgeVersion = "43.4.16";
-      version = "1.19.2";
+      type = "modrinth";
       javaVersion = 17;
       memory = 8;
       port = 25565;
-      extraFiles = ./pack;
       rconStartup = [];
     };
   };

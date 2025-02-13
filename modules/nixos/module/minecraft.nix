@@ -65,8 +65,8 @@ in
       };
       pack = {
         slug = mkOption {
-          type = types.str;
-          default = "";
+          type = with types; nullOr str;
+          default = null;
         };
         fileId = mkOption {
           type = with types; nullOr int;
@@ -75,6 +75,24 @@ in
       };
     };
     modrinth = {
+      pack = {
+        project = mkOption {
+          type = with types; nullOr str;
+          default = null;
+        };
+        loader = mkOption {
+          type = with types; nullOr enum [
+            "forge"
+            "fabric"
+            "quilt"
+          ];
+          default = null;
+        };
+        version = mkOption {
+          type = with types; nullOr string;
+          default = null;
+        };
+      };
       mods = {
         projects = mkOption {
           type = with types; listOf (coercedTo str (modId: { inherit modId; }) (submodule modrinthMod));
@@ -136,7 +154,7 @@ in
           "auto_curseforge"
           "ftba"
           "modrinth"
-          # Other (unsupported, hack away at extraEnvironment)
+          # Other (unsupported, hack away at extraEnv)
           "crucible"
           "limbo"
           "spongevanilla"
@@ -199,6 +217,9 @@ in
         (mkEnvRaw "RCON_CMDS_STARTUP" (lib.strings.concatStringsSep "\n" cfg.settings.rconStartup))
         (mkEnvRaw "GENERIC_PACK" ( if cfg.settings.extraFiles == null then null else (toString (pkgs.callPackage ./resources/genericPack.nix { src = cfg.settings.extraFiles; }))))
         (mkEnvRaw "forge_version" cfg.settings.forgeVersion)
+        (mkEnvRaw "MODRINTH_MODPACK" cfg.modrinth.pack.project)
+        (mkEnvRaw "MODRINTH_LOADER" cfg.modrinth.pack.loader)
+        (mkEnvRaw "MODRINTH_VERSION" cfg.modrinth.pack.version)
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
