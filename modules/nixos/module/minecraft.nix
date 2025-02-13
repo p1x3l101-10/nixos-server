@@ -187,7 +187,7 @@ in
         (mkEnv "CF_FILE_ID" cfg.curseforge.pack.fileId)
         # Settings
         (mkEnv "MEMORY" ((builtins.toString cfg.settings.memory) + "G"))
-        (mkEnvRaw "RCON_CMDS_STARTUP" (lib.lists.concatStringsSep "\n" cfg.settings.rconStartup))
+        (mkEnvRaw "RCON_CMDS_STARTUP" (lib.strings.concatStringsSep "\n" cfg.settings.rconStartup))
         (mkEnv "REPLACE_ENV_IN_PLACE" "true")
         (mkEnv "REPLACE_ENV_VARIABLE_PREFIX" "true")
         (mkEnv "REPLACE_ENV_DURING_SYNC" "true")
