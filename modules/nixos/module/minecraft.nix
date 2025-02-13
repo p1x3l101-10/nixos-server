@@ -81,11 +81,11 @@ in
           default = null;
         };
         loader = mkOption {
-          type = with types; nullOr enum [
+          type = with types; nullOr (enum [
             "forge"
             "fabric"
             "quilt"
-          ];
+          ]);
           default = null;
         };
         version = mkOption {
