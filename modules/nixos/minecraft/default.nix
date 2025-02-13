@@ -16,6 +16,6 @@ in
     };
   };
   environment.persistence."/nix/host/state/Servers/Minecraft".directories = [
-    { directory = "/var/lib/minecraft/saves"; user = "1000"; group = "1000"; } # Only preserve the saves
+    { directory = "/var/lib/minecraft"; user = "1000"; group = "1000"; }
   ];
 }
