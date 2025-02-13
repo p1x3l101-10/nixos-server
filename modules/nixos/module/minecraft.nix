@@ -188,9 +188,6 @@ in
         # Settings
         (mkEnv "MEMORY" ((builtins.toString cfg.settings.memory) + "G"))
         (mkEnvRaw "RCON_CMDS_STARTUP" (lib.strings.concatStringsSep "\n" cfg.settings.rconStartup))
-        (mkEnv "REPLACE_ENV_IN_PLACE" "true")
-        (mkEnv "REPLACE_ENV_VARIABLE_PREFIX" "true")
-        (mkEnv "REPLACE_ENV_DURING_SYNC" "true")
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
