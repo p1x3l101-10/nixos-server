@@ -12,6 +12,9 @@ stdenvNoCC.mkDerivation {
     zip
   ];
   buildPhase = ''
+    mkdir -p ./config ./mods
+    touch ./config/.keep
+    touch ./mods/.keep
     zip -r ./out.zip ./*
   '';
   installPhase = ''
