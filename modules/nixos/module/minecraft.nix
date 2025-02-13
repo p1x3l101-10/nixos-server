@@ -176,7 +176,7 @@ in
       forgeVersion = mkOption {
         type = with types; nullOr str;
         default = null;
-      }
+      };
     };
   };
   config = mkIf cfg.enable {
