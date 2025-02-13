@@ -1,7 +1,7 @@
 { lib
 , stdenvNoCC
 , zip
-, src ? null
+, src
 }:
 
 stdenvNoCC.mkDerivation {
