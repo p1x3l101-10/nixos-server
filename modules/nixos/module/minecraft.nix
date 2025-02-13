@@ -229,7 +229,7 @@ in
         )
       ));
       volumes = [
-        "/var/lib/minecraft/data:/data:rw"
+        "/var/lib/minecraft/data/saves:/data/saves:rw"
         "/var/lib/minecraft/mods:/mods:ro"
         "/var/lib/minecraft/config:/config:ro"
         "/var/lib/minecraft/global:/global:ro"
