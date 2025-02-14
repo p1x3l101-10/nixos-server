@@ -11,5 +11,5 @@ versions=(
 
 for javaVersion in "${versions[@]}"; do
   mkdir -p ./modules/nixos/module/resources/mc-versions
-  nix-prefetch-docker "$image" "java${javaVersion}" --quiet > "./modules/nixos/module/resources/mc-versions/${javaVersion}.nix"
+  nix run nixpkgs#nix-prefetch-docker "$image" "java${javaVersion}" --quiet > "./modules/nixos/module/resources/mc-versions/${javaVersion}.nix"
 done
