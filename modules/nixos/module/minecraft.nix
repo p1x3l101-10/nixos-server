@@ -239,7 +239,7 @@ in
       # Sets the javaVersion of the image from the respecive values from the attrSet at the begining
       image = "internal/docker-minecraft:${toString cfg.settings.javaVersion}";
       imageFile = pkgs.internal.dockerMinecraft.override {
-        inherit ((import ./. + "resources/mc-versions/${cfg.settings.javaVersion}.nix")) imageDigest sha256;
+        inherit (import (./. + "resources/mc-versions/${cfg.settings.javaVersion}.nix")) imageDigest sha256;
         finalImageTag = (toString cfg.settings.javaVersion); 
       };
       autoStart = true;
