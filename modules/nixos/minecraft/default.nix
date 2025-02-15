@@ -8,7 +8,7 @@ in
     modrinth.pack.project = "/global/pack.mrpack";
     settings = {
       eula = true;
-      type = "modrinth";
+      type = "forge";
       javaVersion = "17-graalvm";
       memory = 8;
       port = 25565;
