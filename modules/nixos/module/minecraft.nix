@@ -240,7 +240,7 @@ in
         )
       ));
       volumes = [
-        "/var/lib/minecraft/saves:/data/saves:rw"
+        "/var/lib/minecraft/world:/data/world:rw"
         "/var/lib/minecraft/mods:/mods:ro"
         "/var/lib/minecraft/config:/config:ro"
         "/var/lib/minecraft/global:/global:ro"
@@ -260,7 +260,7 @@ in
         group = "root";
         mode = "0755";
       };
-      "/var/lib/minecraft/saves".d = {
+      "/var/lib/minecraft/world".d = {
         user = "1000";
         group = "1000";
         mode = "0755";
