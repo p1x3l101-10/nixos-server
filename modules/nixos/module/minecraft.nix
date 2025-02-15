@@ -295,6 +295,14 @@ in
           Once you have agreed to the EULA, set `services.minecraft.settings.eula = true` to agree
         ''; 
       }
+      {
+        assertion = (lib.strings.hasInfix "alpine" cfg.settings.javaVersion) && (cfg.generic.pack != null);
+        message = ''
+          Alpine JVMs do not support generic packs
+          These files are Zips, and the alpine container does not have tools to manipulate zip files
+          Please change to another JVM version
+        '';
+      }
     ];
     # Encurage people to not use extraEnv
     warnings = (lib.lists.optional (cfg.settings.extraEnv != {}) ''
