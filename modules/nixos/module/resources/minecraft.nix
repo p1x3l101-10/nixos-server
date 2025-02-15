@@ -19,7 +19,7 @@
     "21-alpine" = {
       # java21-alpine
       imageDigest = "sha256:fd43d03de558b598401968f898b6976ef05875234153261e7772470dce834c11";
-      sha256 = "sha256-uufGE5km+dSLVztO+cIzRG9xhOQMcU5xp0kdbccMSBo=";
+      sha256 = "sha256-RNGNzXGQH0Hd5PRxRTh4ivR+7LrlvMLvwNd8oOdAiYc=";
     };
   };
 }
