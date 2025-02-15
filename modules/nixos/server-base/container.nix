@@ -24,5 +24,6 @@
   };
   environment.persistence."/nix/host/cache".directories = [
     { directory = "/var/lib/machines"; mode = "0700"; }
+    { directory = "/var/lib/containers"; mode = "0700"; }
   ];
 }

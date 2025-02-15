@@ -362,11 +362,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1739230858,
-        "narHash": "sha256-5SMKq1Uly/XcHln8Gg25PO8MoO39AsDKwTaLDwzKgMU=",
+        "lastModified": 1739644077,
+        "narHash": "sha256-i31nyu8kglcASXs8rzprgZvXb7b6C/Izq2OfsV7nY2M=",
         "owner": "p1x3l101-10",
         "repo": "nixos",
-        "rev": "3407794bc8eab23067def959ee1e3bbbb2bae02c",
+        "rev": "f80cf4a3078fb4aeac12e1066b616a4238256776",
         "type": "github"
       },
       "original": {
