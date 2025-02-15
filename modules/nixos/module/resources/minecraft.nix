@@ -23,7 +23,7 @@
     };
     "21-graalvm" = {
       # java21-graalvm
-      imageDigest = "sha256-RNGNzXGQH0Hd5PRxRTh4ivR+7LrlvMLvwNd8oOdAiYc=";
+      imageDigest = "sha256:f5d24da003026019ea54190a857af1371bccc5c9d7450c8d94c9c1af42fbdc55";
       sha256 = "sha256-RNGNzXGQH0Hd5PRxRTh4ivR+7LrlvMLvwNd8oOdAiYc=";
     };
   };
