@@ -5,7 +5,10 @@ in
 {
   services.minecraft = {
     enable = true;
-    generic.pack = "https://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.7.2_Server_Java_17-21.zip";
+    generic.pack = (pkgs.fetchurl {
+      url = "https://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.7.2_Server_Java_17-21.zip";
+      hash = "sha256-IDf53ScNurrewUBbAw5McmzXXuCyRbLs+F0ObY3wUlg=";
+    });
     settings = {
       eula = true;
       type = "forge";
