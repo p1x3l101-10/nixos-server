@@ -20,7 +20,6 @@ in
       customServer = "lwjgl3ify-forgePatches.jar";
       jvmOpts = "-Dfml.readTimeout=180 @java9args.txt";
     };
-    autoPause.enable = true;
   };
   environment.persistence."/nix/host/state/Servers/Minecraft".directories = [
     { directory = "/var/lib/minecraft"; user = "1000"; group = "1000"; }
