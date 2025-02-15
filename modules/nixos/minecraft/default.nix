@@ -10,6 +10,7 @@ in
       eula = true;
       type = "forge";
       javaVersion = "17-graalvm";
+      version = "1.7.10";
       memory = 8;
       port = 25565;
       rconStartup = [];
