@@ -10,6 +10,7 @@
     initialHashedPassword = "$y$j9T$NSMuZ83C3iGB1HqRhcZOy.$6CGZk2KH94gE/gjBro9vioOkOFJw.a4rhQKJI4HzBB9";
     packages = with pkgs; [
       borgbackup
+      vim
     ];
   };
   users.users.root.openssh.authorizedKeys.keys = [
