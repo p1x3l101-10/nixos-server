@@ -5,7 +5,7 @@ in
 {
   services.minecraft = {
     enable = true;
-    modrinth.pack.project = "/global/pack.mrpack";
+    generic.pack = "https://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.7.2_Server_Java_17-21.zip";
     settings = {
       eula = true;
       type = "forge";
