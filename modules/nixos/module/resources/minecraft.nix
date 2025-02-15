@@ -9,7 +9,7 @@
     "17-alpine" = {
       # java17-alpine
       imageDigest = "sha256:c7f2bd3d6cc4836c2a14cab0d1e4776e891c1fc87772ed7bbc8f66d61300caab";
-      sha256 = "sha256-G67Yxs/nxTZeXw5q+p6YvGAqMZj3E50bYvo+ptMbAZ0=";
+      sha256 = "sha256-BDk/T7lKNlZLfRQ8HC50K3LqL3Hyx4VzRT+KrvUv+ds";
     };
     "17-graalvm" = {
       # java17-graalvm
