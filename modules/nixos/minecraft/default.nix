@@ -19,6 +19,9 @@ in
       rconStartup = [];
       customServer = "lwjgl3ify-forgePatches.jar";
       jvmOpts = "-Dfml.readTimeout=180 @java9args.txt";
+      whitelist = [
+        "P1x3l101"
+      ];
     };
   };
   environment.persistence."/nix/host/state/Servers/Minecraft".directories = [

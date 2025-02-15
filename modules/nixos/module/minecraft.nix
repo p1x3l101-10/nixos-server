@@ -189,6 +189,16 @@ in
       customServer = mkMcOption "Custom server jar";
       jvmOpts = mkMcOption "Custom JVM options";
       forgeVersion = mkMcOption "";
+      whitelist = mkOption {
+        type = with types; listOf str;
+        default = [];
+        description = "List of players to whitelist";
+      };
+      ops = mkOption {
+        type = with types; listOf str;
+        default = [];
+        description = "List of players to op";
+      };
     };
     autoPause = {
       enable = mkEnableOption "Autopause";
@@ -231,6 +241,8 @@ in
         (mkEnv "AUTOPAUSE_TIMEOUT_INIT" cfg.autoPause.timeout.init)
         (mkEnv "AUTOPAUSE_TIMEOUT_KN" cfg.autoPause.timeout.knock)
         (mkEnv "AUTOPAUSE_PERIOD" cfg.autoPause.period)
+        (mkEnvRawList "WHITELIST" cfg.settings.whitelist "\n")
+        (mkEnvRawList "OPS" cfg.settings.ops "\n")
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
