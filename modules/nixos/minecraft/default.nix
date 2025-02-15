@@ -12,7 +12,7 @@ in
     settings = {
       eula = true;
       type = "custom";
-      javaVersion = "21-alpine";
+      javaVersion = "17-alpine";
       version = "1.7.10";
       memory = 8;
       port = 25565;
