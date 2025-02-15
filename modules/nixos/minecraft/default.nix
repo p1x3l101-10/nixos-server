@@ -12,7 +12,7 @@ in
     settings = {
       eula = true;
       type = "forge";
-      javaVersion = "17-graalvm";
+      javaVersion = "21";
       version = "1.7.10";
       memory = 8;
       port = 25565;
