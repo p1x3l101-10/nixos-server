@@ -27,14 +27,6 @@ in
       ];
     };
   };
-  virtualisation.oci-containers.containers.minecraft.volumes = [
-    "/var/lib/minecraft/serverutilities:/data/serverutilities:rw"
-  ];
-  systemd.tmpfiles.settings."50-minecraft"."/var/lib/minecraft/serverutilities".d = {
-        user = "1000";
-        group = "1000";
-        mode = "0755";
-      };
   environment.persistence."/nix/host/state/Servers/Minecraft".directories = [
     { directory = "/var/lib/minecraft"; user = "1000"; group = "1000"; }
   ];
