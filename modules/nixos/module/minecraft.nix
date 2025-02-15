@@ -253,7 +253,7 @@ in
         finalImageTag = (toString cfg.settings.javaVersion); 
       };
       autoStart = true;
-      extraOptions = (lib.lists.optionals cfg.autoPause.enable ["--cap-add=CAP_NET_RAW" "--network slirp4netns:port_handler=slirp4netns"]);
+      extraOptions = (lib.lists.optionals cfg.autoPause.enable ["--cap-add=CAP_NET_RAW" "--network=slirp4netns:port_handler=slirp4netns"]);
     };
     systemd.tmpfiles.settings."50-minecraft" = {
       "/var/lib/minecraft".d = {
