@@ -16,7 +16,10 @@ in
       version = "1.7.10";
       memory = 8;
       port = 25565;
-      rconStartup = [];
+      rconStartup = [
+        "bq_admin default load" # Reload for updates
+        "bq_admin hardcore true"
+      ];
       customServer = "lwjgl3ify-forgePatches.jar";
       jvmOpts = "-Dfml.readTimeout=180 @java9args.txt";
       whitelist = [
