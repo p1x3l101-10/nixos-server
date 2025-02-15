@@ -21,5 +21,10 @@
       imageDigest = "sha256:fd43d03de558b598401968f898b6976ef05875234153261e7772470dce834c11";
       sha256 = "sha256-RNGNzXGQH0Hd5PRxRTh4ivR+7LrlvMLvwNd8oOdAiYc=";
     };
+    "21-graalvm" = {
+      # java21-graalvm
+      imageDigest = "sha256-RNGNzXGQH0Hd5PRxRTh4ivR+7LrlvMLvwNd8oOdAiYc=";
+      sha256 = "sha256-RNGNzXGQH0Hd5PRxRTh4ivR+7LrlvMLvwNd8oOdAiYc=";
+    };
   };
 }
