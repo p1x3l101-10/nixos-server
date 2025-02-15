@@ -11,6 +11,11 @@ let
     default = null;
     inherit description;
   };
+  mkMcIntOption = description: mkOption {
+    type = with types; nullOr int;
+    default = null;
+    inherit description;
+  };
   curseforgeMod = _: with lib; {
     options = {
       modId = mkOption {
@@ -73,18 +78,12 @@ in
       };
       pack = {
         slug = mkMcOption "";
-        fileId = mkOption {
-          type = with types; nullOr int;
-          default = null;
-        };
+        fileId = mkMcIntOption "";
       };
     };
     modrinth = {
       pack = {
-        project = mkOption {
-          type = with types; nullOr str;
-          default = null;
-        };
+        project = mkMcOption "";
         loader = mkOption {
           type = with types; nullOr (enum [
             "forge"
@@ -93,10 +92,7 @@ in
           ]);
           default = null;
         };
-        version = mkOption {
-          type = with types; nullOr str;
-          default = null;
-        };
+        version = mkMcOption "";
       };
       mods = {
         projects = mkOption {
@@ -194,6 +190,15 @@ in
       jvmOpts = mkMcOption "Custom JVM options";
       forgeVersion = mkMcOption "";
     };
+    autoPause = {
+      enable = mkEnableOption "Autopause";
+      timeout = {
+        established = mkMcIntOption "time between the last client disconnect and the pausing of the process";
+        init = mkMcIntOption "time between server start and the pausing of the process";
+        knock = mkMcIntOption "time between knocking of the port (e.g. by the main menu ping) and the pausing of the process";
+      };
+      period = mkMcIntOption "period of the daemonized state machine, that handles the pausing of the process";
+    };
   };
   config = mkIf cfg.enable {
     virtualisation.oci-containers.containers.minecraft = {
@@ -221,6 +226,11 @@ in
         (mkEnvRaw "MODRINTH_VERSION" cfg.modrinth.pack.version)
         (mkEnvRaw "CUSTOM_SERVER" cfg.settings.customServer)
         (mkEnvRaw "JVM_OPTS" cfg.settings.jvmOpts)
+        (mkEnv "ENABLE_AUTOPAUSE" (lib.trivial.boolToString cfg.autoPause.enable))
+        (mkEnv "AUTOPAUSE_TIMEOUT_EST" cfg.autoPause.timeout.established)
+        (mkEnv "AUTOPAUSE_TIMEOUT_INIT" cfg.autoPause.timeout.init)
+        (mkEnv "AUTOPAUSE_TIMEOUT_KN" cfg.autoPause.timeout.knock)
+        (mkEnv "AUTOPAUSE_PERIOD" cfg.autoPause.period)
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
