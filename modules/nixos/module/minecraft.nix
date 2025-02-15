@@ -6,6 +6,11 @@ let
   inherit (lib.options) mkOption mkEnableOption;
   inherit (lib.modules) mkIf;
   inherit (lib) types;
+  mkMcOption = description: mkOption {
+    type = with types; nullOr str;
+    default = null;
+    inherit description;
+  };
   curseforgeMod = _: with lib; {
     options = {
       modId = mkOption {
@@ -194,6 +199,8 @@ in
         default = [];
         description = "RCon commands to run on server startup";
       };
+      customServer = mkMcOption "Custom server jar";
+      jvmOpts = mkMcOption "Custom JVM options";
       /*
       extraFiles = mkOption {
         type = with types; nullOr path;
@@ -231,6 +238,8 @@ in
         (mkEnvRaw "MODRINTH_MODPACK" cfg.modrinth.pack.project)
         (mkEnvRaw "MODRINTH_LOADER" cfg.modrinth.pack.loader)
         (mkEnvRaw "MODRINTH_VERSION" cfg.modrinth.pack.version)
+        (mkEnvRaw "CUSTOM_SERVER" cfg.settings.customServer)
+        (mkEnvRaw "JVM_OPTS" cfg.settings.jvmOpts)
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
