@@ -58,6 +58,13 @@ in
 {
   options.services.minecraft = with lib; {
     enable = mkEnableOption "Minecraft Server";
+    generic = {
+      pack = mkOption {
+        type = with types; nullOr str;
+        default = null;
+        description = "Generic pack URL";
+      };
+    };
     curseforge = {
       apiKey = mkOption {
         type = with types; nullOr str;
@@ -219,6 +226,7 @@ in
         (mkEnv "MEMORY" ((builtins.toString cfg.settings.memory) + "G"))
         (mkEnvRaw "RCON_CMDS_STARTUP" (lib.strings.concatStringsSep "\n" cfg.settings.rconStartup))
         #(mkEnvRaw "GENERIC_PACK" ( if cfg.settings.extraFiles == null then null else (toString (pkgs.callPackage ./resources/genericPack.nix { src = cfg.settings.extraFiles; }))))
+        (mkEnvRaw "GENERIC_PACK" cfg.generic.pack)
         (mkEnvRaw "forge_version" cfg.settings.forgeVersion)
         (mkEnvRaw "MODRINTH_MODPACK" cfg.modrinth.pack.project)
         (mkEnvRaw "MODRINTH_LOADER" cfg.modrinth.pack.loader)
