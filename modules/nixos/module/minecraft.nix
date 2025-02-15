@@ -64,11 +64,7 @@ in
   options.services.minecraft = with lib; {
     enable = mkEnableOption "Minecraft Server";
     generic = {
-      pack = mkOption {
-        type = with types; nullOr str;
-        default = null;
-        description = "Generic pack URL";
-      };
+      pack = mkMcOption "Generic Pack URL";
     };
     curseforge = {
       apiKey = mkOption {
@@ -76,10 +72,7 @@ in
         default = null;
       };
       pack = {
-        slug = mkOption {
-          type = with types; nullOr str;
-          default = null;
-        };
+        slug = mkMcOption "";
         fileId = mkOption {
           type = with types; nullOr int;
           default = null;
@@ -176,10 +169,7 @@ in
         default = "vanilla";
         description = "Server type to use";
       };
-      version = mkOption {
-        type = types.str;
-        default = "latest";
-      };
+      version = mkMcOption "";
       port = mkOption {
         type = types.port;
         default = 25565;
@@ -201,17 +191,7 @@ in
       };
       customServer = mkMcOption "Custom server jar";
       jvmOpts = mkMcOption "Custom JVM options";
-      /*
-      extraFiles = mkOption {
-        type = with types; nullOr path;
-        default = null;
-        description = "extra files to be added to the server as a generic pack";
-      };
-      */
-      forgeVersion = mkOption {
-        type = with types; nullOr str;
-        default = null;
-      };
+      forgeVersion = mkMcOption "";
     };
   };
   config = mkIf cfg.enable {
