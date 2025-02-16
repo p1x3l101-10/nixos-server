@@ -28,29 +28,10 @@ in
     };
   };
   virtualisation.oci-containers.containers.minecraft.volumes = [
-    "/var/lib/minecraft/backups:/data/backups:rw"
-    "/var/lib/minecraft/visualprospecting:/data/visualprospecting:rw"
-    "/var/lib/minecraft/journeymap:/data/journeymap:rw"
-    "/var/lib/minecraft/TCNodeTracker:/data/TCNodeTracker:rw"
-    "/var/lib/minecraft/schematics:/data/schematics:rw"
+    "/var/lib/minecraft/data:/data:rw"
   ];
   systemd.tmpfiles.settings."50-minecraft" = {
-    "/var/lib/minecraft/visualprospecting".d = {
-      user = "1000";
-      group = "1000";
-      mode = "0755";
-    };
-    "/var/lib/minecraft/journeymap".d = {
-      user = "1000";
-      group = "1000";
-      mode = "0755";
-    };
-    "/var/lib/minecraft/TCNodeTracker".d = {
-      user = "1000";
-      group = "1000";
-      mode = "0755";
-    };
-    "/var/lib/minecraft/schematics".d = {
+    "/var/lib/minecraft/data".d = {
       user = "1000";
       group = "1000";
       mode = "0755";
