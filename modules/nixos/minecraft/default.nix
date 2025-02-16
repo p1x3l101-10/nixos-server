@@ -28,6 +28,7 @@ in
     };
   };
   virtualisation.oci-containers.containers.minecraft.volumes = [
+    "/var/lib/minecraft/backups:/data/backups:rw"
     "/var/lib/minecraft/visualprospecting:/data/visualprospecting:rw"
     "/var/lib/minecraft/journeymap:/data/journeymap:rw"
     "/var/lib/minecraft/TCNodeTracker:/data/TCNodeTracker:rw"
