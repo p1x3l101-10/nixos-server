@@ -27,6 +27,34 @@ in
       ];
     };
   };
+  virtualisation.oci-containers.containers.minecraft.volumes = [
+    "/var/lib/minecraft/visualprospecting:/data/visualprospecting:rw"
+    "/var/lib/minecraft/journeymap:/data/journeymap:rw"
+    "/var/lib/minecraft/TCNodeTracker:/data/TCNodeTracker:rw"
+    "/var/lib/minecraft/schematics:/data/schematics:rw"
+  ];
+  systemd.tmpfiles.settings."50-minecraft" = {
+    "/var/lib/minecraft/visualprospecting".d = {
+      user = "1000";
+      group = "1000";
+      mode = "0755";
+    };
+    "/var/lib/minecraft/journeymap".d = {
+      user = "1000";
+      group = "1000";
+      mode = "0755";
+    };
+    "/var/lib/minecraft/TCNodeTracker".d = {
+      user = "1000";
+      group = "1000";
+      mode = "0755";
+    };
+    "/var/lib/minecraft/schematics".d = {
+      user = "1000";
+      group = "1000";
+      mode = "0755";
+    };
+  };
   environment.persistence."/nix/host/state/Servers/Minecraft".directories = [
     { directory = "/var/lib/minecraft"; user = "1000"; group = "1000"; }
   ];
