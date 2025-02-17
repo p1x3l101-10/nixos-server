@@ -19,6 +19,9 @@ stdenv.mkDerivation rec {
   sourceRoot = ".";
   buildPhase = ''
     mkdir .work
+    if [[ -e overrides ]]; then
+      mv overrides z-overrides
+    fi
     for pack in $(ls .); do
       if [[ -d "$pack" ]]; then
         rsync -anv "$pack/" .work
