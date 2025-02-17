@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   srcs = packList;
   nativeBuildInputs = [
     rsync
-    gnutar
+    bsdtar
   ];
   sourceRoot = ".";
   buildPhase = ''
