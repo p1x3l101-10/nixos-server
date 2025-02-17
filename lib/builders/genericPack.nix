@@ -1,7 +1,7 @@
 { lib, ext }:
 
 { stdenv ? ext.pkgs.stdenvNoCC
-, tar ? ext.pkgs.tar
+, gnutar ? ext.pkgs.gnutar
 , symlinkJoin ? ext.pkgs.symlinkJoin
 , name ? "genericPack"
 , version ? "1"
@@ -19,7 +19,7 @@ stdenv.mkDerivation {
   pname = "${name}-bundle";
   inherit version src;
   nativeBuildInputs = [
-    tar
+    gnutar
   ];
   buildPhase = ''
     mkdir -p ./config ./mods
