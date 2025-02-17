@@ -23,9 +23,9 @@ stdenv.mkDerivation {
   ];
   buildPhase = ''
     mkdir -p ./config ./mods
-    chmod -R 775 ./*
     touch ./config/.keep
     touch ./mods/.keep
+    umask 007
     tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner ./*
   '';
   installPhase = ''
