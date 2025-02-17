@@ -13,6 +13,7 @@ stdenv.mkDerivation rec {
   inherit version;
   srcs = packList;
   nativeBuildInputs = [
+    rsync
     gnutar
   ];
   sourceRoot = ".";
