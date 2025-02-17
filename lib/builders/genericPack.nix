@@ -27,12 +27,12 @@ stdenv.mkDerivation {
     cp -rL ./* ./.work
     echo "Done"
     cd .work
-    chmod -R 0755 .
+    chmod -R 0755 .work
     echo "Compressing"
-    tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner ./*
+    tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner -C .work ./*
   '';
   installPhase = ''
-    mv ./.work/out.tar.gz $out
+    mv ./out.tar.gz $out
     chmod 644 $out
   '';
 }
