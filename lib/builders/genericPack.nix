@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
       mv overrides zzz-overrides
     fi
     for pack in $(find . -maxdepth 1 -type d); do
-      if [[ "$pack" -ne "." ]]; then
+      if [[ "$pack" != "." ]] && [[ "$pack" != "./.work" ]]; then
         rsync -rIcv --executability "$pack/" .work
         rm -rvf "./.work/$pack"
       fi
