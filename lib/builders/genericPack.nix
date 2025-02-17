@@ -27,6 +27,9 @@ stdenv.mkDerivation rec {
     for pack in $(find . -maxdepth 1 -type d); do
       rsync -av "$pack/" .work
     done
+    if [[ -e ./.work/eula.txt ]]; then
+      rm -f ./.work/eula.txt
+    fi
     bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner ./.work/*
   '';
   installPhase = ''

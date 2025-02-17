@@ -25,6 +25,7 @@ in
       rconStartup = [
         "bq_admin default load" # Reload for updates
         "bq_admin hardcore true"
+        "difficulty hard"
       ];
       customServer = "lwjgl3ify-forgePatches.jar";
       jvmOpts = "-Dfml.readTimeout=180 @java9args.txt";
