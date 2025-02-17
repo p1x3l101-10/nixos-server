@@ -24,7 +24,7 @@ stdenv.mkDerivation {
   buildPhase = ''
     mkdir .work
     cd .work
-    cp -r -D ../* .
+    cp -rL ../* .
     chmod -R 0755 .
     tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner ./*
   '';
