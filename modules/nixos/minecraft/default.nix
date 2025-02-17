@@ -5,24 +5,27 @@ in
 {
   services.minecraft = {
     enable = true;
-    generic.pack = builtins.toString (lib.internal.builders.genericPack {
-      packList = [
-        ./overrides
-        (lib.internal.builders.genericMod rec {
-          name = "ocwasm";
-          version = "0.5.2";
-          file = pkgs.fetchurl {
-            url = "https://github.com/DCNick3/OC-Wasm-GTNH/releases/download/1.7.10-0.5.2/${name}-1.7.10-${version}.jar";
-            hash = "sha256-sMMdWxKBQCqtijxLos7GYjlxHtrsFfh+XzTjTcabnek=";
-          };
-        })
-        (pkgs.fetchzip {
-          url = "https://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.7.2_Server_Java_17-21.zip";
-          hash = "sha256-/1zYsc0P6X5guWHWX0Y57KL9kbzQNmQ+PJreq50wQOw=";
-          stripRoot=false;
-        })
-      ];
-    });
+    generic = {
+      forceUpdate = true;
+      pack = builtins.toString (lib.internal.builders.genericPack {
+        packList = [
+          ./overrides
+          (lib.internal.builders.genericMod rec {
+            name = "ocwasm";
+            version = "0.5.2";
+            file = pkgs.fetchurl {
+              url = "https://github.com/DCNick3/OC-Wasm-GTNH/releases/download/1.7.10-0.5.2/${name}-1.7.10-${version}.jar";
+              hash = "sha256-sMMdWxKBQCqtijxLos7GYjlxHtrsFfh+XzTjTcabnek=";
+            };
+          })
+          (pkgs.fetchzip {
+            url = "https://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.7.2_Server_Java_17-21.zip";
+            hash = "sha256-/1zYsc0P6X5guWHWX0Y57KL9kbzQNmQ+PJreq50wQOw=";
+            stripRoot=false;
+          })
+        ];
+      });
+    };
     settings = {
       eula = true;
       type = "custom";
