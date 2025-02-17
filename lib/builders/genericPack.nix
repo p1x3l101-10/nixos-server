@@ -12,7 +12,6 @@ stdenv.mkDerivation rec {
   pname = "${name}-bundle";
   inherit version;
   srcs = packList;
-  outputs = [ "out" "archive" ];
   nativeBuildInputs = [
     rsync
     libarchive
@@ -37,8 +36,7 @@ stdenv.mkDerivation rec {
   '';
   installPhase = ''
     bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner ./.work/*
-    mv ./out.zip $archive
-    mv ./.work $out
+    mv ./out.zip $out
     chmod 644 $out
   '';
 }
