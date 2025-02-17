@@ -24,8 +24,11 @@ stdenv.mkDerivation {
   buildPhase = ''
     mkdir .work
     cd .work
+    pwd
+    echo "Copying"
     cp -rL ../* .
     chmod -R 0755 .
+    echo "Compressing"
     tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner ./*
   '';
   installPhase = ''
