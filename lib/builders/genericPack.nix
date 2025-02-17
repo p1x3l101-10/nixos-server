@@ -25,6 +25,7 @@ stdenv.mkDerivation {
     mkdir -p ./config ./mods
     touch ./config/.keep
     touch ./mods/.keep
+    umask 002
     tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner ./*
   '';
   installPhase = ''
