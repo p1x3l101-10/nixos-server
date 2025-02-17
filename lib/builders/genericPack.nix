@@ -1,7 +1,7 @@
 { lib, ext }:
 
 { stdenv ? ext.pkgs.stdenvNoCC
-, bsdtar ? ext.pkgs.bsdtar
+, libarchive ? ext.pkgs.libarchive
 , rsync ? ext.pkgs.rsync
 , name ? "genericPack"
 , version ? "1"
@@ -14,7 +14,7 @@ stdenv.mkDerivation rec {
   srcs = packList;
   nativeBuildInputs = [
     rsync
-    bsdtar
+    libarchive
   ];
   sourceRoot = ".";
   buildPhase = ''
