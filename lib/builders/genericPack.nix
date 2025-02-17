@@ -22,7 +22,7 @@ stdenv.mkDerivation rec {
     mkdir .work/mods
     touch .work/mods/.keep
     if [[ -e overrides ]]; then
-      mv overrides z-overrides
+      mv overrides zzz-overrides
     fi
     for pack in $(ls .); do
       if [[ ! "$pack" -eq env-vars ]]; then
