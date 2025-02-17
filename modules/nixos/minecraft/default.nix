@@ -22,7 +22,7 @@ in
           stripRoot=false;
         })
       ];
-    });
+    }).archive;
     settings = {
       eula = true;
       type = "custom";
