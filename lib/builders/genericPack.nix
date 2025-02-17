@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
       mv overrides zzz-overrides
     fi
     for pack in $(find . -maxdepth 1 -type d); do
-      rsync -anv "$pack/" .work
+      rsync -av "$pack/" .work
     done
     bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner ./.work/*
   '';
