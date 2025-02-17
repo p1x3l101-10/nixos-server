@@ -20,13 +20,8 @@ stdenv.mkDerivation rec {
     mkdir .work
     for pack in $(ls .); do
       if [[ -d "$pack" ]]; then
-        if [[ -e "$pack/*" ]]; then
-          mv "$pack/*" .work
-        fi
-        if [[ -e "$pack/.*" ]]; then
-          mv "$pack/.*" .work
-        fi
-        rmdir "$pack"
+        cp -vr "$pack/*" .work
+        cp -vr "$pack/.*" .work
       fi
     done
     tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner -C ./.work ./*
