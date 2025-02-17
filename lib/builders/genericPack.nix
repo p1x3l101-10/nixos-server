@@ -8,29 +8,20 @@
 , packList
 }:
 
-let
-  src = symlinkJoin {
-    inherit name;
-    paths = packList;
-  };
-in
-
 stdenv.mkDerivation {
   pname = "${name}-bundle";
-  inherit version src;
+  inherit version;
+  srcs = packList;
   nativeBuildInputs = [
     gnutar
   ];
   buildPhase = ''
-    mkdir -p ./.work
-    chmod 0755 ./.work # Fail fast
-    echo "Copying"
-    cp -rL ./* ./.work
-    echo "Done"
-    cd .work
-    chmod -R 0755 .work
-    echo "Compressing"
-    tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner -C .work ./*
+    for pack in $(ls); do
+      mv "$pack/*" .
+      mv "$pack/.*" .
+      rmdir "$pack"
+    done
+    tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner ./*
   '';
   installPhase = ''
     mv ./out.tar.gz $out
