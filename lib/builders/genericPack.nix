@@ -16,16 +16,17 @@ stdenv.mkDerivation rec {
     gnutar
   ];
   sourceRoot = pname;
-  buildPhase = ''
+  preBuild = ''
     for pack in $(ls ..); do
       if [[ "$pack" -eq "${pname}" ]]; then
         true
       else
         mv "$pack/*" .
         mv "$pack/.*" .
-        rmdir "$pack"
       fi
     done
+  '';
+  buildPhase = ''
     tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner ./*
   '';
   installPhase = ''
