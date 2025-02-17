@@ -22,14 +22,14 @@ stdenv.mkDerivation {
     gnutar
   ];
   buildPhase = ''
-    mkdir -p ./config ./mods
-    touch ./config/.keep
-    touch ./mods/.keep
-    umask 002
+    mkdir .work
+    cd .work
+    cp -r -D ../* .
+    chmod -R 0755 .
     tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner ./*
   '';
   installPhase = ''
-    mv ./out.tar.gz $out
+    mv ./.work/out.tar.gz $out
     chmod 644 $out
   '';
 }
