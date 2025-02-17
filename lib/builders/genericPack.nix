@@ -1,7 +1,7 @@
 { lib, ext }:
 
 { stdenv ? ext.pkgs.stdenvNoCC
-, gnutar ? ext.pkgs.gnutar
+, bsdtar ? ext.pkgs.bsdtar
 , rsync ? ext.pkgs.rsync
 , name ? "genericPack"
 , version ? "1"
@@ -27,10 +27,10 @@ stdenv.mkDerivation rec {
         rsync -anv "$pack/" .work
       fi
     done
-    tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner -C ./.work .
+    bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner -C ./.work .
   '';
   installPhase = ''
-    mv ./out.tar.gz $out
+    mv ./out.zip $out
     chmod 644 $out
   '';
 }
