@@ -10,6 +10,7 @@ stdenv.mkDerivation {
   inherit name version;
   src = file;
   sourceRoot = ".";
+  unpackPhase = '''';
   buildPhase = ''
     mkdir -p mods
     mv ${file.name} "./mods/${file.name}"
