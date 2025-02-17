@@ -25,8 +25,10 @@ stdenv.mkDerivation rec {
       mv overrides zzz-overrides
     fi
     for pack in $(find . -maxdepth 1 -type d); do
-      rsync -rIcv --executability "$pack/" .work
-      rm -rvf "./.work/$pack"
+      if [[ "$pack" -ne "." ]]; then
+        rsync -rIcv --executability "$pack/" .work
+        rm -rvf "./.work/$pack"
+      fi
     done
     if [[ -e ./.work/eula.txt ]]; then
       rm -f ./.work/eula.txt
