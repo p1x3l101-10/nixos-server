@@ -19,6 +19,8 @@ stdenv.mkDerivation rec {
   sourceRoot = ".";
   buildPhase = ''
     mkdir .work
+    mkdir .work/mods
+    touch .work/mods/.keep
     if [[ -e overrides ]]; then
       mv overrides z-overrides
     fi
