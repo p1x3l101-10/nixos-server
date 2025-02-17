@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
     for pack in $(ls .); do
       case "$dir" in
         "env-vars")true;;
-        "*")rsync -anv "$pack/" .work;;
+        *)rsync -anv "$pack/" .work;;
       esac
     done
     bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner ./.work/*
