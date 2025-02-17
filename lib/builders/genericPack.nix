@@ -1,7 +1,7 @@
 { lib, ext }:
 
 { stdenv ? ext.pkgs.stdenvNoCC
-, zip ? ext.pkgs.zip
+, tar ? ext.pkgs.tar
 , symlinkJoin ? ext.pkgs.symlinkJoin
 , name ? "genericPack"
 , version ? "1"
@@ -25,9 +25,9 @@ stdenv.mkDerivation {
     mkdir -p ./config ./mods
     touch ./config/.keep
     touch ./mods/.keep
-    zip -r ./out.zip ./*
+    tar cvzf --no-preserve-permissions ./out.tar.gz ./*
   '';
   installPhase = ''
-    mv ./out.zip $out
+    mv ./out.tar.gz $out
   '';
 }
