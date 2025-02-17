@@ -1,14 +1,15 @@
 { pkgs, lib, ... }:
 let
   curseforge-api-key = "$2a$10$bL4bIL5pUWqfcO7KQtnMReakwtfHbNKh6v1uTpKlzhwoueEJQnPnm";
+  gtnh-pack = pkgs.fetchurl {
+    url = "https://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.7.2_Server_Java_17-21.zip";
+    hash = "sha256-IDf53ScNurrewUBbAw5McmzXXuCyRbLs+F0ObY3wUlg=";
+  };
 in
 {
   services.minecraft = {
     enable = true;
-    generic.pack = builtins.toString (pkgs.fetchurl {
-      url = "https://downloads.gtnewhorizons.com/ServerPacks/GT_New_Horizons_2.7.2_Server_Java_17-21.zip";
-      hash = "sha256-IDf53ScNurrewUBbAw5McmzXXuCyRbLs+F0ObY3wUlg=";
-    });
+    generic.pack = builtins.toString (gtnh-pack);
     settings = {
       eula = true;
       type = "custom";
