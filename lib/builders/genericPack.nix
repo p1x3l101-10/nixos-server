@@ -22,7 +22,7 @@ stdenv.mkDerivation {
     gnutar
   ];
   buildPhase = ''
-    mkdir .work
+    mkdir ./.work
     echo "Copying"
     cp -rL ./* ./.work
     echo "Done"
