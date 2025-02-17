@@ -25,10 +25,9 @@ stdenv.mkDerivation rec {
       mv overrides z-overrides
     fi
     for pack in $(ls .); do
-      case "$pack" in
-        "env-vars") true ;;
-        *) rsync -anv "$pack/" .work ;;
-      esac
+      if [[ ! "$pack" -eq env-vars ]]; then
+        rsync -anv "$pack/" .work
+      fi
     done
     bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner ./.work/*
   '';
