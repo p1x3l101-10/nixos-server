@@ -6,14 +6,16 @@
 , file
 }:
 
-stdenv.mkDerivation {
+stdenv.mkDerivation rec {
   inherit name version;
   src = file;
   sourceRoot = ".";
-  unpackPhase = '''';
+  unpackPhase = ''
+    cp ${src} "./${src.name}"
+  '';
   buildPhase = ''
     mkdir -p mods
-    mv ${file.name} "./mods/${file.name}"
+    mv ${src.name} "./mods/${src.name}"
   '';
   installPhase = ''
     mkdir -p $out
