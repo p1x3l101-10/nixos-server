@@ -70,6 +70,7 @@ in
     enable = mkEnableOption "Minecraft Server";
     generic = {
       pack = mkMcOption "Generic Pack URL";
+      forceUpdate = mkEnableOption "force update";
     };
     curseforge = {
       apiKey = mkOption {
@@ -243,6 +244,7 @@ in
         (mkEnv "AUTOPAUSE_PERIOD" cfg.autoPause.period)
         (mkEnvRawList "WHITELIST" cfg.settings.whitelist "\n")
         (mkEnvRawList "OPS" cfg.settings.ops "\n")
+        (mkEnv "FORCE_GENERIC_PACK_UPDATE" (lib.trivial.boolToString cfg.generic.forceUpdate))
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
