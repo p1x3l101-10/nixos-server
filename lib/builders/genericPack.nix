@@ -26,6 +26,7 @@ stdenv.mkDerivation rec {
     fi
     for pack in $(find . -maxdepth 1 -type d); do
       rsync -rIcv --executability "$pack/" .work
+      rm -rvf "./.work/$pack"
     done
     if [[ -e ./.work/eula.txt ]]; then
       rm -f ./.work/eula.txt
