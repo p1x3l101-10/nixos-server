@@ -19,7 +19,7 @@ stdenv.mkDerivation {
   pname = "${name}-bundle";
   inherit version src;
   nativeBuildInputs = [
-    zip
+    tar
   ];
   buildPhase = ''
     mkdir -p ./config ./mods
