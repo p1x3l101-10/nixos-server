@@ -24,10 +24,8 @@ stdenv.mkDerivation rec {
     if [[ -e overrides ]]; then
       mv overrides zzz-overrides
     fi
-    for pack in $(ls .); do
-      if [[ "$pack" == "env-vars" ]]; then
-        rsync -anv "$pack/" .work
-      fi
+    for pack in $(find . -depth 1 -type d); do
+      rsync -anv "$pack/" .work
     done
     bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner ./.work/*
   '';
