@@ -20,8 +20,12 @@ stdenv.mkDerivation rec {
     mkdir .work
     for pack in $(ls .); do
       if [[ -d "$pack" ]]; then
-        mv "$pack/*" .work
-        mv "$pack/.*" .work
+        if [[ -e "$pack/*" ]]; then
+          mv "$pack/*" .work
+        fi
+        if [[ -e "$pack/.*" ]]; then
+          mv "$pack/.*" .work
+        fi
         rmdir "$pack"
       fi
     done
