@@ -22,7 +22,8 @@ stdenv.mkDerivation {
     gnutar
   ];
   buildPhase = ''
-    mkdir ./.work
+    mkdir -p ./.work
+    chmod 0755 ./.work # Fail fast
     echo "Copying"
     cp -rL ./* ./.work
     echo "Done"
