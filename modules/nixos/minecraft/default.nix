@@ -5,7 +5,6 @@ in
 {
   services.minecraft = {
     enable = true;
-    generic.forceUpdate = true;
     generic.pack = builtins.toString (lib.internal.builders.genericPack {
       packList = [
         ./overrides
