@@ -30,9 +30,9 @@ stdenv.mkDerivation rec {
     if [[ -e ./.work/eula.txt ]]; then
       rm -f ./.work/eula.txt
     fi
-    bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner ./.work/*
   '';
   installPhase = ''
+    bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner ./.work/*
     mv ./out.zip $out
     chmod 644 $out
   '';
