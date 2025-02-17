@@ -15,19 +15,15 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [
     gnutar
   ];
-  sourceRoot = pname;
-  preBuild = ''
-    for pack in $(ls ..); do
-      if [[ "$pack" -eq "${pname}" ]]; then
-        true
-      else
-        mv "$pack/*" .
-        mv "$pack/.*" .
-      fi
-    done
-  '';
+  sourceRoot = ".";
   buildPhase = ''
-    tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner ./*
+    mkdir .work
+    for pack in $(ls .); do
+      mv "$pack/*" .work
+      mv "$pack/.*" .work
+      rmdir "$pack"
+    done
+    tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner -C ./.work ./*
   '';
   installPhase = ''
     mv ./out.tar.gz $out
