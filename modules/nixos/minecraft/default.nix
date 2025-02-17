@@ -1,11 +1,11 @@
-{ pkgs, lib, namespace, ... }:
+{ pkgs, lib, ... }:
 let
   curseforge-api-key = "$2a$10$bL4bIL5pUWqfcO7KQtnMReakwtfHbNKh6v1uTpKlzhwoueEJQnPnm";
 in
 {
   services.minecraft = {
     enable = true;
-    generic.pack = builtins.toString (lib.${namespace}.builders.genericPack {
+    generic.pack = builtins.toString (lib.internal.builders.genericPack {
       packList = [
         ./overrides
         pkgs.fetchurl {
