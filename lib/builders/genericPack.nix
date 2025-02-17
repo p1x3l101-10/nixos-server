@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
       mv overrides z-overrides
     fi
     for pack in $(ls .); do
-      case "$dir" in
+      case "$pack" in
         "env-vars") true ;;
         *) rsync -anv "$pack/" .work ;;
       esac
