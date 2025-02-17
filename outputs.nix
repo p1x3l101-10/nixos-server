@@ -23,7 +23,7 @@ lib.mkFlake {
   };
   aliases.nixosModules.default = "module";
   channels-config = {
-    contentAddressedByDefault = true;
+    #contentAddressedByDefault = true;
     overlays = with inputs; [ nixos-home.overlays.only-nix3 ];
     # List of unfree packages to allow
     # I could enable them all using one config, but that seems unsafe...
