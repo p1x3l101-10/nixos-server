@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
       mv overrides zzz-overrides
     fi
     for pack in $(ls .); do
-      if [[ "$pack" -ne "env-vars" ]]; then
+      if [[ "$pack" == "env-vars" ]]; then
         rsync -anv "$pack/" .work
       fi
     done
