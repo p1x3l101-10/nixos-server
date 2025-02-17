@@ -19,9 +19,11 @@ stdenv.mkDerivation rec {
   buildPhase = ''
     mkdir .work
     for pack in $(ls .); do
-      mv "$pack/*" .work
-      mv "$pack/.*" .work
-      rmdir "$pack"
+      if [[ -d "$pack" ]]; then
+        mv "$pack/*" .work
+        mv "$pack/.*" .work
+        rmdir "$pack"
+      fi
     done
     tar cvhzf ./out.tar.gz --no-same-permissions --no-same-owner -C ./.work ./*
   '';
