@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
         rsync -anv "$pack/" .work
       fi
     done
-    bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner -C ./.work .
+    bsdtar -cvhf ./out.zip --format=zip --no-same-permissions --no-same-owner -C ./.work ./*
   '';
   installPhase = ''
     mv ./out.zip $out
