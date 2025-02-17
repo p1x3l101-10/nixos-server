@@ -25,7 +25,7 @@ stdenv.mkDerivation {
     mkdir -p ./config ./mods
     touch ./config/.keep
     touch ./mods/.keep
-    tar cvzf --no-preserve-permissions ./out.tar.gz ./*
+    tar --no-preserve-permissions cvhzf ./out.tar.gz ./*
   '';
   installPhase = ''
     mv ./out.tar.gz $out
