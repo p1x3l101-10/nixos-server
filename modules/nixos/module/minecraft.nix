@@ -300,11 +300,6 @@ in
         group = "1000";
         mode = "1777";
       };
-      "/var/lib/minecraft/backups".d = {
-        user = "1000";
-        group = "1000";
-        mode = "0755";
-      };
     };
     networking.firewall.allowedTCPPorts = (
       lib.lists.optional cfg.settings.openFirewall cfg.settings.port

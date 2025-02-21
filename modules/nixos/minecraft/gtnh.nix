@@ -56,6 +56,11 @@ in
       group = "1000";
       mode = "0755";
     };
+    "/var/lib/minecraft/backups".d = {
+      user = "1000";
+      group = "1000";
+      mode = "0755";
+    };
   };
   # Persist server
   environment.persistence."/nix/host/state/Servers/Minecraft/GTNH".directories = [
