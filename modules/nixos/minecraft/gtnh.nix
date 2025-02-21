@@ -40,9 +40,7 @@ in
       ];
       customServer = "lwjgl3ify-forgePatches.jar";
       jvmOpts = "-Dfml.readTimeout=180 @java9args.txt";
-      whitelist = [
-        "P1x3l101"
-      ];
+      whitelist = import ./overrides/whitelist.nix;
     };
   };
   virtualisation.oci-containers.containers.minecraft.volumes = [

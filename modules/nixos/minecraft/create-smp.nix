@@ -41,9 +41,7 @@
       memory = 8;
       port = 25565;
       openFirewall = true;
-      whitelist = [
-        "P1x3l101"
-      ];
+      whitelist = import ./overrides/whitelist.nix;
     };
   };
   # Persist server
