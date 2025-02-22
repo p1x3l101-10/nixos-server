@@ -357,16 +357,17 @@
         "nixos-hardware": "nixos-hardware",
         "nixpak": "nixpak",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-unfree": "nixpkgs-unfree",
         "nixpkgs-xr": "nixpkgs-xr",
         "snowfall-lib": "snowfall-lib",
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1739766590,
-        "narHash": "sha256-+C/ausLBONXi3QbYup/IrmDngeo2pkrscnpI8UV/Bak=",
+        "lastModified": 1740207230,
+        "narHash": "sha256-kOFnIqdxa1RkbXpJLpcguimzaaRZjxyiS84zhx4kQ+c=",
         "owner": "p1x3l101-10",
         "repo": "nixos",
-        "rev": "5d282b2fc7828368cad343d07405bdda3c5438e3",
+        "rev": "dcb3522a377087ca064284895e70f3271db60395",
         "type": "github"
       },
       "original": {
@@ -427,6 +428,27 @@
         "owner": "NixOS",
         "ref": "nixos-24.05",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-unfree": {
+      "inputs": {
+        "nixpkgs": [
+          "nixos-home",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1727984955,
+        "narHash": "sha256-vP3XzXfQLaxy2QYipK5teKFzgWBeSkv9hByCvrMEL1c=",
+        "owner": "numtide",
+        "repo": "nixpkgs-unfree",
+        "rev": "deab889228cedd7bca43e71ea4f61f9ea12c260e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "nixpkgs-unfree",
         "type": "github"
       }
     },
@@ -505,6 +527,10 @@
         "nixpkgs": [
           "nixos-home",
           "nixpkgs"
+        ],
+        "nixpkgs-unfree": [
+          "nixos-home",
+          "nixpkgs-unfree"
         ],
         "snowfall-lib": [
           "nixos-home",
