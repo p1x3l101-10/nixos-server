@@ -6,6 +6,7 @@ let
       map (x:
         { name = x.name; value = {
           initialHashedPassword = x.password;
+          isNormalUser = true;
           extraGroups = [ "vsftpd" ];
         }; }
       ) userList
