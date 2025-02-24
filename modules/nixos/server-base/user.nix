@@ -23,6 +23,7 @@
   environment.persistence."/nix/host/state/UserData".users.pixel.directories = [
     ".ssh"
     "nix-server"
+    "junk-storage"
   ];
   programs.git.config = {
     user = {
