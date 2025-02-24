@@ -58,7 +58,6 @@
       2816880803 # Cellphone & Pylons
       3116957194 # Optimizerraria
       2979146327 # Chance Class Mod
-      2934087687 # Auto-Trash Researched Items
       2896592287 # ResearchFromShop
       3412277684 # 杂鱼~ 杂鱼~
       3032011692 # Hyper Research
