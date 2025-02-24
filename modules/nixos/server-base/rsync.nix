@@ -18,20 +18,20 @@
   ];
   # Chrooted dir for security
   systemd.tmpfiles.settings."10-ssh-chroot" = {
-    "/var/lib/ssh-chroot/borg/var/lib/borgbackup".d = {
-      user = "borg";
+    "/var/lib/ssh-chroot/rsync/var/lib/rsync".d = {
+      user = "rsync";
       group = "users";
       mode = "0755";
     };
-    "/var/lib/ssh-chroot/borg/nix/store".d = {
+    "/var/lib/ssh-chroot/rsync/nix/store".d = {
       user = "root";
       group = "root";
       mode = "0755";
     };
     # This needs access to binaries
     # Use booted system to ensure gc roots
-    # NOTE: I could probably do this better with only pkgs.borg, but im lazy like that lol
-    "/var/lib/ssh-chroot/borg/run/current-system".C.argument = "/run/booted-system";
+    # NOTE: I could probably do this better with only pkgs.rsync, but im lazy like that lol
+    "/var/lib/ssh-chroot/rsync/run/current-system".C.argument = "/run/booted-system";
   };
   # Bind mount nix store for shells and stuff
   fileSystems."/var/lib/ssh-chroot/rsync/nix/store" = {
@@ -39,7 +39,7 @@
     options = [ "bind" "ro" ];
   };
   # Needed dirs
-  fileSystems."/var/lib/ssh-chroot/borg/rsync/lib/rsync" = {
+  fileSystems."/var/lib/ssh-chroot/rsync/lib/rsync" = {
     device = "/var/lib/rsync";
     options = [ "bind" "rw" ];
   };
@@ -48,7 +48,7 @@
     options = [ "bind" "ro" ];
   };
   services.openssh.extraConfig = ''
-    Match User borg
+    Match User rsync
       ChrootDirectory /var/lib/ssh-chroot/rsync
   '';
 }
