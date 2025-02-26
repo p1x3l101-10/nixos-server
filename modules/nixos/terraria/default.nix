@@ -61,6 +61,7 @@
       2896592287 # ResearchFromShop
       3412277684 # 杂鱼~ 杂鱼~
       3032011692 # Hyper Research
+      3032010580 # Overcrit!!!!
       ## Music Mods
       2824688266 # Calamity Mod Music
       2816188633 # Vanilla Calamity Mod Music
