@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./gtnh.nix
+    ./create-smp.nix
   ];
 }
