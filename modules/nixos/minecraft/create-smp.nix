@@ -4,35 +4,38 @@
   services.minecraft = {
     enable = true;
     modrinth = {
-      mods = [
-        "create"
-        "almost-unified"
-        "emi"
-        "emi-ores"
-        "jei"
-        "lithium"
-        "appleskin"
-        "nochatreports"
-        "modernfix"
-        "ferrite-core"
-        "elytra-trims"
-        "do-a-barrel-roll"
-        "doggy-talents-next"
-        "no-chat-reports"
-        # Addons to wait on:
-        /*
-        TFMG
-        Enchantment industry
-        Central Kitchen
-        Jetpack
-        Big cannons
-        TIS-3D
-        TIS-Create
-        TIS-Advanced
-        Some create chunkloader mod
-        liquid fuel?
-        */
-      ];
+      mods = {
+        projects = [
+          "create"
+          "almost-unified"
+          "emi"
+          "emi-ores"
+          "jei"
+          "lithium"
+          "appleskin"
+          "nochatreports"
+          "modernfix"
+          "ferrite-core"
+          "elytra-trims"
+          "do-a-barrel-roll"
+          "doggy-talents-next"
+          "no-chat-reports"
+          # Addons to wait on:
+          /*
+          TFMG
+          Enchantment industry
+          Central Kitchen
+          Jetpack
+          Big cannons
+          TIS-3D
+          TIS-Create
+          TIS-Advanced
+          Some create chunkloader mod
+          liquid fuel?
+          */
+        ];
+        downloadDependancies = "required";
+      };
       downloadDependancies = "required";
     };
     settings = {
