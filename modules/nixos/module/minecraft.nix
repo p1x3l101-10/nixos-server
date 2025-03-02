@@ -220,6 +220,8 @@ in
         (mkEnv "EULA" (lib.trivial.boolToString cfg.settings.eula))
         # Modrinth mod list
         (mkEnvRawList "MODRINTH_PROJECTS" (lib.forEach cfg.modrinth.mods.projects (x: lib.internal.minecraft.translateModName x "modrinth")) "\n")
+        (mkEnvRaw "MODRINTH_ALLOWED_VERSION_TYPE" cfg.modrinth.mods.allowedVersionType)
+        (mkEnvRaw "MODRINTH_DOWNLOAD_DEPENDENCIES" cfg.modrinth.mods.downloadDependancies)
         # Type and version
         (mkEnv "VERSION" cfg.settings.version)
         (mkEnv "TYPE" cfg.settings.type)
