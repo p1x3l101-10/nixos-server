@@ -34,6 +34,7 @@
           */
         ];
         downloadDependancies = "required";
+        allowedVersionType = "beta";
       };
     };
     settings = {
