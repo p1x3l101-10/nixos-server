@@ -318,7 +318,7 @@ in
         ''; 
       }
       {
-        assertion = (! (lib.strings.hasInfix "alpine" cfg.settings.javaVersion) && (cfg.generic.pack != null));
+        assertion = ((lib.strings.hasInfix "alpine" cfg.settings.javaVersion) && (cfg.generic.pack == null));
         message = ''
           Alpine JVMs do not support generic packs
           These files are Zips, and the alpine container does not have tools to manipulate zip files
