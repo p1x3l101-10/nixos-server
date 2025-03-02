@@ -26,6 +26,11 @@
           "create-renewable-diamonds"
           "create-renewable-netherite"
           "create-renewable-brass"
+          "simplest-copper-gear"
+          "simplest-paxels"
+          "simplest-hammers"
+          "simplest-excavators"
+          "simplest-broadaxes"
           # Addons to wait on:
           /*
           TFMG
