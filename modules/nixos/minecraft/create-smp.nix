@@ -13,7 +13,6 @@
           "jei"
           "lithium"
           "appleskin"
-          "nochatreports"
           "modernfix"
           "ferrite-core"
           "elytra-trims"
