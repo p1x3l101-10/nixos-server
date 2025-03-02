@@ -6,35 +6,37 @@
     modrinth = {
       mods = [
         "create"
-        "create-steam-n-rails"
-        "create-jetpack"
-        "create-enchantment-industry"
-        "create-central-kitchen"
-        "create-power-loader"
-        "create-tfmg"
-        "create-liquid-fuel"
-        "create-armory"
-        "create-big-cannons"
-        "create-big-cannons-advanced-technologies"
-        "tis3d"
-        "tis-create"
-        "tis-advanced"
         "almost-unified"
         "emi"
         "emi-ores"
         "jei"
         "lithium"
-        "starlight-forge"
         "appleskin"
         "nochatreports"
         "modernfix"
         "ferrite-core"
-
+        "elytra-trims"
+        "do-a-barrel-roll"
+        "doggy-talents-next"
+        "no-chat-reports"
+        # Addons to wait on:
+        /*
+        TFMG
+        Enchantment industry
+        Central Kitchen
+        Jetpack
+        Big cannons
+        TIS-3D
+        TIS-Create
+        TIS-Advanced
+        Some create chunkloader mod
+        liquid fuel?
+        */
       ];
       downloadDependancies = "required";
     };
     settings = {
-      version = "1.20.1";
+      version = "1.21.1";
       eula = true;
       javaVersion = "21-alpine";
       type = "neoforge";
