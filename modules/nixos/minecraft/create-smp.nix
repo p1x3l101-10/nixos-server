@@ -19,6 +19,13 @@
           "do-a-barrel-roll"
           "doggy-talents-next"
           "no-chat-reports"
+          "corpse"
+          "create-stones"
+          "create-deep-dark"
+          "create-copper-zinc"
+          "create-renewable-diamonds"
+          "create-renewable-netherite"
+          "create-renewable-brass"
           # Addons to wait on:
           /*
           TFMG
