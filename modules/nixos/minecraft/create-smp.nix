@@ -36,7 +36,6 @@
         ];
         downloadDependancies = "required";
       };
-      downloadDependancies = "required";
     };
     settings = {
       version = "1.21.1";
