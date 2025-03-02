@@ -90,6 +90,7 @@ in
             "forge"
             "fabric"
             "quilt"
+            "neoforge"
           ]);
           default = null;
         };
@@ -154,6 +155,7 @@ in
           "fabric"
           "forge"
           "quilt"
+          "neoforge"
           # Modpacks
           "auto_curseforge"
           "ftba"
