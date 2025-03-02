@@ -37,7 +37,7 @@
       version = "1.20.1";
       eula = true;
       javaVersion = "21-alpine";
-      type = "forge";
+      type = "neoforge";
       memory = 8;
       port = 25565;
       openFirewall = true;
