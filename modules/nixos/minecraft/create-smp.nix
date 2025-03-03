@@ -30,6 +30,7 @@
           "emi-loot"
           "jade"
           "jade-addons-forge"
+          { dataPack = true; modId = "dynamic-lights"; }
           # Addons to wait on:
           /*
           TFMG
