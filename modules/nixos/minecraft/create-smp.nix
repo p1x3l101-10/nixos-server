@@ -1,7 +1,7 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 let
-  authlib = fetchurl {
+  authlib = pkgs.fetchurl {
     url = "https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar";
     hash = "3bc9ebdc583b36abd2a65b626c4b9f35f21177fbf42a851606eaaea3fd42ee0f";
   };
