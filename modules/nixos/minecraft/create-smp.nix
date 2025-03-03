@@ -30,6 +30,7 @@
           "simplest-paxels"
           "simplest-hammers"
           "simplest-excavators"
+          "emi-loot"
           # Addons to wait on:
           /*
           TFMG
