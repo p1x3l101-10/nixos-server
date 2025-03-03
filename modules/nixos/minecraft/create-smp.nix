@@ -30,7 +30,6 @@
           "simplest-paxels"
           "simplest-hammers"
           "simplest-excavators"
-          "simplest-broadaxes"
           # Addons to wait on:
           /*
           TFMG
