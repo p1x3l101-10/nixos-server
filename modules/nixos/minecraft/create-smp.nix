@@ -19,12 +19,10 @@
           "do-a-barrel-roll"
           "no-chat-reports"
           "corpse"
-          "create-stones"
-          "create-deep-dark"
+          { datapack = true; modId = "create-stones" }
+          { datapack = true; modId = "create-renewable-diamonds"; }
+          { datapack = true; modId = "create-renewable-netherite"; }
           "create-copper-zinc"
-          "create-renewable-diamonds"
-          "create-renewable-netherite"
-          "create-renewable-brass"
           "simplest-copper-gear"
           "simplest-paxels"
           "simplest-hammers"
