@@ -37,6 +37,7 @@
           "create-trimmed"
           "create-ranged"
           "inventory-essentials"
+          "toms-storage"
           { modId = "balm"; versionId = "Cp67Kb0j"; } # dep is not downloaded properly
           # Addons to wait on:
           /*
