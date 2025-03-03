@@ -59,7 +59,7 @@
     settings = {
       version = "1.21.1";
       eula = true;
-      javaVersion = "21-alpine";
+      java.version = "21-alpine";
       type = "neoforge";
       memory = 8;
       port = 25565;

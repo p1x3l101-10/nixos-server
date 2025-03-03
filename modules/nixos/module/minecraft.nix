@@ -135,16 +135,33 @@ in
         default = 8;
         description = "The amount of memory (in gigabytes) to allocate";
       };
-      javaVersion = mkOption {
-        type = types.enum [
-          "8"
-          "17-alpine"
-          "17-graalvm"
-          "21-alpine"
-          "21-graalvm"
-        ];
-        default = "21-alpine";
-        description = "Java version to select";
+      java = {
+        version = mkOption {
+          type = types.enum [
+            "8"
+            "17-alpine"
+            "17-graalvm"
+            "21-alpine"
+            "21-graalvm"
+          ];
+          default = "21-alpine";
+          description = "Java version to select";
+        };
+        args = mkOption {
+          type = with types; listOf str;
+          default = [];
+          description = "JVM arguments";
+        };
+        DDargs = mkOption {
+          type = with types; listOf str;
+          default = [];
+          description = "JVM DD arguments (shorthand list)";
+        };
+        XXargs = mkOption {
+          type = with types; listOf str;
+          default = [];
+          description = "JVM XX arguments (shorthand list)";
+        };
       };
       type = mkOption {
         type = types.enum [
@@ -190,7 +207,6 @@ in
         description = "RCon commands to run on server startup";
       };
       customServer = mkMcOption "Custom server jar";
-      jvmOpts = mkMcOption "Custom JVM options";
       forgeVersion = mkMcOption "";
       whitelist = mkOption {
         type = with types; listOf str;
@@ -240,7 +256,6 @@ in
         (mkEnvRaw "MODRINTH_LOADER" cfg.modrinth.pack.loader)
         (mkEnvRaw "MODRINTH_VERSION" cfg.modrinth.pack.version)
         (mkEnvRaw "CUSTOM_SERVER" cfg.settings.customServer)
-        (mkEnvRaw "JVM_OPTS" cfg.settings.jvmOpts)
         (mkEnv "ENABLE_AUTOPAUSE" (lib.trivial.boolToString cfg.autoPause.enable))
         (mkEnv "AUTOPAUSE_TIMEOUT_EST" cfg.autoPause.timeout.established)
         (mkEnv "AUTOPAUSE_TIMEOUT_INIT" cfg.autoPause.timeout.init)
@@ -249,6 +264,9 @@ in
         (mkEnvRawList "WHITELIST" cfg.settings.whitelist "\n")
         (mkEnvRawList "OPS" cfg.settings.ops "\n")
         (mkEnv "FORCE_GENERIC_PACK_UPDATE" (lib.trivial.boolToString cfg.generic.forceUpdate))
+        (mkEnvRawList "JVM_OPTS" cfg.settings.java.args " ")
+        (mkEnvRawList "JVM_XX_OPTS" cfg.settings.java.XXargs " ")
+        (mkEnvRawList "JVM_DD_OPTS" cfg.settings.java.DDargs " ")
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
@@ -265,10 +283,10 @@ in
         "/nix/store:/nix/store:ro"
       ];
       # Sets the javaVersion of the image from the respecive values from the attrSet at the begining
-      image = "internal/docker-minecraft:${toString cfg.settings.javaVersion}";
+      image = "internal/docker-minecraft:${toString cfg.settings.java.version}";
       imageFile = pkgs.internal.dockerMinecraft.override {
-        inherit ((import (./resources/minecraft.nix)).versionList.${cfg.settings.javaVersion}) imageDigest sha256;
-        finalImageTag = (toString cfg.settings.javaVersion); 
+        inherit ((import (./resources/minecraft.nix)).versionList.${cfg.settings.java.version}) imageDigest sha256;
+        finalImageTag = (toString cfg.settings.java.version); 
       };
       autoStart = true;
       extraOptions = (lib.lists.optionals cfg.autoPause.enable ["--cap-add=CAP_NET_RAW" "--network=slirp4netns:port_handler=slirp4netns"]);

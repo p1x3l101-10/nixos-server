@@ -29,7 +29,10 @@ in
     settings = {
       eula = true;
       type = "custom";
-      javaVersion = "21-graalvm";
+      java = {
+        version = "21-graalvm";
+        args = "-Dfml.readTimeout=180 @java9args.txt";
+      };
       version = "1.7.10";
       memory = 8;
       port = 25565;
@@ -39,7 +42,6 @@ in
         "difficulty hard"
       ];
       customServer = "lwjgl3ify-forgePatches.jar";
-      jvmOpts = "-Dfml.readTimeout=180 @java9args.txt";
       whitelist = import ./overrides/whitelist.nix;
     };
   };
