@@ -37,6 +37,7 @@
           "create-trimmed"
           "create-ranged"
           "inventory-essentials"
+          "balm" # dep is not downloaded
           # Addons to wait on:
           /*
           TFMG
