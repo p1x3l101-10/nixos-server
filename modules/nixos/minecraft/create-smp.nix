@@ -32,7 +32,7 @@
           "simplest-excavators"
           "emi-loot"
           "jade"
-          "jade-additions"
+          "jade-addons-forge"
           # Addons to wait on:
           /*
           TFMG
