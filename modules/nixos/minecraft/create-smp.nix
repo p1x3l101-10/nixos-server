@@ -1,6 +1,11 @@
-{ ... }:
+{ pkgs, lib, ... }:
 
-{
+let
+  authlib = fetchurl {
+    url = "https://authlib-injector.yushi.moe/artifact/53/authlib-injector-1.2.5.jar";
+    hash = "3bc9ebdc583b36abd2a65b626c4b9f35f21177fbf42a851606eaaea3fd42ee0f";
+  };
+in {
   services.minecraft = {
     enable = true;
     modrinth = {
@@ -61,8 +66,14 @@
       port = 25565;
       openFirewall = true;
       whitelist = import ./overrides/whitelist.nix;
+      extraEnv = {
+        JVM_OPTS = "-javaagent:${authlib}=ely.by";
+      };
     };
   };
+  virtualisation.oci-containers.containers.minecraft.volumes = [
+    "/nix/store:/nix/store:ro"
+  ];
   # Persist server
   environment.persistence."/nix/host/state/Servers/Minecraft/create-smp".directories = [
     { directory = "/var/lib/minecraft"; user = "1000"; group = "1000"; }
