@@ -17,7 +17,6 @@
           "ferrite-core"
           "elytra-trims"
           "do-a-barrel-roll"
-          "doggy-talents-next"
           "no-chat-reports"
           "corpse"
           "create-stones"
