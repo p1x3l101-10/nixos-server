@@ -37,7 +37,7 @@
           "create-trimmed"
           "create-ranged"
           "inventory-essentials"
-          "balm" # dep is not downloaded
+          { modId = "balm"; version = "Cp67Kb0j"; } # dep is not downloaded properly
           # Addons to wait on:
           /*
           TFMG
