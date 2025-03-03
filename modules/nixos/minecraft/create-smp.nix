@@ -31,6 +31,8 @@
           "simplest-hammers"
           "simplest-excavators"
           "emi-loot"
+          "jade"
+          "jade-additions"
           # Addons to wait on:
           /*
           TFMG
