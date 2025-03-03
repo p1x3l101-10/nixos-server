@@ -34,6 +34,9 @@
           "natures-compass"
           "explorers-compass"
           "travelers-compass"
+          "create-trimmed"
+          "create-ranged"
+          "inventory-essentials"
           # Addons to wait on:
           /*
           TFMG
