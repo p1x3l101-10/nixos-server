@@ -36,9 +36,7 @@
           "travelers-compass"
           "create-trimmed"
           "create-ranged"
-          "inventory-essentials"
           "toms-storage"
-          { modId = "balm"; versionId = "Cp67Kb0j"; } # dep is not downloaded properly
           "create-ore-excavation"
           "create_oxidized"
           # Addons to wait on:
