@@ -36,7 +36,6 @@
           "travelers-compass"
           "create-trimmed"
           "create-ranged"
-          "toms-storage"
           "create-ore-excavation"
           "create_oxidized"
           # Addons to wait on:
