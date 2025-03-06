@@ -21,6 +21,7 @@
           "appleskin"
         ];
         downloadDependancies = "required";
+        allowedVersionType = "beta";
       };
     };
     settings = {
