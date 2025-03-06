@@ -12,11 +12,11 @@ let
                   item = name;
                   emc = value;
                 }
-              )
+              ) set
             )
           ];
         }
-      ) set
+      )
     )
   );
 in
