@@ -6,6 +6,7 @@
     curseforge = {
       apiKey = import ./overrides/cfApiKey.nix;
       mods = [
+        # The only required mods
         "projecte"
         "team-projecte"
       ];
@@ -13,11 +14,13 @@
     modrinth = {
       mods = {
         projects = [
+          # Nice to have
           "jei"
           "emi"
           "emi-ores"
           "emi-loot"
           "appleskin"
+          # Server-side
           "radium"
         ];
         downloadDependancies = "required";
