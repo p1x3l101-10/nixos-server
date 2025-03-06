@@ -9,10 +9,10 @@
       ];
     });
     curseforge.mods = [
-      { modId = "399700"; }
-      { modId = "1062867"; }
-      { modId = "226410"; }
-      { modId = "689273"; }
+      { modId = 399700; }
+      { modId = 1062867; }
+      { modId = 226410; }
+      { modId = 689273; }
     ];
     modrinth.mods = {
       projects = [
