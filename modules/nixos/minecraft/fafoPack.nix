@@ -15,7 +15,7 @@
         { modId = 226410; }
         { modId = 689273; }
       ];
-      apiKey = import ./overrides/cfApkKey.nix;
+      apiKey = import ./overrides/cfApiKey.nix;
     };
     modrinth.mods = {
       projects = [
