@@ -70,7 +70,7 @@ in
     enable = mkEnableOption "Minecraft Server";
     generic = {
       pack = mkMcOption "Generic Pack URL";
-      forceUpdate = mkEnableOption "force update";
+      forceUpdate = (mkEnableOption "force update") // { default = true; };
     };
     curseforge = {
       apiKey = mkOption {
