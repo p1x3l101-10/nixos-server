@@ -5,16 +5,14 @@ let
     pkgs.writeTextDir "config/ProjectE/custom_emc.json" (
       builtins.toJSON (
         {
-          entries = [
-            (
-              lib.attrsets.mapAttrsToList (name: value:
-                {
-                  item = name;
-                  emc = value;
-                }
-              ) set
-            )
-          ];
+          entries = (
+            lib.attrsets.mapAttrsToList (name: value:
+              {
+                item = name;
+                emc = value;
+              }
+            ) set
+          );
         }
       )
     )
