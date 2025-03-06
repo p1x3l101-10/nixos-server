@@ -3,6 +3,11 @@
 {
   services.minecraft = {
     enable = true;
+    generic.pack = builtins.toString (lib.internal.builders.genericPack {
+      packList = [
+        ./overrides/fafoPack
+      ];
+    });
     curseforge = {
       apiKey = import ./overrides/cfApiKey.nix;
       mods = [
@@ -36,7 +41,7 @@
     settings = {
       version = "1.20.1";
       eula = true;
-      java.version = "21-alpine";
+      java.version = "21-graalvm";
       type = "neoforge";
       memory = 8;
       port = 25565;
