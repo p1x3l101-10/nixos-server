@@ -16,6 +16,9 @@
       rconStartup = [
         "gamerule playersSleepingPercentage 10"
       ];
+      ops = [
+        "P1x3l101"
+      ];
     };
   };
   # Persist server
