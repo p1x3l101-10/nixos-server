@@ -6,7 +6,7 @@
     curseforge = {
       apiKey = import ./overrides/cfApiKey.nix;
       mods = [
-        # The only required mods
+        # Required
         "projecte"
         "team-projecte"
       ];
@@ -14,6 +14,8 @@
     modrinth = {
       mods = {
         projects = [
+          # Required
+          "corpse"
           # Nice to have
           "jei"
           "emi"
