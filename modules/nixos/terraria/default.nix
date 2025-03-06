@@ -2,7 +2,7 @@
 
 {
   services.tmodloader = {
-    enable = true;
+    enable = false;
     openFirewall = true;
     difficulty = "journey";
     world = {
