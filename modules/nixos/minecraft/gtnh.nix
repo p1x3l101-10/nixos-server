@@ -44,17 +44,10 @@
     };
   };
   virtualisation.oci-containers.containers.minecraft.volumes = [
-    "/var/lib/minecraft/data:/data:rw" # Persist all the random data bc journeymap is stupid and cant use the world id
     "/var/lib/minecraft/backups:/backups:rw" # Serverutilities backups
-    "/var/lib/minecraft/world:/data/World:rw" # Use old world location 
   ];
   # Make a data folder to mount to
   systemd.tmpfiles.settings."50-minecraft" = {
-    "/var/lib/minecraft/data".d = {
-      user = "1000";
-      group = "1000";
-      mode = "0755";
-    };
     "/var/lib/minecraft/backups".d = {
       user = "1000";
       group = "1000";
