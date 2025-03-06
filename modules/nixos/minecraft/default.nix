@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./create-smp.nix
+    ./fafoPack.nix
   ];
 }
