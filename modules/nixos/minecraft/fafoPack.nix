@@ -84,6 +84,8 @@
         "cs7iGVq1"
         "ZYgyPyfq"
         "pJGcKPh1"
+        "kubejs"
+        "mekanism"
       ];
       allowedVersionType = "beta";
     };
