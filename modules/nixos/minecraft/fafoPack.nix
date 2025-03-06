@@ -3,7 +3,11 @@
 {
   services.minecraft = {
     enable = true;
-    generic.pack = "/global/fafoPack.zip";
+    generic.pack = builtins.toString (lib.internal.builders.genericPack {
+      packList = [
+        ./overrides/fafoPack
+      ];
+    });
     settings = {
       version = "1.20.1";
       eula = true;
