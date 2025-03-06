@@ -19,6 +19,7 @@
           "emi-ores"
           "emi-loot"
           "appleskin"
+          "kotlin-for-forge"
         ];
         downloadDependancies = "required";
         allowedVersionType = "beta";
