@@ -81,6 +81,16 @@ in
         slug = mkMcOption "";
         fileId = mkMcIntOption "";
       };
+      mods = mkOption {
+        type = with types; listOf (coercedTo str (slug: { inherit slug; }) (submodule curseforgeMod));
+        default = [];
+        description = "List of mods from modrinth to install";
+        example = ''
+          [
+            "TODO: MAKE EXAMPLE"
+          ]
+        '';
+      };
     };
     modrinth = {
       pack = {
@@ -267,6 +277,7 @@ in
         (mkEnvRawList "JVM_OPTS" cfg.settings.java.args " ")
         (mkEnvRawList "JVM_XX_OPTS" cfg.settings.java.XXargs " ")
         (mkEnvRawList "JVM_DD_OPTS" cfg.settings.java.DDargs " ")
+        (mkEnvRawList "CURSEFORGE_FILES" (lib.forEach cfg.curseforge.mods (x: lib.internal.minecraft.translateModName x "curseforge")) "\n")
       ]));
       ports = [
         "${builtins.toString cfg.settings.port}:25565"
