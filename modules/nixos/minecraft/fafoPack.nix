@@ -3,46 +3,7 @@
 {
   services.minecraft = {
     enable = true;
-    generic.pack = builtins.toString (lib.internal.builders.genericPack {
-      packList = [
-        ./overrides/fafoPack
-      ];
-    });
-    curseforge = {
-      apiKey = import ./overrides/cfApiKey.nix;
-      mods = [
-        # Required
-        "projecte"
-        "team-projecte"
-      ];
-    };
-    modrinth = {
-      mods = {
-        projects = [
-          # Required
-          "corpse"
-          "mekanism"
-          "mekanism-tools"
-          "mekanism-generators"
-          "mekanism-additions"
-          "projecte-emc+"
-          # Nice to have
-          "jei"
-          "emi"
-          "emi-ores"
-          "emi-loot"
-          "appleskin"
-          # Server-side
-          "radium"
-          "dynamic-lights"
-          "better-spawner-control"
-          "modernfix"
-          "ferrite-core"
-        ];
-        downloadDependancies = "required";
-        allowedVersionType = "beta";
-      };
-    };
+    generic.pack = "/global/fafoPack.zip";
     settings = {
       version = "1.20.1";
       eula = true;
