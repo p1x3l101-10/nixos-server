@@ -8,12 +8,15 @@
         ./overrides/fafoPack
       ];
     });
-    curseforge.mods = [
-      { modId = 399700; }
-      { modId = 1062867; }
-      { modId = 226410; }
-      { modId = 689273; }
-    ];
+    curseforge = {
+      mods = [
+        { modId = 399700; }
+        { modId = 1062867; }
+        { modId = 226410; }
+        { modId = 689273; }
+      ];
+      apiKey = import ./overrides/cfApkiKey.nix;
+    };
     modrinth.mods = {
       projects = [
         "pNabrMMw"
