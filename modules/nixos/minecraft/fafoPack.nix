@@ -22,6 +22,10 @@
           "appleskin"
           # Server-side
           "radium"
+          "dynamic-lights"
+          "better-spawner-control"
+          "modernfix"
+          "ferrite-core"
         ];
         downloadDependancies = "required";
         allowedVersionType = "beta";
