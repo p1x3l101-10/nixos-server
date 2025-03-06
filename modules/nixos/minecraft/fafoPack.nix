@@ -25,7 +25,7 @@
           "mekanism-tools"
           "mekanism-generators"
           "mekanism-additions"
-          "project-emc+"
+          "projecte-emc+"
           # Nice to have
           "jei"
           "emi"
