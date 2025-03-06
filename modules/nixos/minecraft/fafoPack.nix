@@ -21,6 +21,11 @@
         projects = [
           # Required
           "corpse"
+          "mekanism"
+          "mekanism-tools"
+          "mekanism-generators"
+          "mekanism-additions"
+          "project-emc+
           # Nice to have
           "jei"
           "emi"
