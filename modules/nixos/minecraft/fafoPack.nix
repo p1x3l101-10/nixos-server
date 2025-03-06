@@ -7,7 +7,6 @@
       apiKey = import ./overrides/cfApiKey.nix;
       mods = [
         "projecte"
-        "projectextended"
         "team-projecte"
       ];
     };
