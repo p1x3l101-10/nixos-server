@@ -287,9 +287,7 @@ in
         )
       ));
       volumes = [
-        "/var/lib/minecraft/world:/data/world:rw"
-        "/var/lib/minecraft/mods:/mods:ro"
-        "/var/lib/minecraft/config:/config:ro"
+        "/var/lib/minecraft/data:/data:rw"
         "/var/lib/minecraft/global:/global:ro"
         "/nix/store:/nix/store:ro"
       ];
@@ -308,22 +306,7 @@ in
         group = "root";
         mode = "0755";
       };
-      "/var/lib/minecraft/world".d = {
-        user = "1000";
-        group = "1000";
-        mode = "0755";
-      };
-      "/var/lib/minecraft/config".d = {
-        user = "1000";
-        group = "1000";
-        mode = "0755";
-      };
-      "/var/lib/minecraft/mods".d = {
-        user = "1000";
-        group = "1000";
-        mode = "0755";
-      };
-      "/var/lib/minecraft/plugins".d = {
+      "/var/lib/minecraft/data".d = {
         user = "1000";
         group = "1000";
         mode = "0755";
