@@ -18,7 +18,7 @@
           "emi-ores"
           "emi-loot"
           "appleskin"
-          "kotlin-for-forge"
+          "radium"
         ];
         downloadDependancies = "required";
         allowedVersionType = "beta";
