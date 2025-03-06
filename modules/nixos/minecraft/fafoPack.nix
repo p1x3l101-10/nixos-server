@@ -1,11 +1,37 @@
 { pkgs, lib, ... }:
 
+let
+  genEmc = set: (
+    pkgs.writeTextDir "config/ProjectE/custom_emc.json" (
+      builtins.toJSON (
+        {
+          entries = [
+            (
+              lib.attrsets.mapAttrsToList (name: value:
+                {
+                  item = name;
+                  emc = value;
+                }
+              )
+            )
+          ];
+        }
+      ) set
+    )
+  );
+in
 {
   services.minecraft = {
     enable = true;
     generic.pack = builtins.toString (lib.internal.builders.genericPack {
       packList = [
         ./overrides/fafoPack
+        (genEmc {
+          "tfmg:lithium_ingot" = 1024;
+          "create:zinc_ingot" = 256;
+          "tfmg:fireclay_ball" = 16;
+          "create:andesite_casing" = 76;
+        })
       ];
     });
     curseforge = {
