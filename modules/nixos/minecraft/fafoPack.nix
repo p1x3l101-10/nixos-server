@@ -82,6 +82,7 @@
         "ZYgyPyfq"
         "pJGcKPh1"
       ];
+      allowedVersionType = "beta";
     };
     settings = {
       version = "1.20.1";
