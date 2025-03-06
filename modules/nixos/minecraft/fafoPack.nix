@@ -86,6 +86,7 @@
         "mekanism"
       ];
       allowedVersionType = "beta";
+      downloadDependancies = "required";
     };
     settings = {
       version = "1.20.1";
