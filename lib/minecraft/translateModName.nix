@@ -22,7 +22,7 @@ in (
   else # curseforge
     (if (slug != null) then slug else (builtins.toString modId))
     + (
-      if (versionId != null) then ":${versionId}"
+      if (versionId != null) then ":${builtins.toString versionId}"
       else if (partialFilename != null) then "@${partialFilename}"
     else ""
   )
