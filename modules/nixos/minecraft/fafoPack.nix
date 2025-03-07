@@ -37,6 +37,7 @@ in
           "create:copper_sheet" = 128;
           "create:brass_casing" = 416;
           "create:copper_casing" = 160;
+          "draconicevolution:draconium_dust" = 2048;
         })
       ];
     });
