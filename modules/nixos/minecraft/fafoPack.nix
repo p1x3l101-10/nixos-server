@@ -37,9 +37,16 @@ in
           "create:copper_sheet" = 128;
           "create:brass_casing" = 416;
           "create:copper_casing" = 160;
-          "draconicevolution:draconium_dust" = 2048;
+          "draconicevolution:draconium_dust" = 65536;
           "ae2:fluix_crystal" = 832;
           "ae2:charged_certus_quartz_crystal" = 512;
+          "ae2:printed_calculation_processor" = 256;
+          "ae2:printed_engineering_processor" = 8192;
+          "ae2:printed_logic_processor" = 2048;
+          "ae2:printed_silcon" = 256;
+          "ae2:logic_processor" = 2368;
+          "ae2:calculation_processor" = 578;
+          "ae2:engineering_processor" = 8512;
         })
       ];
     });
