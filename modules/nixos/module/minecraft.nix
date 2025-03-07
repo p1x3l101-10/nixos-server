@@ -82,7 +82,7 @@ in
         fileId = mkMcIntOption "";
       };
       mods = mkOption {
-        type = with types; listOf (submodule curseforgeMod);
+        type = with types; listOf (coercedTo str (slug: { inherit slug; }) (submodule curseforgeMod));
         default = [];
         description = "List of mods from modrinth to install";
         example = ''
