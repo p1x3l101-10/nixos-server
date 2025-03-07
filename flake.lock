@@ -363,11 +363,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1741389926,
-        "narHash": "sha256-31NJZLRggPAxtKOx4eXntOABMbDZnIwRXuysx3uHyqM=",
+        "lastModified": 1741390518,
+        "narHash": "sha256-vG+RfgQgwYbw6c+yemOiAl4nIKz4SJ+IoSR5wcnUHlk=",
         "owner": "p1x3l101-10",
         "repo": "nixos",
-        "rev": "8c16b565f99d03af80d9114106d052ae5007dfe9",
+        "rev": "8ded05e49c472b325ce6cf05c22ab4310d6db779",
         "type": "github"
       },
       "original": {
