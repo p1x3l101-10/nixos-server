@@ -116,6 +116,7 @@ in
         "pJGcKPh1"
         "kubejs"
         "mekanism"
+        "create-power-loader"
       ];
       allowedVersionType = "beta";
       downloadDependancies = "required";
