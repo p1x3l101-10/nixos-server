@@ -29,6 +29,14 @@ in
           "create:zinc_ingot" = 256;
           "tfmg:fireclay_ball" = 16;
           "create:andesite_casing" = 76;
+          "create:polished_rose_quartz" = 768;
+          "create:brass_ingot" = 384;
+          "create:brass_sheet" = 384;
+          "create:iron_sheet" = 256;
+          "create:golden_sheet" = 2048;
+          "create:copper_sheet" = 128;
+          "create:brass_casing" = 416;
+          "create:copper_casing" = 160;
         })
       ];
     });
