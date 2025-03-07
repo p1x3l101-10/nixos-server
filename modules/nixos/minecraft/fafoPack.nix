@@ -38,6 +38,8 @@ in
           "create:brass_casing" = 416;
           "create:copper_casing" = 160;
           "draconicevolution:draconium_dust" = 2048;
+          "ae2:fluix_crystal" = 832;
+          "ae2:charged_certus_quartz_crystal" = 512;
         })
       ];
     });
