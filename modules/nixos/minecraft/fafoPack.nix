@@ -46,7 +46,7 @@ in
         { modId = 1062867; }
         { modId = 226410; }
         { modId = 689273; }
-        "the-twilight-forest"
+        { slug = "the-twilight-forest"; }
         { modId = 654347; versionId = 5241995; }
       ];
       apiKey = import ./overrides/cfApiKey.nix;
