@@ -117,6 +117,7 @@ in
         "kubejs"
         "mekanism"
         "create-power-loader"
+        "draconic-evolution"
       ];
       allowedVersionType = "beta";
       downloadDependancies = "required";
