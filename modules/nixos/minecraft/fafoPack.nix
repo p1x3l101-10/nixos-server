@@ -134,6 +134,7 @@ in
         "twilight-aether"
         "twilight-forest-dungeons"
         "aether"
+        "do-a-barrel-roll"
       ];
       allowedVersionType = "beta";
       downloadDependancies = "required";
