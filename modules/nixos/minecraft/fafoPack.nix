@@ -47,7 +47,7 @@ in
         { modId = 226410; }
         { modId = 689273; }
         "the-twilight-forest"
-        { modId = 654347; }
+        { modId = 654347; versionId = 5241995; }
       ];
       apiKey = import ./overrides/cfApiKey.nix;
     };
