@@ -47,7 +47,7 @@ in
         { modId = 226410; }
         { modId = 689273; }
         "the-twilight-forest"
-        "chest-cavity-forge-port"
+        { modId = 654347; }
       ];
       apiKey = import ./overrides/cfApiKey.nix;
     };
