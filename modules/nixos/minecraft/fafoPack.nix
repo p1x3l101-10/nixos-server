@@ -46,6 +46,7 @@ in
         { modId = 1062867; }
         { modId = 226410; }
         { modId = 689273; }
+        "the-twilight-forest"
       ];
       apiKey = import ./overrides/cfApiKey.nix;
     };
@@ -119,6 +120,9 @@ in
         "create-power-loader"
         "draconic-evolution"
         "tempad"
+        "twilight-aether"
+        "twilight-forest-dungeons"
+        "aether"
       ];
       allowedVersionType = "beta";
       downloadDependancies = "required";
