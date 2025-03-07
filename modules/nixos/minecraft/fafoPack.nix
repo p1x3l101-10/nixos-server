@@ -75,7 +75,6 @@ in
         "bQ5TJA1E"
         "WrpuIfhw"
         { modId = "create"; versionId = "IJpm7znS"; }
-        "ResbpANg"
         "USgVjXsk"
         "vvuO3ImH"
         "fRiHVvU7"
