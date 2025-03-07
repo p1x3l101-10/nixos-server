@@ -118,6 +118,7 @@ in
         "mekanism"
         "create-power-loader"
         "draconic-evolution"
+        "tempad"
       ];
       allowedVersionType = "beta";
       downloadDependancies = "required";
