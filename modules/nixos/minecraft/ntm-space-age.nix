@@ -37,7 +37,7 @@ in {
       packList = [
         (pkgs.writeTextDir "lwjgl3ify-args/java9args.txt" (builtins.readFile (builtins.fetchurl {
           url = "https://raw.githubusercontent.com/GTNewHorizons/lwjgl3ify/refs/heads/master/java9args.txt";
-          hash = lib.fakehash;
+          sha256 = lib.fakehash;
         })))
         lwjgl3ify-forgePatches
         (GTNHGenericMod {
