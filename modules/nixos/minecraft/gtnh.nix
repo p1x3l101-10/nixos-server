@@ -27,7 +27,7 @@ in {
             name = "ocwasm";
             version = "1.7.10-0.5.2";
             file = fetchGHRelease {
-              fileName = "${name}-${version}";
+              fileName = "${name}-${version}.jar";
               inherit version;
               owner = "DCNick3";
               repo = "OC-Wasm-GTNH";
