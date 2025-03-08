@@ -35,10 +35,6 @@ in {
     enable = true;
     generic.pack = builtins.toString (lib.internal.builders.genericPack {
       packList = [
-        (pkgs.writeTextDir "lwjgl3ify-args/java9args.txt" (builtins.readFile (builtins.fetchurl {
-          url = "https://raw.githubusercontent.com/GTNewHorizons/lwjgl3ify/refs/heads/master/java9args.txt";
-          sha256 = "sha256:0mvlkwbi9v1dxir1fj9vrd2liwlakqzmajl4grwwg6ynb1qw2jai";
-        })))
         lwjgl3ify-forgePatches
         (GTNHGenericMod {
           name = "appliedenergistics2";
@@ -91,10 +87,13 @@ in {
       java = {
         version = "21-graalvm";
         args = [
-          "@java9args.txt"
+          "@${builtins.fetchurl {
+            url = "https://raw.githubusercontent.com/GTNewHorizons/lwjgl3ify/refs/heads/master/java9args.txt";
+            sha256 = "sha256:0mvlkwbi9v1dxir1fj9vrd2liwlakqzmajl4grwwg6ynb1qw2jai";
+          }}"
         ];
       };
-      customServer = "lwjgl3ify-forgePatches.jar";
+      customServer = lwjgl3ify-forgePatches;
       version = "1.7.10";
       memory = 8;
       rconStartup = [
