@@ -43,6 +43,7 @@ in {
       projects = [
         "ntmspace"
         "notenoughids-unofficial"
+        "gtnhlib"
       ];
       allowedVersionType = "beta";
     };
@@ -51,7 +52,6 @@ in {
         "70496"
         "746279"
         "230976"
-        "688894"
         "384391"
         "358228"
         "1099276"
