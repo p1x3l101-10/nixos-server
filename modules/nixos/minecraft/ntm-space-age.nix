@@ -68,7 +68,7 @@ in {
     curseforge = {
       mods = [
         "70496"
-        { modId = "746279"; versionId = "6070102"; }
+        { modId = 746279; versionId = 6070102; }
         "230976"
         "384391"
         "358228"
