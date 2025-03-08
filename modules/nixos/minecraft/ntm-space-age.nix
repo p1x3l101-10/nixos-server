@@ -93,7 +93,7 @@ in {
           }}"
         ];
       };
-      customServer = lwjgl3ify-forgePatches;
+      customServer = builtins.toString lwjgl3ify-forgePatches;
       version = "1.7.10";
       memory = 8;
       rconStartup = [
