@@ -93,7 +93,7 @@ in {
           }}"
         ];
       };
-      customServer = "${lwjgl3ify-forgePatches}/lwjgl3ify-forgePatches.jar";
+      customServer = "lwjgl3ify-forgePatches.jar";
       version = "1.7.10";
       memory = 8;
       rconStartup = [
