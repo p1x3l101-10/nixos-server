@@ -23,19 +23,19 @@ in {
           name = "appliedenergistics2";
           version = "rv3-beta-549-GTNH";
           repo = "Applied-Energistics-2-Unofficial";
-          hash = lib.fakeHash;
+          hash = "sha256-Uh9r5+HTTRPVqTFvsKx40ucEX8YTrzIvCeimGwSZMaA=";
         })
         (GTNHGenericMod rec {
           name = "ae2stuff";
           version = "0.9.4-GTNH";
           repo = name;
-          hash = lib.fakeHash;
+          hash = "sha256-+QWYZ1fT43aM9BWUVvwojB6RXORjCt7n6I+1HBezGvY=";
         })
         (GTNHGenericMod rec {
           name = "NotEnoughEnergistics";
           version = "1.7.0";
           repo = name;
-          hash = lib.fakeHash;
+          hash = "sha256-h4nZ+U03r8jPCZEzzH83yt7FPcM9V7ERpEgqmLglMrE=";
         })
       ];
     });
