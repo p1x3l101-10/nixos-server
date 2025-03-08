@@ -19,7 +19,7 @@ let
     version = "2.1.9";
     src = pkgs.fetchurl {
       src = "https://github.com/GTNewHorizons/lwjgl3ify/releases/download/${version}/lwjgl3ify-${version}-forgePatches.jar";
-      hash = lib.fakehash;
+      hash = lib.fakeHash;
     };
     sourceRoot = ".";
     unpackPhase = ''
@@ -37,7 +37,7 @@ in {
       packList = [
         (pkgs.writeTextDir "lwjgl3ify-args/java9args.txt" (builtins.readFile (builtins.fetchurl {
           url = "https://raw.githubusercontent.com/GTNewHorizons/lwjgl3ify/refs/heads/master/java9args.txt";
-          sha256 = lib.fakehash;
+          sha256 = lib.fakeHash;
         })))
         lwjgl3ify-forgePatches
         (GTNHGenericMod {
