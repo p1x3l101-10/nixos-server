@@ -7,8 +7,8 @@ let
   };
   fetchGTNHMod = { repo, name, version, hash }: fetchGHRelease {
     owner = "GTNewHorizons";
-    version = "${version}-GTNH";
-    fileName = "${name}-${version}-GTNH.jar";
+    version = "${version}";
+    fileName = "${name}-${version}.jar";
     inherit repo hash;
   };
   GTNHGenericMod = { repo, name, version, hash }: lib.internal.builders.genericMod {
@@ -22,13 +22,13 @@ in {
       packList = [
         (GTNHGenericMod {
           name = "appliedenergistics2";
-          version = "rv3-beta-549";
+          version = "rv3-beta-549-GTNH";
           repo = "Applied-Energistics-2-Unofficial";
           hash = lib.fakeHash;
         })
         (GTNHGenericMod rec {
           name = "ae2stuff";
-          version = "0.9.4";
+          version = "0.9.4-GTNH";
           repo = name;
           hash = lib.fakeHash;
         })
