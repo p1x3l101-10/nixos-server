@@ -4,7 +4,7 @@
     "8" = {
       # java8
       imageDigest = "sha256:b70787a42a14867669d66c900b5c42bbaf9d2a21c7e0edd29b9c0e050c95b6ea";
-      sha256 = "0scsmi52x8wq2sxqf360116s8w4f3ywp9k32akwxhwnzq4nfjd67";
+      sha256 = "sha256-r8s82sTR6xjs8M+oE2EgeOpCApYPlGIySGPH+1aFQ4Y=";
     };
     "17-alpine" = {
       # java17-alpine
