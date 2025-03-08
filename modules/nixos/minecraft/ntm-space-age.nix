@@ -40,6 +40,33 @@ in {
         })
       ];
     });
+    modrinth.mods = {
+      projects = [
+        "ntmspace"
+        "notenoughids-unofficial"
+      ];
+      allowedVersionType = "beta";
+    };
+    curseforge = {
+      mods = [
+        "70496"
+        "746279"
+        "250398"
+        "230976"
+        "688894"
+        "384391"
+        "60089"
+        "358228"
+        "1099276"
+        "238603"
+        "227639"
+        "244258"
+        "826970"
+        "73488"
+        "235140"
+      ];
+      apiKey = import ./overrides/cfApiKey.nix;
+    };
     settings = {
       eula = true;
       java.version = "8";
