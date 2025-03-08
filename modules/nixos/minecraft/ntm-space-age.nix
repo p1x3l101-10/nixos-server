@@ -35,6 +35,7 @@ in {
     enable = true;
     generic.pack = builtins.toString (lib.internal.builders.genericPack {
       packList = [
+        ./overrides/ntm-space-age
         lwjgl3ify-forgePatches
         (GTNHGenericMod {
           name = "appliedenergistics2";
