@@ -35,7 +35,7 @@ in {
     enable = true;
     generic.pack = builtins.toString (lib.internal.builders.genericPack {
       packList = [
-        (pkgs.writeTextDir "lwjgl3ify-args/java9args.txt" (builtins.readfile (builtins.fetchurl {
+        (pkgs.writeTextDir "lwjgl3ify-args/java9args.txt" (builtins.readFile (builtins.fetchurl {
           url = "https://raw.githubusercontent.com/GTNewHorizons/lwjgl3ify/refs/heads/master/java9args.txt";
           hash = lib.fakehash;
         })))
