@@ -5,16 +5,6 @@ let
     url = "https://github.com/${owner}/${repo}/releases/download/${version}/${fileName}";
     inherit hash;
   };
-  fetchGTNHMod = { repo, name, version, hash }: fetchGHRelease {
-    owner = "GTNewHorizons";
-    version = "${version}-GTNH";
-    fileName = "${name}-${version}-GTNH";
-    inherit repo hash;
-  };
-  GTNHGenericMod = { repo, name, version, hash }: lib.internal.builders.genericMod {
-    inherit name version;
-    file = fetchGTNHMod { inherit repo name version hash; };
-  };
 in {
   services.minecraft = {
     enable = true;
