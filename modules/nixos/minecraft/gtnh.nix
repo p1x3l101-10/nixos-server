@@ -1,6 +1,21 @@
 { pkgs, lib, ... }:
 
-{
+let
+  fetchGHRelease = { owner, repo, version, fileName, hash }: pkgs.fetchurl {
+    url = "https://github.com/${owner}/${repo}/releases/download/${version}/${fileName}";
+    inherit hash;
+  };
+  fetchGTNHMod = { repo, name, version, hash }: fetchGHRelease {
+    owner = "GTNewHorizons";
+    version = "${version}-GTNH";
+    fileName = "${name}-${version}-GTNH";
+    inherit repo version hash;
+  };
+  GTNHGenericMod = { repo, name, version, hash }: lib.internal.builders.genericMod {
+    inherit name version;
+    file = fetchGTNHMod { inherit repo name version hash; };
+  };
+in {
   services.minecraft = {
     enable = true;
     generic = {
@@ -10,9 +25,11 @@
           ./overrides/gtnh
           (lib.internal.builders.genericMod rec {
             name = "ocwasm";
-            version = "0.5.2";
-            file = pkgs.fetchurl {
-              url = "https://github.com/DCNick3/OC-Wasm-GTNH/releases/download/1.7.10-0.5.2/${name}-1.7.10-${version}.jar";
+            version = "1.7.10-0.5.2";
+            file = fetchGHRelease {
+              inherit name version;
+              owner = "DCNick3";
+              repo = "OC-Wasm-GTNH";
               hash = "sha256-sMMdWxKBQCqtijxLos7GYjlxHtrsFfh+XzTjTcabnek=";
             };
           })
