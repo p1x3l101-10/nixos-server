@@ -33,7 +33,7 @@ in {
         })
         (GTNHGenericMod rec {
           name = "NotEnoughEnergistics";
-          version = "1.7.10";
+          version = "1.7.0";
           repo = name;
           hash = lib.fakeHash;
         })
