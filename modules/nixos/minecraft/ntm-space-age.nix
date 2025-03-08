@@ -14,11 +14,32 @@ let
     inherit name version;
     file = fetchGTNHMod { inherit repo name version hash; };
   };
+  lwjgl3ify-forgePatches = pkgs.stdenvNoCC.mkDerivation rec {
+    name = "lwjgl3ify-forgePatches";
+    version = "2.1.9";
+    src = pkgs.fetchurl {
+      src = "https://github.com/GTNewHorizons/lwjgl3ify/releases/download/${version}/lwjgl3ify-${version}-forgePatches.jar";
+      hash = lib.fakehash;
+    };
+    sourceRoot = ".";
+    unpackPhase = ''
+      cp ${src} "./${src.name}"
+    '';
+    installPhase = ''
+      mkdir -p $out
+      mv ./${src.name} $out/lwjgl3ify-forgePatches.jar
+    '';
+  };
 in {
   services.minecraft = {
     enable = true;
     generic.pack = builtins.toString (lib.internal.builders.genericPack {
       packList = [
+        (pkgs.writeTextDir "lwjgl3ify-args/java9args.txt" (builtins.readfile (builtins.fetchurl {
+          url = "https://raw.githubusercontent.com/GTNewHorizons/lwjgl3ify/refs/heads/master/java9args.txt";
+          hash = lib.fakehash;
+        })))
+        lwjgl3ify-forgePatches
         (GTNHGenericMod {
           name = "appliedenergistics2";
           version = "rv3-beta-549-GTNH";
@@ -43,7 +64,7 @@ in {
       projects = [
         "ntmspace"
         "notenoughids-unofficial"
-        { modId = "gtnhlib"; versionId = "N42YUMSO"; }
+        "gtnhlib"
       ];
       allowedVersionType = "beta";
     };
@@ -66,8 +87,14 @@ in {
     };
     settings = {
       eula = true;
-      java.version = "8";
-      type = "forge";
+      type = "custom";
+      java = {
+        version = "21-graalvm";
+        args = [
+          "@java9args.txt"
+        ];
+      };
+      customServer = "lwjgl3ify-forgePatches.jar";
       version = "1.7.10";
       memory = 8;
       rconStartup = [
