@@ -61,6 +61,7 @@ in {
         "ntmspace"
         "notenoughids-unofficial"
         "gtnhlib"
+        "lwjgl3ify"
       ];
       allowedVersionType = "beta";
     };
