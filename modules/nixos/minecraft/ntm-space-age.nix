@@ -7,9 +7,8 @@ let
   };
   fetchGTNHMod = { repo, name, version, hash }: fetchGHRelease {
     owner = "GTNewHorizons";
-    version = "${version}";
     fileName = "${name}-${version}.jar";
-    inherit repo hash;
+    inherit repo version hash;
   };
   GTNHGenericMod = { repo, name, version, hash }: lib.internal.builders.genericMod {
     inherit name version;
