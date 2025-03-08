@@ -18,7 +18,7 @@ let
     name = "lwjgl3ify-forgePatches";
     version = "2.1.9";
     src = pkgs.fetchurl {
-      src = "https://github.com/GTNewHorizons/lwjgl3ify/releases/download/${version}/lwjgl3ify-${version}-forgePatches.jar";
+      url = "https://github.com/GTNewHorizons/lwjgl3ify/releases/download/${version}/lwjgl3ify-${version}-forgePatches.jar";
       hash = lib.fakeHash;
     };
     sourceRoot = ".";
