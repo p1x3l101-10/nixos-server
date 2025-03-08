@@ -43,7 +43,7 @@ in {
       projects = [
         "ntmspace"
         "notenoughids-unofficial"
-        "gtnhlib"
+        { modId = "gtnhlib"; versionId = "N42YUMSO"; }
       ];
       allowedVersionType = "beta";
     };
