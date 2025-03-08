@@ -27,7 +27,8 @@ in {
             name = "ocwasm";
             version = "1.7.10-0.5.2";
             file = fetchGHRelease {
-              inherit name version;
+              fileName = "${name}-${version}";
+              inherit version;
               owner = "DCNick3";
               repo = "OC-Wasm-GTNH";
               hash = "sha256-sMMdWxKBQCqtijxLos7GYjlxHtrsFfh+XzTjTcabnek=";
