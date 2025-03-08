@@ -19,7 +19,7 @@ let
     version = "2.1.9";
     src = pkgs.fetchurl {
       url = "https://github.com/GTNewHorizons/lwjgl3ify/releases/download/${version}/lwjgl3ify-${version}-forgePatches.jar";
-      hash = lib.fakeHash;
+      hash = "sha256-Wn02CV98S5wrw3LhX4TB+JfOzjUDVT+kk32q2+0TTCY=";
     };
     sourceRoot = ".";
     unpackPhase = ''
