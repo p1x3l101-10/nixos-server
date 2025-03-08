@@ -2,6 +2,6 @@
 
 {
   imports = [
-    ./gtnh.nix
+    ./ntm-space-age.nix
   ];
 }
