@@ -9,7 +9,7 @@ let
     owner = "GTNewHorizons";
     version = "${version}-GTNH";
     fileName = "${name}-${version}-GTNH";
-    inherit repo version hash;
+    inherit repo hash;
   };
   GTNHGenericMod = { repo, name, version, hash }: lib.internal.builders.genericMod {
     inherit name version;
