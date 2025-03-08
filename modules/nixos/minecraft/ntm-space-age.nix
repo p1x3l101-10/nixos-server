@@ -80,7 +80,6 @@ in {
         "826970"
         "73488"
         "235140"
-        "441392"
         "227875"
       ];
       apiKey = import ./overrides/cfApiKey.nix;
