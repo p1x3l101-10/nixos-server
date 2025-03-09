@@ -21,7 +21,7 @@ in {
               owner = "BlueAmulet";
               repo = name;
               version = "v1.1.0";
-              hash = lib.fakeHash;
+              hash = "sha256-cRKuDNNDaEHDFQPNPHeIs/SySpKdoLgzv2ojl5fFqQs=";
             };
           })
           (lib.internal.builders.genericMod rec {
