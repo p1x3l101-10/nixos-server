@@ -37,6 +37,28 @@ in {
       packList = [
         ./overrides/ntm-space-age
         lwjgl3ify-forgePatches
+        (lib.internal.builders.genericMod rec {
+          name = "Thistle";
+          version = "1.7.10-1.1.0";
+          file = fetchGHRelease {
+            fileName = "${name}-${version}.jar";
+            owner = "BlueAmulet";
+            repo = name;
+            version = "v1.1.0";
+            hash = "sha256-cRKuDNNDaEHDFQPNPHeIs/SySpKdoLgzv2ojl5fFqQs=";
+          };
+        })
+        (lib.internal.builders.genericMod rec {
+          name = "ocwasm";
+          version = "1.7.10-0.5.2";
+          file = fetchGHRelease {
+            fileName = "${name}-${version}.jar";
+            inherit version;
+            owner = "DCNick3";
+            repo = "OC-Wasm-GTNH";
+            hash = "sha256-sMMdWxKBQCqtijxLos7GYjlxHtrsFfh+XzTjTcabnek=";
+          };
+        })
         (GTNHGenericMod {
           name = "appliedenergistics2";
           version = "rv3-beta-549-GTNH";
@@ -82,6 +104,13 @@ in {
         "235140"
         "227875"
         "238551"
+        "225819"
+        "223008"
+        "236839"
+        "225225"
+        "225127"
+        "231687"
+        "267909"
       ];
       apiKey = import ./overrides/cfApiKey.nix;
     };
