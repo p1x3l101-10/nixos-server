@@ -134,4 +134,8 @@ in {
       ];
     };
   };
+  # Persist server
+  environment.persistence."/nix/host/state/Servers/Minecraft/ntm-space-age".directories = [
+    { directory = "/var/lib/minecraft"; user = "1000"; group = "1000"; }
+  ];
 }
