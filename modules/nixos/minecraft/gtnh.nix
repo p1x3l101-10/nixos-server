@@ -21,7 +21,7 @@ in {
               owner = "BlueAmulet";
               repo = name;
               version = "v1.1.0";
-              hash = lib.fakehash;
+              hash = lib.fakeHash;
             };
           })
           (lib.internal.builders.genericMod rec {
