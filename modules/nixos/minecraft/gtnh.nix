@@ -14,6 +14,17 @@ in {
         packList = [
           ./overrides/gtnh
           (lib.internal.builders.genericMod rec {
+            name = "Thistle";
+            version = "1.7.10-1.1.0";
+            file = fetchGHRelease {
+              fileName = "${name}-${version}.jar";
+              owner = "BlueAmulet";
+              repo = name;
+              version = "v1.1.0";
+              hash = lib.fakehash;
+            };
+          })
+          (lib.internal.builders.genericMod rec {
             name = "ocwasm";
             version = "1.7.10-0.5.2";
             file = fetchGHRelease {
