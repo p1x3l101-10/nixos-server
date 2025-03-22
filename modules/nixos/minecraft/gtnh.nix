@@ -5,6 +5,7 @@ let
     url = "https://github.com/${owner}/${repo}/releases/download/${version}/${fileName}";
     inherit hash;
   };
+  getdata = key: names: (import ../userdata.nix { inherit lib; }) key names;
 in {
   services.minecraft = {
     enable = true;
@@ -51,7 +52,7 @@ in {
         "difficulty hard"
       ];
       customServer = "lwjgl3ify-forgePatches.jar";
-      whitelist = import ./overrides/whitelist.nix;
+      whitelist = getdata [ "mcUsername" ] (import ./overrides/whitelist.nix);
     };
   };
   virtualisation.oci-containers.containers.minecraft.volumes = [

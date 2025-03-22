@@ -64,7 +64,7 @@
       memory = 8;
       port = 25565;
       openFirewall = true;
-      whitelist = import ./overrides/whitelist.nix;
+      whitelist = getdata [ "mcUsername" ] (import ./overrides/whitelist.nix);
       rconStartup = [
         "gamerule playersSleepingPercentage 10"
       ];

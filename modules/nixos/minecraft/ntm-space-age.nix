@@ -132,6 +132,7 @@ in {
       rconStartup = [
         "difficulty hard"
       ];
+      whitelist = getdata [ "mcUsername" ] (import ./overrides/whitelist.nix);
     };
   };
   # Persist server
