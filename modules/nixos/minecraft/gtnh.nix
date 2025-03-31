@@ -5,7 +5,7 @@ let
     url = "https://github.com/${owner}/${repo}/releases/download/${version}/${fileName}";
     inherit hash;
   };
-  getdata = key: names: (import ../userdata.nix { inherit lib; }) key names;
+  getdata = key: names: (import ../userdata.nix { inherit lib; }).getdata key names;
 in {
   services.minecraft = {
     enable = true;

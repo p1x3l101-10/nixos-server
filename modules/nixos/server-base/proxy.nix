@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 let
-  getdata = key: names: (import ../userdata.nix { inherit lib; }) key names;
+  getdata = key: names: (import ../userdata.nix { inherit lib; }).getdata key names;
 in {
   users.users.proxy = {
     isNormalUser = true;
