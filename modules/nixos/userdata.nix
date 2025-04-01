@@ -15,7 +15,7 @@ lib.fix (self: {
       mcUsername = "P1x3l101";
     };
     cayden = {
-      proxyKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJwbUnVjNdHpw4trfz2NEmg6Q901eO6cmELH2EilyFaV cbaxter@SS-Mac-cbaxter.local";
+      proxyKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDXIBP2bh+ZS1kRsK8VVUobrVrV+DM1Z8iL6spqpHWVe cbaxter@tv-c07yvbmhjg2x.normanps.norman.k12.ok.us";
     };
     kenton = {
       proxyKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIALkAoRXoHW+8AL7HTJQvwCFraLk3Fi7YtuB0N8yLpQ9 kentonb@SS-Mac-kentonb.local";
